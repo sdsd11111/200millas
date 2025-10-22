@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200 Millas Loja | El Legado Marino en la Sierra Sur</title>
+    <meta name="description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Más de 46 años ofreciendo auténticos sabores del Pacífico con tradición serrana desde 1979.">
+    <meta name="keywords" content="mariscos Loja, restaurante Loja, ceviche, pariguera, camaron reventado, pollo acullado, comida ecuatoriana, mariscos frescos">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/">
+    <meta property="og:title" content="200 Millas Loja | El Legado Marino en la Sierra Sur">
+    <meta property="og:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Más de 46 años ofreciendo auténticos sabores del Pacífico con tradición serrana desde 1979.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/">
+    <meta name="twitter:title" content="200 Millas Loja | El Legado Marino en la Sierra Sur">
+    <meta name="twitter:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Más de 46 años ofreciendo auténticos sabores del Pacífico con tradición serrana desde 1979.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- Estilos específicos de la página de inicio -->
+    <style>
+        /* Hero Slider Styles */
+        .hero-slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/hero-bg-1.jpg') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/hero-bg-2.jpg') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/hero-bg-3.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: var(--font-titulos);
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-cuerpo);
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-subtitulos);
+        }
+
+        .btn-primary {
+            background-color: var(--naranja-principal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--marron-calido);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--naranja-principal);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Quiénes Somos Section */
+        .quienes-somos {
+            padding: 6rem 0;
+            background-color: var(--crema);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--gris-oscuro);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-family: var(--font-cuerpo);
+            margin-bottom: 3rem;
+        }
+
+        .quienes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .quienes-text {
+            padding-right: 2rem;
+        }
+
+        .quienes-text p {
+            color: var(--gris-oscuro);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-family: var(--font-cuerpo);
+        }
+
+        .diferenciadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .diferenciador-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--naranja-principal);
+        }
+
+        .diferenciador-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .diferenciador-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--amarillo-dorado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .diferenciador-title {
+            color: var(--naranja-principal);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: var(--font-subtitulos);
+        }
+
+        .diferenciador-text {
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+            font-family: var(--font-cuerpo);
+        }
+
+        .price-highlight {
+            color: var(--amarillo-dorado);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .quienes-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .quienes-text {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .diferenciadores {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 80vh;
+                min-height: 600px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .quienes-somos {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Slider Section -->
+        <section class="hero-slider">
+            <div class="slide active">
+                <div class="hero-content">
+                    <h1>46 Años de Experiencia.<br>El Legado Marino en Loja.</h1>
+                    <p>Nuestra historia comenzó en 1979. Desde Machala hasta su mesa, somos embajadores de la cocina de mar de la más alta calidad en la Sierra Sur.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>El Pacífico a 200 Millas.<br>Sabor de Fusión Inigualable.</h1>
+                    <p>Disfrute de mariscos frescos garantizados. Fusionamos lo mejor de las recetas peruanas y ecuatorianas. La distancia no compromete nuestra calidad premium.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>Sazón Lojana, Corazón de Mar.<br>La Tradición de 200 Millas.</h1>
+                    <p>No solo somos mariscos. Somos la casa de la especialidad local, el Pollo Acullado. Una tradición familiar desde el fundador Vismar Moncayo.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiénes Somos Section -->
+        <section class="quienes-somos animate-on-scroll">
+            <div class="container">
+                <div class="quienes-grid">
+                    <div class="quienes-text">
+                        <h2 class="section-title">Un Legado que Une el Mar y la Sierra</h2>
+                        <p class="section-subtitle">
+                            200 Millas Loja es el referente de la alta cocina marina de fusión en la Sierra Sur.
+                            Fundados en 1979 por Vismar Moncayo, fusionamos la frescura del Pacífico con la calidez
+                            de la tradición lojana, bajo una administración familiar dedicada a la excelencia.
+                        </p>
+                    </div>
+
+                    <div class="diferenciadores">
+                        <div class="diferenciador-card">
+                            <div class="diferenciador-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3 class="diferenciador-title">Especialidad Única: Pollo Acullado</h3>
+                            <p class="diferenciador-text">
+                                Honramos a Loja ofreciendo su plato más querido, el Pollo Acullado, preparado con los
+                                aliños tradicionales serranos. <span class="price-highlight">Autenticidad desde $6.50</span>.
+                            </p>
+                        </div>
+
+                        <div class="diferenciador-card">
+                            <div class="diferenciador-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <h3 class="diferenciador-title">Calidad Premium: Fusión Peruana-Ecuatoriana</h3>
+                            <p class="diferenciador-text">
+                                Somos embajadores de la alta cocina marítima en el interior del país. Ofrecemos
+                                mariscos frescos garantizados con las mejores recetas del Pacífico.
+                            </p>
+                        </div>
+
+                        <div class="diferenciador-card">
+                            <div class="diferenciador-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="diferenciador-title">Experiencia y Legado</h3>
+                            <p class="diferenciador-text">
+                                Más de 46 años de experiencia desde nuestra fundación en Machala en 1979.
+                                Un legado familiar que garantiza sabor y calidad en cada plato.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+
+    <!-- Header Component Loader -->
+    <script>
+        // Función para cargar el header
+        function loadHeader() {
+            const headerContainer = document.getElementById('header-container');
+            if (!headerContainer) return;
+
+            headerContainer.innerHTML = `
+                <header class="header">
+                    <div class="container">
+                        <nav class="navbar">
+                            <a href="/" class="logo">
+                                <span class="logo-text">200 Millas</span>
+                                <span class="logo-subtext">Loja</span>
+                            </a>
+
+                            <div class="menu-toggle" id="mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <ul class="nav-links">
+                                <li><a href="/" class="active">Inicio</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">Menú <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#pariguera">Parigüera</a></li>
+                                        <li><a href="#camaron-reventado">Camarón Reventado</a></li>
+                                        <li><a href="#ceviche-mixto">Ceviche Mixto</a></li>
+                                        <li><a href="#pollo-acullado">Pollo Acullado</a></li>
+                                        <li><a href="#ensalada-mariscos">Ensalada de Mariscos</a></li>
+                                        <li><a href="#arroz-marinero">Arroz Marinero</a></li>
+                                        <li><a href="#corviche">Corviche de Pescado</a></li>
+                                        <li><a href="#bollo-pescado">Bollo de Pescado</a></li>
+                                        <li><a href="#cazuela-mariscos">Cazuela de Mariscos</a></li>
+                                        <li><a href="#pescado-frito">Pescado Frito</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/gallery/">Galería</a></li>
+                                <li><a href="/contact/">Contacto</a></li>
+                                <li class="cta-nav">
+                                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp"></i> Reservar
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            `;
+
+            // Inicializar funcionalidades del header
+            initHeader();
+        }
+
+        // Inicializar funcionalidades del header
+        function initHeader() {
+            const header = document.querySelector('.header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            if (!header || !mobileMenu || !navLinks) return;
+
+            // Efecto de scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Menú móvil
+            mobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            // Dropdown para móvil
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 992) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992 &&
+                    !e.target.closest('.navbar') &&
+                    navLinks.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        }
+
+        // Cargar el header cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadHeader);
+    </script>
+
+    <!-- Hero Slider Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Auto-rotate slides every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+
+    <!-- Footer Component Loader -->
+    <script>
+        // Load footer component
+        fetch('/components/footer/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+
+                // Load footer styles
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '/components/footer/footer.css';
+                document.head.appendChild(link);
+
+                // Load footer script
+                const script = document.createElement('script');
+                script.src = '/components/footer/footer.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+
+    <!-- Animations on Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+            const checkIfInView = () => {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+
+            window.addEventListener('load', checkIfInView);
+            window.addEventListener('scroll', checkIfInView);
+        });
+    </script>
+</body>
+</html>

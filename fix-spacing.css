@@ -1,0 +1,28 @@
+/* Ajustes para eliminar el espacio entre el header y el hero */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#header-container {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Asegurar que el header no tenga márgenes ni paddings adicionales */
+.header {
+    margin: 0;
+    padding: 0.5rem 0 !important;
+}
+
+/* Ajuste para el contenedor principal */
+main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

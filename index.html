@@ -1,0 +1,3509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200 Millas Loja | Algo muy especial en mariscos</title>
+    <meta name="description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/inicio/favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/">
+    <meta property="og:title" content="200 Millas Loja | Algo muy especial en mariscos">
+    <meta property="og:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/inicio/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/">
+    <meta name="twitter:title" content="200 Millas Loja | Algo muy especial en mariscos">
+    <meta name="twitter:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/inicio/og-image.jpg">
+    
+    <!-- Estilos específicos de la página de inicio -->
+    <style>
+        /* Estilos del Hero */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('/assets/images/inicio/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1.5rem;
+            margin-top: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        /* Hero Slider Styles */
+        .hero-slider {
+            position: relative;
+            height: 100vh;
+            min-height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0 80px; /* Espacio para las flechas */
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide:nth-child(1) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/inicio/hero-bg-1.jpg') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(2) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/inicio/hero-bg-2.jpg') no-repeat center center/cover;
+        }
+
+        .slide:nth-child(3) {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('/assets/images/inicio/hero-bg-3.jpg') no-repeat center center/cover;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: var(--font-titulos);
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: var(--font-cuerpo);
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-subtitulos);
+        }
+
+        .btn-primary {
+            background-color: var(--naranja-principal);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--marron-calido);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--naranja-principal);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Navigation Arrows */
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            z-index: 3;
+            backdrop-filter: blur(10px);
+        }
+
+        .slider-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .slider-nav:active {
+            transform: translateX(-50%) scale(0.95);
+        }
+
+        .nav-prev {
+            transform: translateX(-50%) translateX(-30px);
+        }
+
+        .nav-next {
+            transform: translateX(-50%) translateX(30px);
+        }
+
+        /* Hide navigation on mobile for cleaner look */
+        @media (max-width: 768px) {
+            .slider-nav {
+                display: none;
+            }
+        }
+
+        /* Quiénes Somos Section */
+        .quienes-somos {
+            padding: 6rem 0;
+            background-color: var(--crema);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-title {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            color: var(--gris-oscuro);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-family: var(--font-cuerpo);
+            margin-bottom: 3rem;
+        }
+
+        /* ------------------------------------- */
+        /* A. CORRECCIÓN DE LA SECCIÓN "QUIÉNES SOMOS" */
+        /* ------------------------------------- */
+        /* Base: Desktop */
+        .quienes-somos-grid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 40px;
+        }
+
+        /* Punto de quiebre para Tablet y Móvil */
+        @media (max-width: 768px) {
+            .quienes-somos-grid {
+                /* Fuerza el apilamiento de las columnas a 100% */
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ------------------------------------- */
+        /* B. CORRECCIÓN DE LAS TARJETAS DESTACADAS (5 PLATOS) */
+        /* ------------------------------------- */
+        /* Base: Grid de 5 columnas para Desktop */
+        .platos-destacados-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        /* Punto de quiebre para Tablet */
+        @media (max-width: 1024px) {
+            .platos-destacados-grid {
+                /* Transición a Grid de 3 o 2 columnas */
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        /* Punto de quiebre para Móvil */
+        @media (max-width: 600px) {
+            .platos-destacados-grid {
+                /* Apilamiento completo */
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ------------------------------------- */
+        /* C. CORRECCIÓN DE LA SECCIÓN MENÚ (LISTADO + SLIDER) */
+        /* ------------------------------------- */
+        /* Base: Doble Columna Menú + Slider */
+        .menu-category-block .category-grid {
+            display: flex;
+            flex-direction: row; /* Menú a la izquierda, Slider a la derecha */
+            gap: 20px;
+        }
+
+        .dish-list {
+            width: 60%; /* Columna de menú */
+        }
+
+        .category-slider {
+            width: 40%; /* Columna de slider */
+        }
+
+        /* Punto de quiebre para Tablet y Móvil */
+        @media (max-width: 900px) {
+            .menu-category-block .category-grid {
+                /* Fuerza el apilamiento vertical */
+                flex-direction: column;
+            }
+
+            .dish-list,
+            .category-slider {
+                /* Ambas columnas ocupan el ancho completo */
+                width: 100%;
+            }
+
+            .category-slider {
+                /* Para el móvil, el slider puede tener una altura definida y no el 100% de la altura del contenido del menú */
+                height: 300px;
+            }
+        }
+
+        /* ------------------------------------- */
+        /* D. CORRECCIÓN DE LA SECCIÓN TESTIMONIOS */
+        /* ------------------------------------- */
+        /* Base: Grid de 3 columnas */
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* Punto de quiebre para Tablet */
+        @media (max-width: 900px) {
+            .testimonios-grid {
+                grid-template-columns: 1fr 1fr; /* 2 columnas */
+            }
+        }
+
+        /* Punto de quiebre para Móvil */
+        @media (max-width: 600px) {
+            .testimonios-grid {
+                grid-template-columns: 1fr; /* 1 columna */
+            }
+        }
+
+        .quienes-text {
+            padding-right: 2rem;
+        }
+
+        .quienes-text p {
+            color: var(--gris-oscuro);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-family: var(--font-cuerpo);
+        }
+
+        .diferenciadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .diferenciador-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--naranja-principal);
+        }
+
+        .diferenciador-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .diferenciador-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--amarillo-dorado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .diferenciador-title {
+            color: var(--naranja-principal);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: var(--font-subtitulos);
+        }
+
+        .diferenciador-text {
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+            font-family: var(--font-cuerpo);
+        }
+
+        .price-highlight {
+            color: var(--amarillo-dorado);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Sección de Video Destacado */
+        .video-showcase {
+            padding: 6rem 0;
+            background-color: var(--gris-oscuro);
+            color: white;
+        }
+
+        .video-content {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-showcase .section-title {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-titulos);
+            font-weight: 700;
+        }
+
+        .video-showcase .section-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-family: var(--font-cuerpo);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--naranja-principal);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Responsive Design para Video */
+        @media (max-width: 1200px) {
+            .video-showcase .section-title {
+                font-size: 2.25rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-showcase {
+                padding: 4rem 0;
+            }
+
+            .video-showcase .section-title {
+                font-size: 2rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 0.95rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .video-wrapper {
+                border-radius: 10px;
+                margin: 0 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-showcase .section-title {
+                font-size: 1.75rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 0.9rem;
+            }
+
+            .video-wrapper {
+                margin: 0 0.5rem;
+            }
+        }
+        
+        /* Sección de Menú Destacado */
+        .menu-section {
+            padding: 6rem 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .menu-section .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .menu-section .section-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .menu-section .section-subtitle {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Estilos para los platos destacados */
+        .featured-dishes {
+            margin-bottom: 6rem;
+        }
+
+        .featured-dishes .section-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .featured-dishes .section-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--naranja-principal);
+        }
+
+        .featured-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .dish-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .dish-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dish-card:hover .dish-image img {
+            transform: scale(1.05);
+        }
+
+        .dish-price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--naranja-principal);
+            color: white;
+            font-weight: 700;
+            padding: 0.7rem 1.3rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .dish-content {
+            padding: 1.5rem;
+        }
+
+        .dish-content h4 {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dish-description {
+            color: #1a252f;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--naranja-principal);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--naranja-principal);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--naranja-principal);
+        }
+
+        /* ------------------------------------------------ */
+        /* VARIABLES CSS - BRANDING 200 MILLAS LOJA */
+        /* ------------------------------------------------ */
+        :root {
+            /* Colores Principales */
+            --naranja-principal: #E67E22;
+            --marron-calido: #D35400;
+            --amarillo-dorado: #F39C12;
+            --gris-oscuro: #2C3E50;
+            --gris-claro: #ECF0F1;
+            --crema: #FDF2E9;
+            --blanco: #FFFFFF;
+
+            /* Tipografía */
+            --font-titulos: 'Playfair Display', serif;
+            --font-subtitulos: 'Montserrat', sans-serif;
+            --font-cuerpo: 'Open Sans', sans-serif;
+        }
+
+        /* Regla global para prevenir scroll horizontal */
+        html, body {
+            overflow-x: hidden; /* ¡CRÍTICO: Evita scroll horizontal! */
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Todos los elementos deben respetar el ancho del contenedor */
+        * {
+            box-sizing: border-box; /* ¡Incluye padding y border en el ancho total! */
+        }
+
+        /* Contenedores principales nunca deben exceder el viewport */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%; /* ¡Asegura que nunca exceda el 100% del viewport! */
+        }
+
+        /* Imágenes nunca deben causar scroll horizontal */
+        img {
+            max-width: 100%; /* ¡CRÍTICO: Nunca exceder el contenedor! */
+            height: auto; /* Mantiene proporción */
+            display: block; /* Evita espacios en blanco debajo */
+        }
+
+        /* Videos e iframes también deben respetar el contenedor */
+        iframe, video, embed {
+            max-width: 100%; /* ¡CRÍTICO: Nunca exceder el contenedor! */
+            height: auto;
+        }
+
+        /* Elementos posicionados absolutamente nunca deben salir del viewport */
+        [style*="position: absolute"],
+        [style*="position:absolute"] {
+            max-width: 100% !important; /* ¡Fuerza el respeto al contenedor! */
+        }
+
+        /* ------------------------------------------------ */
+        /* MEDIA QUERIES ESPECÍFICOS PARA MÓVIL */
+        /* ------------------------------------------------ */
+
+        @media (max-width: 768px) {
+            /* Contenedor aún más restrictivo en móvil */
+            .container {
+                padding: 0 1rem; /* ¡Reduce padding para dar más espacio al contenido! */
+                width: 100%; /* ¡Garantiza 100% del viewport disponible! */
+            }
+
+            /* Asegura que todas las secciones usen el 100% disponible */
+            section {
+                width: 100%; /* ¡Nunca exceder el viewport! */
+                max-width: 100%;
+            }
+
+            /* Elementos flotantes o con posición absoluta en móvil */
+            .slider-nav {
+                position: absolute; /* Mantiene navegación absoluta */
+                max-width: 45px; /* ¡Límite de ancho para evitar desborde! */
+                left: 10px; /* ¡Asegura que esté dentro del contenedor! */
+            }
+
+            .slider-nav.next {
+                right: 10px; /* ¡Asegura que esté dentro del contenedor! */
+                left: auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Aún más restrictivo en pantallas pequeñas */
+            .container {
+                padding: 0 0.5rem; /* ¡Padding mínimo para máximo contenido! */
+            }
+
+            /* Texto que podría causar problemas */
+            h1, h2, h3, h4, h5, h6 {
+                word-wrap: break-word; /* ¡Rompe palabras largas si es necesario! */
+                hyphens: auto; /* ¡Agrega guiones si el navegador lo soporta! */
+            }
+
+            /* Precios y elementos con fondo que podrían desbordar */
+            .dish-price, .btn {
+                max-width: 100%; /* ¡Nunca exceder el contenedor! */
+                box-sizing: border-box;
+            }
+        }
+
+        /* Contenedor de la Categoría (Sopas, Ceviches, etc.) */
+        .menu-category-block {
+            margin-bottom: 60px;
+            padding: 30px;
+            background-color: var(--blanco);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            width: 100%; /* ¡Asegura que nunca exceda el contenedor! */
+            box-sizing: border-box;
+        }
+
+        .category-title {
+            font-family: var(--font-subtitulos);
+            font-size: 2rem;
+            color: var(--naranja-principal);
+            border-bottom: 3px solid var(--naranja-principal);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        /* ESTILO CRÍTICO: GRID PARA SIMETRÍA Y DOBLE COLUMNA */
+        .category-grid {
+            display: flex;
+            gap: 30px;
+            /* CRÍTICO: Asegura que el slider y la lista tengan la misma altura */
+            align-items: stretch;
+            width: 100%; /* ¡Asegura que nunca exceda el contenedor! */
+        }
+
+        .dish-list {
+            flex-grow: 1; /* Permite a la lista ocupar el espacio restante */
+            width: 65%; /* 65% para la lista de menú */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-slider {
+            width: 35%; /* 35% para la imagen/slider */
+            overflow: hidden; /* Oculta partes de la imagen que exceden */
+            border-radius: 8px;
+            /* La altura se ajusta por align-items: stretch del padre */
+        }
+
+        /* La imagen debe llenar el contenedor al 100% de la altura y ancho */
+        .category-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* CRÍTICO: Cubre el área sin desbordar ni deformar */
+            display: block;
+        }
+
+        /* ------------------------------------------------ */
+        /* ESTILO CRÍTICO: ALINEACIÓN COLUMNA DE PRECIOS */
+        /* ------------------------------------------------ */
+        .dish-item {
+            display: flex;
+            justify-content: space-between; /* Empuja Nombre/Puntos a la izquierda y Precio a la derecha */
+            align-items: flex-end;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--gris-claro); /* Separador sutil */
+            font-family: var(--font-cuerpo);
+            font-size: 1.1rem;
+        }
+
+        .dish-name {
+            white-space: nowrap; /* Evita que el nombre del plato salte de línea */
+            font-weight: 600;
+            color: var(--blanco); /* ¡Cambiado a blanco para mejor visibilidad! */
+        }
+
+        /* CRÍTICO: La línea punteada se estira para llenar el espacio */
+        .dotted-line {
+            flex-grow: 1;
+            margin: 0 15px;
+            /* Usar un pseudo-elemento o un span de borde punteado para la línea */
+            border-bottom: 2px dotted #aaa;
+            align-self: flex-end;
+            height: 1em; /* Mantiene la altura para que el borde se muestre */
+            opacity: 0.7;
+        }
+
+        .dish-price {
+            /* Mantiene el precio en una línea */
+            white-space: nowrap;
+            font-family: var(--font-subtitulos);
+            font-weight: 800;
+            color: var(--naranja-principal);
+            font-size: 1.2rem;
+            /* Estilo burbuja de precio */
+            background-color: var(--naranja-principal);
+            color: var(--blanco);
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            /* CRÍTICO: Esto garantiza la columna vertical */
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* ------------------------------------------------ */
+        /* MEDIA QUERY: TABLET Y PANTALLAS PEQUEÑAS (Max 900px) */
+        /* ------------------------------------------------ */
+        @media (max-width: 900px) {
+            /* Reestructura el layout de doble columna a apilamiento vertical */
+            .category-grid {
+                flex-direction: column;
+            }
+
+            /* Ambas columnas ocupan el 100% del ancho */
+            .dish-list,
+            .category-slider {
+                width: 100%;
+            }
+
+            /* El slider ya no se estira por el contenido del menú, le damos una altura fija */
+            .category-slider {
+                /* Altura fija para el slider en móvil */
+                height: 300px;
+                margin-top: 20px;
+            }
+
+            .category-title {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* ------------------------------------------------ */
+        /* MEDIA QUERY: MÓVIL (Max 550px) */
+        /* ------------------------------------------------ */
+        @media (max-width: 550px) {
+            .menu-section {
+                padding: 40px 0;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .dish-item {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+
+            .dish-name {
+                /* Si el nombre es muy largo, permitimos el salto de línea en móvil */
+                white-space: normal;
+            }
+
+            .dotted-line {
+                /* Reducimos el margen y el grosor de la línea punteada */
+                margin: 0 8px;
+                border-bottom-width: 1px;
+            }
+
+            .dish-price {
+                font-size: 1.1rem;
+                padding: 3px 8px;
+                min-width: 50px;
+            }
+
+            .category-slider {
+                /* Reducimos la altura en pantallas muy pequeñas */
+                height: 250px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Punto de quiebre para Tablet y Móvil */
+        @media (max-width: 768px) {
+            .quienes-grid {
+                /* ¡Fuerza el apilamiento de las columnas a 100%! */
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-slider {
+                height: 100vh;
+                min-height: 100%;
+                padding-bottom: 100px; /* Más espacio para las flechas en móvil */
+            }
+            
+            .hero-content {
+                padding: 0 20px;
+                margin-bottom: 60px; /* Espacio para el botón y flechas */
+            }
+            
+            .hero-buttons {
+                margin-bottom: 30px; /* Espacio entre botón y flechas */
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .quienes-somos {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Sección de Bienvenida */
+        .welcome {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .welcome-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .welcome-text h2 {
+            color: var(--naranja-principal);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-family: var(--font-titulos);
+        }
+        
+        .welcome-text p {
+            color: var(--gris-oscuro);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-family: var(--font-cuerpo);
+        }
+        
+        .welcome-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .welcome-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .welcome-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .experience-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: var(--amarillo-dorado);
+            color: white;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+        
+        .experience-badge .years {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .experience-badge .text {
+            font-size: 0.9rem;
+            line-height: 1.2;
+            display: block;
+            margin-top: 0.5rem;
+        }
+        
+        /* Sección de Especialidades */
+        .specialties {
+            padding: 6rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        .section-title {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+        }
+        
+        .section-subtitle {
+            color: var(--amarillo-dorado);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 1rem;
+            font-family: var(--font-subtitulos);
+        }
+        
+        .section-description {
+            color: var(--gris-oscuro);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-family: var(--font-cuerpo);
+        }
+        
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .specialty-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .specialty-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .specialty-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .specialty-card:hover .specialty-image img {
+            transform: scale(1.1);
+        }
+        
+        .specialty-content {
+            padding: 1.5rem;
+        }
+        
+        .specialty-title {
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 0.75rem;
+            font-family: var(--font-titulos);
+        }
+        
+        .specialty-description {
+            color: var(--gris-oscuro);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-family: var(--font-cuerpo);
+        }
+        
+        .specialty-price {
+            color: var(--amarillo-dorado);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: block;
+            font-family: var(--font-subtitulos);
+        }
+        
+        .btn-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--amarillo-dorado);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: var(--font-subtitulos);
+        }
+        
+        .btn-more:hover {
+            color: var(--naranja-principal);
+        }
+        
+        .btn-more i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        
+        .btn-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mt-5 {
+            margin-top: 3rem;
+        }
+        
+        /* Sección de Testimonios */
+        .testimonials-section {
+            padding: 6rem 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .testimonials-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .testimonials-subtitle {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin: 0;
+            font-family: var(--font-cuerpo);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-icon {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .testimonial-text {
+            color: #1a252f;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-family: var(--font-cuerpo);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+            border: 3px solid var(--naranja-principal);
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            color: #1a252f;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            font-family: var(--font-titulos);
+        }
+
+        .testimonial-info p {
+            color: var(--naranja-principal);
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Responsive Design para Testimonios */
+        @media (max-width: 992px) {
+            .testimonials-section {
+                padding: 5rem 0;
+            }
+
+            .testimonials-title {
+                font-size: 2.25rem;
+            }
+
+            .testimonials-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-section {
+                padding: 4rem 0;
+            }
+
+            .testimonials-title {
+                font-size: 2rem;
+            }
+
+            .testimonials-subtitle {
+                font-size: 1rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-card {
+                padding: 1.8rem;
+            }
+
+            .testimonial-icon {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonials-section {
+                padding: 3rem 0;
+            }
+
+            .testimonials-title {
+                font-size: 1.8rem;
+            }
+
+            .testimonials-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Sección de Preguntas Frecuentes */
+        .faq-section {
+            padding: 6rem 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .faq-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .faq-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--naranja-principal);
+        }
+
+        .faq-question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a252f;
+            font-family: var(--font-cuerpo);
+            margin: 0;
+        }
+
+        .faq-icon {
+            color: var(--naranja-principal);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .faq-question[aria-expanded="true"] + .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.7;
+            font-family: var(--font-cuerpo);
+        }
+
+        /* Responsive Design para FAQ */
+        @media (max-width: 992px) {
+            .faq-section {
+                padding: 5rem 0;
+            }
+
+            .faq-title {
+                font-size: 2.25rem;
+            }
+
+            .faq-question-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 4rem 0;
+            }
+
+            .faq-title {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 1.2rem 0;
+            }
+
+            .faq-question-text {
+                font-size: 0.95rem;
+            }
+
+            .faq-answer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .faq-section {
+                padding: 3rem 0;
+            }
+
+            .faq-title {
+                font-size: 1.8rem;
+            }
+
+            .faq-question {
+                padding: 1rem 0;
+            }
+
+            .faq-question-text {
+                font-size: 0.9rem;
+            }
+
+            .faq-answer {
+                font-size: 0.85rem;
+            }
+        }
+        
+        /* Sección de Llamado a la Acción */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(rgba(212, 106, 31, 0.9), rgba(26, 54, 93, 0.9)), 
+                        url('/assets/images/inicio/cta-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Estilos responsivos */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .welcome-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .welcome-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .experience-badge {
+                width: 120px;
+                height: 120px;
+                bottom: -20px;
+                right: -20px;
+            }
+            
+            .experience-badge .years {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            .testimonials-section {
+                background-attachment: scroll;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta h2 {
+                font-size: 2rem;
+            }
+            
+            .cta p {
+                font-size: 1.1rem;
+            }
+            
+            .testimonial-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .cta h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        /* Sección Quiénes Somos - Diseño Asimétrico */
+        .quienes-somos-section {
+            padding: 6rem 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .quienes-asimetrico {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quienes-content {
+            padding-right: 2rem;
+        }
+
+        .quienes-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .quienes-intro {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-family: var(--font-cuerpo);
+        }
+
+        .valor-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .valor-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .valor-icon {
+            color: var(--naranja-principal);
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+
+        .valor-content {
+            flex: 1;
+        }
+
+        .valor-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .valor-text {
+            color: #2c3e50;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            font-family: var(--font-cuerpo);
+        }
+
+        .quienes-visual {
+            position: relative;
+        }
+
+        .visual-container {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .legacy-capsule {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: var(--naranja-principal);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
+            z-index: 10;
+        }
+
+        .capsule-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .legacy-year {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .legacy-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: var(--font-titulos);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .legacy-text {
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        /* Responsive Design para Quiénes Somos */
+        @media (max-width: 992px) {
+            .quienes-somos-section {
+                padding: 5rem 0;
+            }
+
+            .quienes-asimetrico {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .quienes-content {
+                padding-right: 0;
+                order: 2;
+            }
+
+            .quienes-visual {
+                order: 1;
+            }
+
+            .quienes-title {
+                font-size: 2.25rem;
+            }
+
+            .legacy-capsule {
+                width: 100px;
+                height: 100px;
+                top: -15px;
+                right: -15px;
+            }
+
+            .legacy-number {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .quienes-somos-section {
+                padding: 4rem 0;
+            }
+
+            .quienes-title {
+                font-size: 2rem;
+            }
+
+            .quienes-intro {
+                font-size: 1rem;
+            }
+
+            .valor-blocks {
+                gap: 1.5rem;
+            }
+
+            .valor-item {
+                gap: 1rem;
+            }
+
+            .valor-icon {
+                font-size: 1.5rem;
+                min-width: 40px;
+            }
+
+            .valor-title {
+                font-size: 1.1rem;
+            }
+
+            .valor-text {
+                font-size: 0.9rem;
+            }
+
+            .main-image img {
+                height: 300px;
+            }
+
+            .legacy-capsule {
+                width: 80px;
+                height: 80px;
+                padding: 1rem;
+            }
+
+            .legacy-year {
+                font-size: 0.7rem;
+            }
+
+            .legacy-number {
+                font-size: 1.2rem;
+            }
+
+            .legacy-text {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .quienes-somos-section {
+                padding: 3rem 0;
+            }
+
+            .quienes-title {
+                font-size: 1.8rem;
+            }
+
+            .valor-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+
+            .valor-icon {
+                margin: 0;
+            }
+
+            .main-image img {
+                height: 250px;
+            }
+
+            .legacy-capsule {
+                width: 70px;
+                height: 70px;
+                top: -10px;
+                right: -10px;
+            }
+        }
+        
+        /* Sección de Video Destacado */
+        .video-showcase {
+            padding: 6rem 0;
+            background-color: var(--gris-oscuro);
+            color: white;
+        }
+
+        .video-content {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .video-showcase .section-title {
+            color: var(--naranja-principal);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-family: var(--font-titulos);
+            font-weight: 700;
+        }
+
+        .video-showcase .section-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            font-family: var(--font-cuerpo);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid var(--naranja-principal);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        /* Responsive Design para Video */
+        @media (max-width: 1200px) {
+            .video-showcase .section-title {
+                font-size: 2.25rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-showcase {
+                padding: 4rem 0;
+            }
+
+            .video-showcase .section-title {
+                font-size: 2rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 0.95rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .video-wrapper {
+                border-radius: 10px;
+                margin: 0 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-showcase .section-title {
+                font-size: 1.75rem;
+            }
+
+            .video-showcase .section-description {
+                font-size: 0.9rem;
+            }
+
+            .video-wrapper {
+                margin: 0 0.5rem;
+            }
+        }
+        
+        /* Sección de Menú Destacado */
+        .menu-section {
+            padding: 6rem 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .menu-section .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .menu-section .section-title {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .menu-section .section-subtitle {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Estilos para los platos destacados */
+        .featured-dishes {
+            margin-bottom: 6rem;
+        }
+
+        .featured-dishes .section-subtitle {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .featured-dishes .section-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--naranja-principal);
+        }
+
+        .featured-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .dish-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .dish-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .dish-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .dish-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .dish-card:hover .dish-image img {
+            transform: scale(1.05);
+        }
+
+        .dish-price {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: var(--naranja-principal);
+            color: white;
+            font-weight: 700;
+            padding: 0.7rem 1.3rem;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .dish-content {
+            padding: 1.5rem;
+        }
+
+        .dish-content h4 {
+            color: #1a252f;
+            font-family: var(--font-titulos);
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dish-description {
+            color: #1a252f;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--naranja-principal);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--naranja-principal);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--naranja-principal);
+        }
+
+        /* Estilos para el menú por categorías */
+        .menu-categories {
+            margin-top: 5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .category {
+            background: #ffffff !important;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .category-title {
+            color: #0d1117 !important;
+            font-family: var(--font-titulos);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 3px solid var(--naranja-principal);
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .dish-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .dish-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed #ddd;
+            gap: 1rem;
+            width: 100%;
+            position: relative;
+        }
+
+        .dish-list li:last-child {
+            border-bottom: none;
+        }
+
+        .dish-name {
+            color: #0d1117 !important;
+            font-weight: 600;
+            flex: 1;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.4;
+            padding: 0.2rem 0;
+            word-wrap: break-word;
+            min-width: 0;
+        }
+
+        .dish-price {
+            color: #ffffff;
+            font-weight: 700;
+            white-space: nowrap;
+            background-color: var(--naranja-principal);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            min-width: 60px;
+            text-align: center;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+            position: relative;
+            right: auto;
+            top: auto;
+            margin-left: 0.5rem;
+        }
+
+        .highlighted-dish .dish-name {
+            color: #1a252f !important;
+            font-weight: 700;
+        }
+
+        .highlighted-dish .dish-price {
+            font-size: 1.1rem;
+        }
+
+        .category-description {
+            color: #1a252f;
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--naranja-principal);
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--naranja-principal);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--naranja-principal);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .menu-section .section-title {
+                font-size: 2.25rem;
+            }
+
+            .featured-grid {
+
+    .menu-section .section-header {
+        margin-bottom: 3rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .category {
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* ------------------------------------- */
+    /* 1. SIMETRÍA DE ALTURA (CRÍTICA) */
+    /* ------------------------------------- */
+    .category-grid {
+        display: flex; /* ¡Flexbox para simetría perfecta! */
+        gap: 20px;
+        align-items: stretch; /* ¡AMBAS COLUMNAS TIENEN LA MISMA ALTURA! */
+    }
+
+    .dish-list {
+        flex-grow: 1; /* ¡Lista ocupa todo el espacio disponible! */
+        padding-right: 20px; /* ¡Espacio para evitar choque con imagen! */
+    }
+
+    .category-slider {
+        width: 40%; /* ¡Ancho fijo para el slider! */
+        /* ¡No necesitamos height explícito gracias a align-items: stretch! */
+    }
+
+    .category-slider img {
+        width: 100%;
+        height: 100%; /* ¡Imagen llena completamente la altura! */
+        object-fit: cover; /* ¡Imagen cubre todo el espacio sin deformarse! */
+    }
+
+    /* ------------------------------------- */
+    /* 2. ALINEACIÓN COLUMNAR DE PRECIOS (CRÍTICA) */
+    /* ------------------------------------- */
+
+    .dish-item {
+        display: flex; /* ¡Flexbox para plato, puntos y precio! */
+        justify-content: space-between; /* ¡Precio empujado completamente a la derecha! */
+        align-items: flex-end; /* ¡Elementos alineados a la parte inferior! */
+        padding: 10px 0;
+        border-bottom: 1px solid var(--gris-claro); /* ¡Separador suave! */
+    }
+
+    .dish-name {
+        /* ¡Nombre del plato como primer elemento en flexbox! */
+        font-size: 16px;
+        font-weight: 500;
+        white-space: nowrap; /* ¡Evita saltos de línea! */
+    }
+
+    /* ¡Línea punteada extensible - LA CLAVE! */
+    .dotted-line {
+        flex-grow: 1; /* ¡CRECE Y OCUPA TODO EL ESPACIO CENTRAL! */
+        margin: 0 10px;
+        border-bottom: 2px dotted #ccc; /* ¡Puntos elegantes! */
+        align-self: flex-end; /* ¡Línea al mismo nivel que el texto! */
+        height: 1em; /* ¡Necesario para que el border se vea! */
+    }
+
+    .dish-price {
+        /* ¡PRECIO ALINEADO VERTICALMENTE A LA DERECHA! */
+        font-family: var(--font-subtitulos);
+        font-weight: 700;
+        color: var(--naranja-principal); /* ¡Color naranja principal! */
+        white-space: nowrap; /* ¡CRÍTICO: Mantiene la columna estricta! */
+        width: 60px; /* ¡Ancho fijo para columna perfecta! */
+        text-align: right;
+    }
+
+    /* Slider Styles con altura perfecta */
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        flex: 1;
+    }
+
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide-item.active {
+        opacity: 1;
+    }
+
+    .slide-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--naranja-principal);
+        transition: all 0.3s ease;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .slider-nav:hover {
+        background: var(--naranja-principal);
+        color: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .slider-nav.prev {
+        left: 15px;
+    }
+
+    .slider-nav.next {
+        right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-section .section-title {
+        font-size: 2rem;
+    }
+
+    .menu-section .section-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .featured-dishes .section-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .dish-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-section {
+        padding: 4rem 0;
+    }
+
+    .menu-section .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .menu-section .category-grid {
+        align-items: stretch;
+        min-height: 100%;
+    }
+
+        .category-slider {
+            display: flex;
+            flex-direction: column;
+            align-self: stretch;
+            width: 300px;
+        }
+
+        /* Slider Styles con altura perfecta */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide-item.active {
+            opacity: 1;
+        }
+
+        .slide-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--naranja-principal);
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .slider-nav:hover {
+            background: var(--naranja-principal);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slider-nav.prev {
+            left: 15px;
+        }
+
+        .slider-nav.next {
+            right: 15px;
+        }
+
+        /* Responsive Design para Menú con Sliders */
+        @media (max-width: 1200px) {
+            .category-grid {
+                gap: 15px;
+            }
+
+            .dish-list {
+                padding-right: 15px;
+            }
+
+            .category-slider {
+                width: 35%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .category-menu {
+                order: 2;
+            }
+
+            .category-slider {
+                order: 1;
+                width: 100%;
+            }
+
+            .category-title {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-categories-with-sliders {
+                margin-top: 3rem;
+            }
+
+            .category-block {
+                padding: 1.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .category-title {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .dish-item {
+                padding: 0.8rem 0;
+            }
+
+            .dish-name {
+                font-size: 0.95rem;
+            }
+
+            .dish-price {
+                width: 55px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-block {
+                padding: 1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .category-title {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .dish-item {
+                padding: 0.7rem 0;
+            }
+
+            .dish-name {
+                font-size: 0.9rem;
+            }
+
+            .dish-price {
+                width: 50px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script>
+        // Cargar el CSS del header primero
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/components/header/header.css';
+        document.head.appendChild(link);
+        
+        // Función para cargar el header
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        // Cargar el JS del header
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false; // Importante: cargar de forma síncrona
+                        document.body.appendChild(script);
+                        
+                        // Forzar la inicialización después de un breve retraso
+                        setTimeout(() => {
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                        }, 100);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header HTML:', error);
+                });
+        }
+        
+        // Cargar el header cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadHeader);
+        } else {
+            loadHeader();
+        }
+    </script>
+
+    <!-- Hero Slider Section -->
+        <section class="hero-slider">
+            <div class="slide active">
+                <div class="hero-content">
+                    <h1>46 Años de Experiencia.<br>El Legado Marino en Loja.</h1>
+                    <p>Nuestra historia comenzó en 1979. Desde Machala hasta su mesa, somos embajadores de la cocina de mar de la más alta calidad en la Sierra Sur.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>El Pacífico a 200 Millas.<br>Sabor de Fusión Inigualable.</h1>
+                    <p>Disfrute de mariscos frescos garantizados. Fusionamos lo mejor de las recetas peruanas y ecuatorianas. La distancia no compromete nuestra calidad premium.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="hero-content">
+                    <h1>Sazón Lojana, Corazón de Mar.<br>La Tradición de 200 Millas.</h1>
+                    <p>No solo somos mariscos. Somos la casa de la especialidad local, el Pollo Acullado. Una tradición familiar desde el fundador Vismar Moncayo.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="slider-arrows">
+                <button class="slider-nav nav-prev" aria-label="Slide anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-nav nav-next" aria-label="Siguiente slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Quiénes Somos Section - Diseño Asimétrico -->
+        <section class="quienes-somos-section animate-on-scroll">
+            <div class="container">
+                <div class="quienes-asimetrico">
+                    <!-- Columna de Contenido (60%) -->
+                    <div class="quienes-content">
+                        <h2 class="quienes-title">Un Legado de 46 Años: El Mejor Restaurante Loja de Mariscos</h2>
+                        <p class="quienes-intro">
+                            Bienvenidos a 200 Millas Loja. Nuestra historia no es solo un menú, es un legado que inició Vismar Moncayo en 1979. Nacimos en Machala y llevamos con orgullo la frescura del Pacífico a la Sierra Sur, fusionando con maestría las recetas peruanas y ecuatorianas.
+                        </p>
+
+                        <!-- Bloques de Valor -->
+                        <div class="valor-blocks">
+                            <div class="valor-item">
+                                <div class="valor-icon">
+                                    <i class="fas fa-fish"></i>
+                                </div>
+                                <div class="valor-content">
+                                    <h3 class="valor-title">Frescos y Garantizados</h3>
+                                    <p class="valor-text">Somos embajadores de la alta cocina marítima. Garantizamos mariscos frescos con las mejores recetas, resolviendo la objeción de la distancia con calidad premium.</p>
+                                </div>
+                            </div>
+
+                            <div class="valor-item">
+                                <div class="valor-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="valor-content">
+                                    <h3 class="valor-title">La Esencia Lojana</h3>
+                                    <p class="valor-text">Nos diferenciamos por honrar la tierra que nos acoge: somos la casa del auténtico Pollo Acullado, ofreciendo autenticidad serrana en un restaurante marino.</p>
+                                </div>
+                            </div>
+
+                            <div class="valor-item">
+                                <div class="valor-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="valor-content">
+                                    <h3 class="valor-title">Visión Familiar</h3>
+                                    <p class="valor-text">Un negocio familiar con 46 años de experiencia dedicado a la excelencia y a ofrecer un ambiente cálido e inigualable en el centro de Loja.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Visual (40%) -->
+                    <div class="quienes-visual">
+                        <div class="visual-container">
+                            <!-- Imagen Principal -->
+                            <div class="main-image">
+                                <img src="/assets/images/inicio/vismar-moncayo.jpg" alt="Vismar Moncayo - Fundador 200 Millas Loja" loading="lazy">
+                            </div>
+
+                            <!-- Cápsula del Tiempo Flotante -->
+                            <div class="legacy-capsule">
+                                <div class="capsule-content">
+                                    <span class="legacy-year">Desde</span>
+                                    <span class="legacy-number">1979</span>
+                                    <p class="legacy-text">años de excelencia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Video Destacado -->
+        <section class="video-showcase animate-on-scroll">
+            <div class="container">
+                <div class="video-content">
+                    <h2 class="section-title">Experimenta 200 Millas Loja: Sabor, Tradición y Ambiente</h2>
+                    <p class="section-description">
+                        Una breve mirada a la excelencia de nuestra cocina, la frescura de nuestros mariscos y el cálido ambiente familiar que nos define. ¡Disfrútalo!
+                    </p>
+
+                    <div class="video-container">
+                        <div class="video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                title="200 Millas Loja - Experiencia Gastronómica"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Menú Destacado -->
+        <section id="menu-destacado" class="menu-section animate-on-scroll">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Menú de Mariscos 200 Millas Loja: Fusión y Tradición</h2>
+                    <p class="section-subtitle">Una selección de nuestros mejores platos: desde las especialidades de la alta cocina marina hasta la auténtica tradición lojana. Explore la frescura del mar y encuentre su favorito.</p>
+                </div>
+
+                <!-- Zona A: Platos Destacados -->
+                <div class="featured-dishes">
+                    <h3 class="section-subtitle">Nuestros Platos Estrella</h3>
+                    <div class="featured-grid">
+                        <!-- Plato 1 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/pariguella.jpg" alt="Parihuela 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">$11.00</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Parihuela</h4>
+                                <p class="dish-description">La Sopa Marinera Tradicional</p>
+                                <a href="/pariguela" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 2 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/camaron-reventado.jpg" alt="Camarón Reventado 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">$11.25</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Camarón Reventado</h4>
+                                <p class="dish-description">Especialidad de la Casa con salsa única</p>
+                                <a href="/camaron-reventado" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 3 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/ceviche-mixto.jpg" alt="Ceviche Mixto 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">$11.50</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Ceviche Mixto</h4>
+                                <p class="dish-description">Fusión Perfecta: Camarón, Concha, Pescado</p>
+                                <a href="/ceviche-mixto" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 4 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/arroz-mariscos.jpg" alt="Arroz con Mariscos 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">$11.25</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Arroz con Mariscos</h4>
+                                <p class="dish-description">Clásico Abundante (sin acompañamiento extra)</p>
+                                <a href="/arroz-con-mariscos" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 5 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/conchas-asadas.jpg" alt="Conchas Asadas 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">$11.75</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Conchas Asadas (20 Unidades)</h4>
+                                <p class="dish-description">El Plato Ideal para Compartir</p>
+                                <a href="/conchas-asadas" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="text-center mt-5">
+                    <a href="/menu" class="btn btn-outline">Ver Menú Completo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Testimonios -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="testimonials-header">
+                    <h2 class="testimonials-title">Lo que Dicen Nuestros Clientes: El Mejor Sabor de Loja</h2>
+                    <p class="testimonials-subtitle">Más de 46 años construyendo un legado de sabor y excelencia. Lea las experiencias auténticas de quienes ya probaron la fusión marina de 200 Millas.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonio 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"La frescura de los mariscos es increíble, realmente sientes que estás en la costa. El Ceviche Mixto es el mejor que he probado en Loja. ¡Calidad premium garantizada!"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="/assets/images/inicio/ana-m.jpg" alt="Ana M." loading="lazy">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Ana M.</h4>
+                                <p>Google Review</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Vine por los mariscos, ¡y me quedé por el Pollo Acullado! Es la combinación perfecta entre el sabor del mar y la tradición lojana. Es un plato que tienen que probar."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="/assets/images/inicio/david-c.jpg" alt="David C." loading="lazy">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>David C.</h4>
+                                <p>Cliente Fiel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonio 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Un ambiente familiar y una atención impecable. El Camarón Reventado es espectacular. Se nota la dedicación y los 46 años de experiencia. Volveremos siempre."</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">
+                                <img src="/assets/images/inicio/familia-v.jpg" alt="Familia V." loading="lazy">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Familia V.</h4>
+                                <p>Visitantes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Preguntas Frecuentes -->
+        <section class="faq-section animate-on-scroll">
+            <div class="container">
+                <div class="faq-header">
+                    <h2 class="faq-title">Preguntas Frecuentes sobre Restaurantes en Loja y Nuestro Servicio</h2>
+                </div>
+
+                <div class="faq-accordion">
+                    <!-- Pregunta 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">¿Cómo puedo reservar una mesa en Restaurante 200 Millas Loja?</span>
+                            <span class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>¡Es muy sencillo! La manera más rápida para reservar mesa en Restaurante Loja es contactándonos directamente por WhatsApp al +593 99 753 3304. Aceptamos reservas de Lunes a Domingo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">¿Tienen opciones de menú en el centro de Loja que sean económicas?</span>
+                            <span class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí. Además de nuestra alta cocina marina, ofrecemos el auténtico Pollo Acullado desde $6.50, haciéndonos una de las mejores opciones entre los restaurantes económicos centro Loja sin sacrificar calidad y sabor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">¿Cuáles son los horarios de atención y dónde están ubicados?</span>
+                            <span class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Estamos en el centro de Loja (10 de Agosto y Juan José Peña). Nuestro horario es Lunes a Jueves: 10:00 a 16:00 y Viernes a Domingo: 09:30 a 16:45. ¡Le esperamos!</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">¿Qué tan frescos son los mariscos, estando Loja lejos de la costa?</span>
+                            <span class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>La frescura es nuestra garantía y promesa principal. Transportamos nuestros mariscos frescos directamente desde Machala. 200 Millas Loja es el embajador de la frescura del Pacífico en la Sierra Sur.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5 -->
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span class="faq-question-text">¿Tienen servicio a domicilio o delivery en Loja?</span>
+                            <span class="faq-icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sí, ofrecemos servicio a domicilio. Puede realizar su pedido directamente por WhatsApp al +593 99 753 3304 o a través de PedidosYa para disfrutar de nuestros mariscos Loja en su hogar u oficina.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        console.log('🚀 Iniciando carga del componente footer...');
+
+        // Load footer component
+        fetch('/components/footer/footer.html')
+            .then(response => {
+                console.log('✅ Footer HTML cargado correctamente', response.status);
+                return response.text();
+            })
+            .then(html => {
+                console.log('📄 Insertando footer HTML...');
+                document.getElementById('footer-placeholder').innerHTML = html;
+
+                // Load footer styles
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = '/components/footer/footer.css';
+                link.onload = () => {
+                    console.log('✅ Footer CSS cargado correctamente');
+
+                    // Verificar que el CSS se aplicó correctamente
+                    setTimeout(() => {
+                        const footer = document.querySelector('.footer');
+                        if (footer) {
+                            const computedStyle = getComputedStyle(footer);
+                            console.log('🎨 Verificación del footer:');
+                            console.log('   - Color de fondo:', computedStyle.backgroundColor);
+                            console.log('   - Familia de fuente:', computedStyle.fontFamily);
+                            console.log('   - Color del texto:', computedStyle.color);
+
+                            // Verificar que las columnas estén en fila
+                            const footerColumns = footer.querySelectorAll('.footer-column');
+                            console.log('📊 Número de columnas encontradas:', footerColumns.length);
+
+                            if (footerColumns.length >= 4) {
+                                console.log('✅ Footer con 4 columnas detectado correctamente');
+                            } else {
+                                console.warn('⚠️  Footer no tiene las 4 columnas esperadas');
+                            }
+                        }
+                    }, 100);
+                };
+                link.onerror = () => console.error('❌ Error cargando footer CSS');
+                document.head.appendChild(link);
+
+                // Load footer script
+                const script = document.createElement('script');
+                script.src = '/components/footer/footer.js';
+                script.onload = () => console.log('✅ Footer JS cargado correctamente');
+                script.onerror = () => console.error('❌ Error cargando footer JS');
+                document.body.appendChild(script);
+
+                console.log('🎉 Footer component completamente cargado');
+            })
+            .catch(error => {
+                console.error('❌ Error loading footer:', error);
+                console.error('🔍 Verifica que el servidor esté corriendo en puerto 3003');
+            });
+    </script>
+
+    <!-- Hero Slider Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.querySelector('.nav-prev');
+            const nextBtn = document.querySelector('.nav-next');
+            let currentSlide = 0;
+            let autoSlideInterval;
+
+            function showSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = index;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+
+            function prevSlide() {
+                const prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(prevIndex);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Event listeners for navigation buttons
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    nextSlide();
+                    stopAutoSlide();
+                    setTimeout(startAutoSlide, 10000); // Restart auto-slide after 10 seconds of manual interaction
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    prevSlide();
+                    stopAutoSlide();
+                    setTimeout(startAutoSlide, 10000); // Restart auto-slide after 10 seconds of manual interaction
+                });
+            }
+
+            // Pause auto-slide on hover
+            const sliderContainer = document.querySelector('.hero-slider');
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+                sliderContainer.addEventListener('mouseleave', startAutoSlide);
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                    stopAutoSlide();
+                    setTimeout(startAutoSlide, 10000);
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                    stopAutoSlide();
+                    setTimeout(startAutoSlide, 10000);
+                }
+            });
+        });
+    </script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+                    // Cerrar todas las preguntas
+                    faqQuestions.forEach(q => {
+                        q.setAttribute('aria-expanded', 'false');
+                    });
+
+                    // Abrir la pregunta seleccionada si no estaba abierta
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            // Cerrar FAQ al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.faq-item')) {
+                    faqQuestions.forEach(q => {
+                        q.setAttribute('aria-expanded', 'false');
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/components/header/header.js"></script>
+    <script>
+        // Inicializar animaciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verificar si los elementos están en el viewport
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const checkIfInView = () => {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            // Ejecutar al cargar y al hacer scroll
+            window.addEventListener('load', checkIfInView);
+            window.addEventListener('scroll', checkIfInView);
+            
+            // Forzar verificación inicial
+            checkIfInView();
+            
+            // Actualizar año en el footer
+            const currentYear = new Date().getFullYear();
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                yearElement.textContent = currentYear;
+            }
+        });
+    </script>
+
+    <!-- Menu Category Sliders Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar todos los sliders de categorías
+            const categorySliders = document.querySelectorAll('.category-slider');
+
+            categorySliders.forEach(slider => {
+                const slides = slider.querySelectorAll('.slide-item');
+                const prevBtn = slider.querySelector('.prev');
+                const nextBtn = slider.querySelector('.next');
+                let currentSlide = 0;
+
+                if (slides.length === 0) return;
+
+                // Función para ajustar altura dinámica del slider
+                function adjustSliderHeight() {
+                    const categoryBlock = slider.closest('.category-block');
+                    const categoryMenu = categoryBlock.querySelector('.category-menu');
+                    const menuHeight = categoryMenu.offsetHeight;
+
+                    // Ajustar altura del slider al contenido del menú
+                    const sliderContainer = slider.querySelector('.slider-container');
+                    if (sliderContainer) {
+                        sliderContainer.style.height = menuHeight + 'px';
+                    }
+                }
+
+                // Función mejorada para ajustar altura después de que se renderice completamente
+                function adjustHeightWithDelay() {
+                    setTimeout(adjustSliderHeight, 100);
+                    setTimeout(adjustSliderHeight, 500);
+                }
+
+                // Ajustar altura inicialmente
+                adjustHeightWithDelay();
+
+                // Reajustar altura cuando cambie el tamaño de ventana
+                window.addEventListener('resize', adjustHeightWithDelay);
+
+                function showSlide(index) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = index;
+                    if (currentSlide >= slides.length) currentSlide = 0;
+                    if (currentSlide < 0) currentSlide = slides.length - 1;
+                    slides[currentSlide].classList.add('active');
+                }
+
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
+
+                function prevSlide() {
+                    showSlide(currentSlide - 1);
+                }
+
+                // Event listeners para navegación
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', nextSlide);
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', prevSlide);
+                }
+
+                // Auto-slide cada 4 segundos
+                setInterval(nextSlide, 4000);
+
+                // Pausar auto-slide al hacer hover
+                slider.addEventListener('mouseenter', function() {
+                    clearInterval(slider.autoSlideInterval);
+                });
+
+                slider.addEventListener('mouseleave', function() {
+                    slider.autoSlideInterval = setInterval(nextSlide, 4000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
