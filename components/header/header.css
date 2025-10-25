@@ -1,4 +1,9 @@
 /* Header Component Styles - 200 Millas Branding */
+/* Hide specific menu items */
+.hidden-item {
+    display: none !important;
+}
+
 .header {
     position: fixed;
     top: 0;

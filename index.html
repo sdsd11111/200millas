@@ -615,11 +615,35 @@
         }
 
         .featured-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+        }
+        
+        .dish-card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        
+        .dish-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dish-content .btn {
+            margin-top: auto;
+        }
+        
+        /* Estilo para la última tarjeta */
+        .featured-grid .dish-card:last-child {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .dish-card {
@@ -2202,11 +2226,35 @@
         }
 
         .featured-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+        }
+        
+        .dish-card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        
+        .dish-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .dish-content .btn {
+            margin-top: auto;
+        }
+        
+        /* Estilo para la última tarjeta */
+        .featured-grid .dish-card:last-child {
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .dish-card {
@@ -2959,15 +3007,12 @@
                         Una breve mirada a la excelencia de nuestra cocina, la frescura de nuestros mariscos y el cálido ambiente familiar que nos define. ¡Disfrútalo!
                     </p>
 
-                    <div class="video-container">
-                        <div class="video-wrapper">
-                            <iframe
-                                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                                title="200 Millas Loja - Experiencia Gastronómica"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                            </iframe>
+                    <div class="video-container" style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 15px;">
+                        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                                <source src="/assets/images/inicio/home.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
                         </div>
                     </div>
                 </div>
@@ -3048,6 +3093,71 @@
                                 <h4>Conchas Asadas (20 Unidades)</h4>
                                 <p class="dish-description">El Plato Ideal para Compartir</p>
                                 <a href="/conchas-asadas.html" class="btn btn-primary">Ver Plato</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 6 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/sopas.jpg" alt="Sopas 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">Desde $8.50</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Sopas Marineras</h4>
+                                <p class="dish-description">Variedad de sabores del mar</p>
+                                <a href="/sopas.html" class="btn btn-primary">Ver Platos</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 7 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/ceviches.jpg" alt="Ceviches 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">Desde $10.50</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Ceviches Variados</h4>
+                                <p class="dish-description">Frescura y sabor en cada bocado</p>
+                                <a href="/ceviches.html" class="btn btn-primary">Ver Platos</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 8 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/segundos.jpg" alt="Segundos 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">Desde $9.75</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Segundos Platos</h4>
+                                <p class="dish-description">Platos fuertes del mar</p>
+                                <a href="/segundos.html" class="btn btn-primary">Ver Platos</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 9 -->
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/especialidades.jpg" alt="Especialidades 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">Desde $12.00</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Nuestras Especialidades</h4>
+                                <p class="dish-description">Lo mejor de nuestra cocina</p>
+                                <a href="/especialidades.html" class="btn btn-primary">Ver Platos</a>
+                            </div>
+                        </div>
+
+                        <!-- Plato 10 - Última fila centrada -->
+                        <div class="dish-card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto;">
+                            <div class="dish-image">
+                                <img src="/assets/images/inicio/acompañamientos.jpg" alt="Acompañamientos 200 Millas Loja" loading="lazy">
+                                <div class="dish-price">Desde $2.50</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>Acompañamientos</h4>
+                                <p class="dish-description">El complemento perfecto para tus platos</p>
+                                <a href="/acompañamientos.html" class="btn btn-primary">Ver Opciones</a>
                             </div>
                         </div>
                     </div>
@@ -3161,7 +3271,7 @@
                             </span>
                         </button>
                         <div class="faq-answer">
-                            <p>¡Es muy sencillo! La manera más rápida para reservar mesa en Restaurante Loja es contactándonos directamente por WhatsApp al +593 99 753 3304. Aceptamos reservas de Lunes a Domingo.</p>
+                            <p>¡Es muy sencillo! La manera más rápida para reservar mesa en Restaurante Loja es contactándonos directamente por WhatsApp al +593 99 894 1753. Aceptamos reservas de Lunes a Domingo.</p>
                         </div>
                     </div>
 
@@ -3200,7 +3310,7 @@
                             </span>
                         </button>
                         <div class="faq-answer">
-                            <p>La frescura es nuestra garantía y promesa principal. Transportamos nuestros mariscos frescos directamente desde Machala. 200 Millas Loja es el embajador de la frescura del Pacífico en la Sierra Sur.</p>
+                            <p>La frescura es nuestra garantía y promesa principal. 200 Millas Loja es el embajador de la frescura del Pacífico en la Sierra Sur.</p>
                         </div>
                     </div>
 
@@ -3213,7 +3323,7 @@
                             </span>
                         </button>
                         <div class="faq-answer">
-                            <p>Sí, ofrecemos servicio a domicilio. Puede realizar su pedido directamente por WhatsApp al +593 99 753 3304 o a través de PedidosYa para disfrutar de nuestros mariscos Loja en su hogar u oficina.</p>
+                            <p>Sí, ofrecemos servicio a domicilio. Puede realizar su pedido directamente por WhatsApp al +593 99 894 1753 o a través de PedidosYa para disfrutar de nuestros mariscos Loja en su hogar u oficina.</p>
                         </div>
                     </div>
                 </div>

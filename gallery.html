@@ -374,7 +374,7 @@
 
         /* Gallery Hero Styles */
         .gallery-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                         url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
             display: flex;
@@ -383,6 +383,10 @@
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .gallery-hero-content {
@@ -542,11 +546,14 @@
 
         @media (max-width: 768px) {
             .gallery-hero {
-                height: 60vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
             }
 
             .gallery-hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .gallery-hero-content p {
@@ -575,15 +582,18 @@
 
         @media (max-width: 576px) {
             .gallery-hero {
-                height: 50vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
             }
 
             .gallery-hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
             }
 
             .gallery-hero-content p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .gallery-subtitle {

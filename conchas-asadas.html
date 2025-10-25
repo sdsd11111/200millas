@@ -625,6 +625,17 @@
                             <button class="gallery-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
+
+                    <!-- Sección de Video -->
+                    <div class="video-section">
+                        <h3>Mira cómo preparamos nuestras Conchas Asadas</h3>
+                        <div class="video-container">
+                            <video width="100%" controls poster="/assets/images/platos/conchas-asadas-banner.jpg">
+                                <source src="/assets/images/inicio/video-conchas.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Card de Pedido Flotante/Pegajoso -->
@@ -731,15 +742,19 @@
 
         /* Conchas Hero Styles */
         .conchas-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                        url('/assets/images/hero-conchas-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .conchas-hero-content {
@@ -896,6 +911,39 @@
             transform: scale(1.1);
         }
 
+        /* Estilos para la sección de video */
+        .video-section {
+            margin: 4rem 0;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section h3 {
+            font-family: var(--font-titulos);
+            color: var(--gris-oscuro);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            width: 70%;
+            max-width: 400px; /* Reducido a 400px */
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
         /* Card de Pedido Flotante/Pegajoso */
         .sticky-order-card {
             position: sticky;
@@ -1005,13 +1053,28 @@
             }
         }
 
+        /* Estilos responsivos para la sección de video */
+        @media (max-width: 768px) {
+            .video-section {
+                padding: 1.5rem;
+                margin: 3rem 0;
+            }
+
+            .video-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .conchas-hero {
-                height: 60vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
             }
 
             .conchas-hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .conchas-hero-content p {
@@ -1046,15 +1109,18 @@
 
         @media (max-width: 576px) {
             .conchas-hero {
-                height: 50vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
             }
 
             .conchas-hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
             }
 
             .conchas-hero-content p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             .page-title {

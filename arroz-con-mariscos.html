@@ -772,15 +772,19 @@
 
         /* Arroz Hero Styles */
         .arroz-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                        url('/assets/images/hero-arroz-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .arroz-hero-content {
@@ -1113,9 +1117,20 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .arroz-hero {
-                height: 50vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .arroz-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .arroz-hero-content p {
+                font-size: 1.2rem;
             }
 
             .arroz-hero-content h1 {

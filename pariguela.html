@@ -602,8 +602,8 @@
 
                     <!-- Sección de Narrativa -->
                     <div class="pariguela-narrative">
-                        <h3>Un Viaje Culinario desde la Costa hasta la Sierra Lojana</h3>
-                        <p>La Parihuela es el alma de 200 Millas. Fundada en 1979 con la sabiduría de un chef peruano, esta sopa marinera de Machala a Loja es el testimonio de nuestro compromiso con la frescura. Cada cucharada es una explosión de mariscos frescos (pescado, camarón y conchas) en un caldo espeso y concentrado, cocido a fuego lento con especias tradicionales. Es el plato perfecto para calentar el cuerpo y el espíritu en el clima de la Sierra.</p>
+                        <h3>Un Viaje Culinario desde Peru hasta la Sierra Lojana</h3>
+                        <p>La Parihuela es el alma de 200 Millas. Fundada en 1979 con la sabiduría de un chef peruano, esta sopa marinera de Peru a Loja es el testimonio de nuestro compromiso con la frescura. Cada cucharada es una explosión de mariscos frescos (pescado, camarón y conchas) en un caldo espeso y concentrado, cocido a fuego lento con especias tradicionales. Es el plato perfecto para calentar el cuerpo y el espíritu en el clima de la Sierra.</p>
                     </div>
 
                     <!-- Galería de Imágenes/Carrusel -->
@@ -740,15 +740,19 @@
 
         /* Parihuela Hero Styles */
         .pariguela-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                        url('/assets/images/hero-pariguela-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .pariguela-hero-content {
@@ -1074,9 +1078,20 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .pariguela-hero {
-                height: 50vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .pariguela-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .pariguela-hero-content p {
+                font-size: 1.2rem;
             }
 
             .pariguela-hero-content h1 {

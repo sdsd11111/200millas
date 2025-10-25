@@ -732,15 +732,19 @@
 
         /* Camarón Hero Styles */
         .camaron-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                        url('/assets/images/hero-camaron-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .camaron-hero-content {
@@ -1034,9 +1038,20 @@
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
             .camaron-hero {
-                height: 50vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .camaron-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .camaron-hero-content p {
+                font-size: 1.2rem;
             }
 
             .camaron-hero-content h1 {

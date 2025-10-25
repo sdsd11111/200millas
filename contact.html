@@ -655,8 +655,7 @@
                             <h3>Horarios de Atención</h3>
                             <ul class="schedule-list">
                                 <li><strong>Lunes a Jueves:</strong> 10:00 a 16:00</li>
-                                <li><strong>Viernes:</strong> Horario especial (Consultar por WhatsApp)</li>
-                                <li><strong>Sábado y Domingo:</strong> 09:30 a 16:45</li>
+                                <li><strong>Viernes, Sábado y Domingo:</strong> 09:30 a 16:30</li>
                             </ul>
                             <p class="note"><strong>Nota:</strong> Se recomienda confirmar feriados por WhatsApp.</p>
                         </div>
@@ -752,7 +751,7 @@
 
         /* Contact Hero Styles */
         .contact-hero {
-            height: 70vh;
+            min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                         url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
             display: flex;
@@ -761,6 +760,10 @@
             text-align: center;
             color: white;
             position: relative;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .contact-hero-content {
@@ -1034,11 +1037,14 @@
 
         @media (max-width: 768px) {
             .contact-hero {
-                height: 60vh;
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
             }
 
             .contact-hero-content h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
             }
 
             .contact-hero-content p {
@@ -1098,6 +1104,21 @@
         }
 
         @media (max-width: 576px) {
+            .contact-hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .contact-hero-content h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-hero-content p {
+                font-size: 1.1rem;
+            }
+            
             .contact-hero {
                 height: 50vh;
             }
