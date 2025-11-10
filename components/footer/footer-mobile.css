@@ -1,0 +1,57 @@
+/* Estilos específicos para móvil - Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+    
+    /* Ajuste para mostrar Navegación y Platos Estrella en la misma fila */
+    .footer-column:nth-child(3),
+    .footer-column:nth-child(4) {
+        width: calc(50% - 1rem);
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    /* Ajustar la altura de la columna de Platos Estrella */
+    .footer-column:nth-child(4) {
+        height: auto;
+    }
+    
+    /* Ajustar el contenedor de platos */
+    .featured-dishes {
+        height: 100%;
+    }
+    
+    /* Asegurar que los ítems de platos no generen espacio extra */
+    .dish-item {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-brand {
+        padding-right: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .footer-logo-image {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

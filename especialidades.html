@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialidades y Plato Lojano | 200 Millas</title>
+    <meta name="description" content="Descubre nuestras especialidades en mariscos y el exclusivo Plato Lojano en 200 Millas. Sabores únicos que combinan tradición e innovación.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="/assets/css/menu-pages.css">
+    
+    <!-- Cargar el header dinámicamente -->
+    <script src="/assets/js/load-header.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/especialidades">
+    <meta property="og:title" content="Especialidades y Plato Lojano | 200 Millas">
+    <meta property="og:description" content="Descubre nuestras especialidades en mariscos y el exclusivo Plato Lojano en 200 Millas. Sabores únicos que combinan tradición e innovación.">
+    <meta property="og:image" content="/assets/images/especialidades/especialidades-banner.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/especialidades">
+    <meta name="twitter:title" content="Especialidades y Plato Lojano | 200 Millas">
+    <meta name="twitter:description" content="Exclusividad y Tradición: Nuestra Carta Única. Descubre nuestras especialidades premium y el famoso Plato Lojano o Majarisco.">
+    <meta name="twitter:image" content="/assets/images/especialidades/especialidades-banner.webp">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+        <div style="text-align: center;">
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+    
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    
+    <!-- Header ya está cargado en el head -->
+
+    <main class="menu-category-page">
+        <!-- Hero Section -->
+        <section class="category-hero">
+            <div class="container">
+                <h1>Especialidades y Plato Lojano</h1>
+                <p class="subtitle">La Cocina Gourmet y Fusión de 200 Millas en Loja</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="menu-category-content">
+            <div class="container">
+                <div class="menu-grid">
+                    <!-- Main Content -->
+                    <div class="menu-main">
+                        <!-- Category Description -->
+                        <div class="category-description">
+                            <h2>Exclusividad y Tradición: Nuestra Carta Única</h2>
+                            <div class="description-text">
+                                <span class="short-text">Esta sección representa lo mejor de la creatividad de 200 Millas. Aquí convergen los platos premium, como nuestros suculentos Langostinos y las Conchas Asadas al grill</span>
+                                <span class="full-text"> (una técnica única), con nuestra orgullosa fusión local: el Plato Lojano o Majarisco. Es un menú diseñado para la celebración, la indulgencia y para honrar la riqueza del mar y de la tierra. Si busca una experiencia inolvidable y platos fuera de lo común en Loja, esta es su carta.</span>
+                                <button class="read-more-btn">seguir leyendo</button>
+                            </div>
+                        </div>
+                        <style>
+                            .description-text {
+                                display: inline;
+                            }
+                            .read-more-btn {
+                                background: none;
+                                border: none;
+                                color: #e67e22;
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: 600;
+                                padding: 0;
+                                margin: 0 0 0 3px;
+                                cursor: pointer;
+                                display: inline;
+                                font-size: 0.95rem;
+                                vertical-align: baseline;
+                            }
+                            .read-more-btn:focus {
+                                outline: none;
+                            }
+                            .full-text {
+                                display: none;
+                            }
+                            @media (min-width: 769px) {
+                                .read-more-btn {
+                                    display: none;
+                                }
+                                .full-text {
+                                    display: inline !important;
+                                }
+                            }
+                        </style>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const readMoreBtn = document.querySelector('.read-more-btn');
+                                const fullText = document.querySelector('.full-text');
+                                
+                                if (readMoreBtn && fullText) {
+                                    // Initial state for mobile
+                                    if (window.innerWidth < 769) {
+                                        fullText.style.display = 'none';
+                                        readMoreBtn.style.display = 'inline';
+                                    }
+                                    
+                                    // Toggle function
+                                    readMoreBtn.onclick = function(e) {
+                                        e.preventDefault();
+                                        if (fullText.style.display === 'none' || !fullText.style.display) {
+                                            fullText.style.display = 'inline';
+                                            this.textContent = 'mostrar menos';
+                                        } else {
+                                            fullText.style.display = 'none';
+                                            this.textContent = 'seguir leyendo';
+                                        }
+                                    };
+                                    
+                                    // Handle window resize
+                                    function handleResize() {
+                                        if (window.innerWidth >= 769) {
+                                            fullText.style.display = 'inline';
+                                            readMoreBtn.style.display = 'none';
+                                        } else {
+                                            readMoreBtn.style.display = 'inline';
+                                            if (readMoreBtn.textContent === 'mostrar menos') {
+                                                fullText.style.display = 'inline';
+                                            } else {
+                                                fullText.style.display = 'none';
+                                            }
+                                        }
+                                    }
+                                    
+                                    // Add resize listener with debounce
+                                    let resizeTimer;
+                                    window.addEventListener('resize', function() {
+                                        clearTimeout(resizeTimer);
+                                        resizeTimer = setTimeout(handleResize, 100);
+                                    });
+                                }
+                            });
+                        </script>
+
+                        <!-- Menu Items -->
+                        <div class="menu-items">
+                            <h3>Nuestras Especialidades</h3>
+                            
+                            <div class="menu-item featured-dish">
+                                <div class="dish-featured-tag">¡ESPECIALIDAD DE LA CASA!</div>
+                                <div class="dish-name">Plato Lojano (Majarisco)</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$10.00</div>
+                                <p class="dish-description">El Majarisco es un plato de origen del norte del Perú, es otro de nuestros platos en la lista de los más pedidos. Su nombre surge de la combinación de majado (plátano aplastado o machacado) y variedad de mariscos frescos. Su sabor se potencia con un aderezo especial y nuestro toque 200 Millas, logrando una combinación de sabores de la tierra y el mar.</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="dish-name">Conchas Asadas (20 Unidades)</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$11.75</div>
+                                <p class="dish-description">Especialidad al Grill. Servido con patacones</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="dish-name">Arroz con Mariscos</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$11.25</div>
+                                <p class="dish-description">Abundante y meloso, cargado de mariscos</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="dish-name">Langostinos al Ajillo</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$18.00</div>
+                                <p class="dish-description">Opción premium, ideal para compartir</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="dish-name">Cazuela de Mariscos</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$12.50</div>
+                                <p class="dish-description">Plato espeso, cremoso y tradicional</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="dish-name">Mariscada 200 Millas</div>
+                                <div class="dotted-line"></div>
+                                <div class="dish-price">$25.00</div>
+                                <p class="dish-description">Plato para 2 personas, variedad de especialidades</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="menu-sidebar">
+                        <div class="sidebar-card">
+                            <h3>¡Prueba Nuestras Especialidades!</h3>
+                            <p>Disfruta de nuestros platos exclusivos y el famoso Plato Lojano, una experiencia única en mariscos.</p>
+                            <a href="https://wa.me/593997533304?text=¡Hola!%20Quisiera%20más%20información%20sobre%20sus%20especialidades" class="cta-button">
+                                <i class="fab fa-whatsapp"></i> ¡Pide Nuestra Especialidad Lojana Ahora!
+                            </a>
+                        </div>
+                        
+                        <div class="sidebar-image">
+                            <img src="/assets/images/especialidades/especialidades-sidebar.webp" alt="Especialidades 200 Millas" class="img-fluid">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider de Imágenes -->
+        <section class="sopas-slider">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestras Especialidades</h2>
+                <div class="sopas-slider-container" id="especialidades-slider">
+                    <div class="sopas-slide">
+                        <img src="/assets/images/especialidades/conchas-asadas.webp" alt="Conchas Asadas" class="img-fluid">
+                        <p>Conchas Asadas</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/especialidades/arroz-mariscos.webp" alt="Arroz con Mariscos" class="img-fluid">
+                        <p>Arroz con Mariscos</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/especialidades/plato-lojano.webp" alt="Plato Lojano" class="img-fluid">
+                        <p>Plato Lojano (Majarisco)</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/especialidades/langostinos-ajillo.webp" alt="Langostinos al Ajillo" class="img-fluid">
+                        <p>Langostinos al Ajillo</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/especialidades/mariscada.webp" alt="Mariscada 200 Millas" class="img-fluid">
+                        <p>Mariscada 200 Millas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Habilitar scroll horizontal táctil para el slider de especialidades
+            document.addEventListener('DOMContentLoaded', function() {
+                const slider = document.getElementById('especialidades-slider');
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                    slider.style.cursor = 'grabbing';
+                    slider.style.userSelect = 'none';
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+
+                // Soporte táctil
+                slider.addEventListener('touchstart', (e) => {
+                    const touch = e.touches[0];
+                    startX = touch.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                }, { passive: true });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (!e.touches[0]) return;
+                    const touch = e.touches[0];
+                    const x = touch.pageX - slider.offsetLeft;
+                    const walk = (x - startX);
+                    slider.scrollLeft = scrollLeft - walk;
+                }, { passive: true });
+            });
+        </script>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestras Especialidades en Video</h2>
+                <div class="video-container">
+                    <video controls class="img-fluid" style="width: 100%; max-width: 500px; margin: 0 auto; display: block; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                        <source src="/assets/images/especialidades/especialidades-video.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .video-section {
+                padding: 50px 0;
+                background-color: #f9f9f9;
+            }
+
+            .video-section h2 {
+                color: #333;
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 30px;
+                position: relative;
+                padding-bottom: 15px;
+            }
+
+            .video-section h2:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 3px;
+                background-color: #E67E22;
+            }
+
+            .video-container {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+
+            @media (max-width: 768px) {
+                .video-section {
+                    padding: 30px 0;
+                }
+                
+                .video-section h2 {
+                    font-size: 1.75rem;
+                }
+            }
+        </style>
+        
+        <!-- Visual Experience Component -->
+        <div id="visual-experience-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Scripts -->
+    <script>
+        // Función para cargar el footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const footerContainer = document.getElementById('footer-placeholder');
+                    if (footerContainer) {
+                        footerContainer.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el footer:', error);
+                });
+        }
+        
+        // Función para manejar la carga de la página
+        function handlePageLoad() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // El header se carga automáticamente con el script load-header.js
+            
+            // Cargar el footer
+            loadFooter();
+            
+            // Configurar la altura del viewport
+            setViewportHeight();
+            
+            // Ocultar pantalla de carga tan pronto como sea posible
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.visibility = 'hidden';
+                
+                // Eliminar el loader del DOM después de la animación
+                setTimeout(function() {
+                    loadingScreen.remove();
+                    document.body.classList.remove('loading');
+                    document.body.classList.add('loaded');
+                }, 300); // Reducido de 500ms a 300ms
+            } else {
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+            }
+            
+            // Inicializar el header si está disponible
+            if (window.initHeader) {
+                window.initHeader();
+            }
+            
+            // Cargar el script de experiencia visual
+            const visualExpScript = document.createElement('script');
+            visualExpScript.src = '/assets/js/load-visual-experience.js';
+            document.body.appendChild(visualExpScript);
+        }
+
+        // Función para configurar la altura del viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        
+        // Iniciar la carga de la página cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', handlePageLoad);
+        } else {
+            handlePageLoad();
+        }
+        
+        // Actualizar en cambios de tamaño u orientación
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+    </script>
+
+    <!-- Cargar scripts no críticos -->
+    <script src="/assets/js/load-visual-experience.js" defer></script>
+    </script>
+    <script>
+        // Cargar el header dinámicamente
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false;
+                        document.body.appendChild(script);
+                        
+                        setTimeout(() => {
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                        }, 100);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header:', error);
+                });
+        }
+
+        // Cargar el footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const footerContainer = document.getElementById('footer-placeholder');
+                    if (footerContainer) {
+                        footerContainer.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el footer:', error);
+                });
+        }
+
+        // Configuración de la altura del viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // Configuración inicial de la altura del viewport
+        setViewportHeight();
+        
+        // Actualizar en cambios de tamaño u orientación
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('orientationchange', setViewportHeight);
+        
+        // Manejar la carga de la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // Esperar a que cargue todo el contenido
+            window.addEventListener('load', function() {
+                // Pequeño retraso para asegurar que todo esté listo
+                setTimeout(function() {
+                    // Ocultar el loader
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Mostrar el contenido
+                        document.body.classList.remove('loading');
+                        document.body.classList.add('loaded');
+                        
+                        // Eliminar el loader del DOM después de la animación
+                        setTimeout(function() {
+                            loadingScreen.remove();
+                        }, 500);
+                    }
+                }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
+            });
+        });
+
+        // Cargar header y footer cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                loadHeader();
+                loadFooter();
+                setViewportHeight();
+            });
+        } else {
+            loadHeader();
+            loadFooter();
+            setViewportHeight();
+        }
+    </script>
+
+    <style>
+        /* Animación de carga */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Ocultar contenido hasta que se cargue */
+        body.loading .menu-category-page,
+        body.loading #footer-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.loaded .menu-category-page,
+        body.loaded #footer-placeholder {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Estilos específicos para la página de especialidades */
+        .menu-category-page {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Estilos para el slider de especialidades */
+        .sopas-slider {
+            padding: 30px 0 50px;
+            background-color: #fff;
+        }
+
+        .sopas-slider h2 {
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .sopas-slider h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #E67E22;
+        }
+
+        .sopas-slider-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 20px 10px 30px;
+            margin: 0 -10px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            cursor: grab;
+        }
+
+        .sopas-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sopas-slide {
+            flex: 0 0 auto;
+            width: 280px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .sopas-slide {
+            flex: 0 0 auto;
+            width: 280px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .menu-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .featured-dish {
+            border: 2px solid #E67E22;
+            background-color: #FFF9F2 !important;
+            padding-top: 40px !important;
+            margin-bottom: 35px !important;
+        }
+        
+        .dish-featured-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #E67E22;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px 0 15px 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .featured-dish .dish-name {
+            color: #E67E22;
+            font-weight: 700;
+        }
+
+        .sopas-slide:active {
+            cursor: grabbing;
+        }
+
+        .sopas-slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sopas-slide p {
+            padding: 15px 10px;
+            margin: 0;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            font-size: 1rem;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .sopas-slide {
+                width: 260px;
+            }
+            
+            .sopas-slide img {
+                height: 180px;
+            }
+        }
+
+        /* Estilos específicos para la página de especialidades */
+        .menu-category-page {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            overflow: hidden;
+        }
+        
+        .category-hero {
+            width: 100%;
+            height: 100vh;
+            min-height: -webkit-fill-available;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/especialidades/especialidades-banner.webp') center/cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .category-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .category-hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #f8f9fa;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-category-content {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-main {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .menu-sidebar {
+            width: 300px;
+        }
+
+        .category-description {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: #f0f7ff;
+            border-left: 4px solid #E67E22;
+            border-radius: 8px;
+        }
+
+        .category-description h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+        }
+
+        .category-description p {
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .menu-items h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .menu-items h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #E67E22;
+        }
+
+        .menu-item {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .menu-items .menu-item .dish-name {
+            font-weight: 600;
+            color: #000000 !important;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item {
+            color: #000000 !important;
+        }
+
+        .dish-price {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: 700;
+            color: #E67E22;
+            font-size: 1.1rem;
+        }
+
+        .dotted-line {
+            border-bottom: 2px dotted #ddd;
+            flex-grow: 1;
+            margin: 0 10px;
+            position: relative;
+            top: -5px;
+        }
+
+        .dish-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 5px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Sidebar Styles */
+        .sidebar-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-top: 4px solid #E67E22;
+        }
+
+        .sidebar-card h3 {
+            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .sidebar-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #E67E22;
+            color: white !important;
+            padding: 12px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-button:hover {
+            background-color: #D35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+        }
+
+        .cta-button i {
+            margin-right: 8px;
+        }
+
+        .sidebar-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .sidebar-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .sidebar-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-sidebar {
+                width: 100%;
+                margin-top: 40px;
+            }
+            
+            .menu-grid {
+                flex-direction: column;
+            }
+            
+            .sidebar-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .category-hero {
+                height: 100vh !important;
+                min-height: 100vh !important;
+                min-height: -webkit-fill-available !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                position: relative !important;
+                z-index: 1 !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .category-hero .container {
+                padding: 80px 20px 40px 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                position: relative !important;
+                z-index: 2 !important;
+                box-sizing: border-box !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            .category-hero h1 {
+                font-size: 2.2rem !important;
+                margin: 0 0 1rem 0 !important;
+                line-height: 1.2 !important;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+            
+            .category-hero .subtitle {
+                font-size: 1.2rem !important;
+                margin: 0.5rem 0 0 0 !important;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+            
+            .menu-item {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .dish-name, .dish-price {
+                position: static;
+            }
+            
+            .dotted-line {
+                display: none;
+            }
+            
+            .dish-description {
+                width: 100%;
+                margin-top: 5px;
+                padding-left: 0;
+            }
+            
+            .menu-main {
+                padding: 20px;
+            }
+            
+            .category-description {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-hero h1 {
+                font-size: 1.8rem !important;
+            }
+            
+            .category-hero .subtitle {
+                font-size: 1.1rem !important;
+            }
+            
+            .cta-button {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .menu-items h3 {
+                font-size: 1.5rem;
+            }
+            
+            .category-description h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camarón Reventado en Loja | Chicharrón de Camarón Crujiente | 200 Millas</title>
+    <meta name="description" content="Prueba el Camarón Reventado de 200 Millas: mariscos frescos, rebozado crujiente y el acompañamiento perfecto de papas fritas. Pídelo a domicilio en Loja desde 1979.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/camaron-reventado">
+    <meta property="og:title" content="Camarón Reventado en Loja | Chicharrón de Camarón Crujiente | 200 Millas">
+    <meta property="og:description" content="Descubre el Camarón Reventado de 200 Millas en Loja. Mariscos frescos con rebozado crujiente y papas fritas.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/platos/camaron-reventado-banner.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/camaron-reventado">
+    <meta name="twitter:title" content="Camarón Reventado en Loja | Chicharrón de Camarón Crujiente | 200 Millas">
+    <meta name="twitter:description" content="El mejor Camarón Reventado de Loja en 200 Millas. Crujiente, fresco y con papas fritas.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/platos/camaron-reventado-banner.webp">
+</head>
+<body>
+    <!-- Contenedor del header -->
+    <div id="header-container"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+        <div style="text-align: center;">
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script src="/assets/js/load-header.js" defer></script>
+    <script>
+        // Función para cargar el footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const footerContainer = document.getElementById('footer-placeholder');
+                    if (footerContainer) {
+                        footerContainer.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el footer:', error);
+                });
+        }
+
+        // Función para manejar la carga de la página
+        function handlePageLoad() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // El header se carga automáticamente con el script load-header.js
+            
+            // Cargar el footer
+            loadFooter();
+            
+            // Simular tiempo de carga
+            setTimeout(() => {
+                // Ocultar pantalla de carga
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.visibility = 'hidden';
+                    
+                    // Eliminar el loader del DOM después de la animación
+                    setTimeout(function() {
+                        loadingScreen.remove();
+                    }, 500);
+                }
+                
+                // Quitar clase de carga del body
+                document.body.classList.remove('loading');
+                document.body.classList.add('loaded');
+                
+                // Asegurar que el header esté visible después de la carga
+                const header = document.querySelector('.header');
+                if (header) {
+                    header.style.opacity = '1';
+                }
+            }, 800);
+        }
+        
+        // Iniciar la carga de la página cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', handlePageLoad);
+        } else {
+            handlePageLoad();
+        }
+
+                            <div class="menu-toggle" id="mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <ul class="nav-links">
+                                <li><a href="/">Inicio</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">Menú <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="featured-menu-item"><a href="/menu">Menu Completo</a></li>
+                                        <li><a href="/pariguela">Parihuela</a></li>
+                                        <li><a href="/camaron-reventado" class="active">Camarón Reventado</a></li>
+                                        <li><a href="/ceviche-mixto">Ceviche Mixto</a></li>
+                                        <li><a href="/arroz-con-mariscos">Arroz con Mariscos</a></li>
+                                        <li><a href="/conchas-asadas">Conchas Asadas</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/gallery/">Galería</a></li>
+                                <li><a href="/contact/">Contacto</a></li>
+                                <li class="cta-nav">
+                                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp"></i> Reservar
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <style>
+                    /* Estilos del Header */
+                    .header {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: var(--blanco);
+                        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+                        z-index: 1000;
+                        padding: 0.75rem 0;
+                        transition: all 0.3s ease;
+                    }
+
+                    .header.scrolled {
+                        padding: 0.5rem 0;
+                        background-color: rgba(255, 255, 255, 0.98);
+                        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .navbar {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 2rem;
+                    }
+
+                    .logo {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 1rem;
+                        font-family: var(--font-titulos);
+                        color: var(--naranja-principal);
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        line-height: 1;
+                        text-decoration: none;
+                    }
+
+                    .logo-image {
+                        width: 50px;
+                        height: 50px;
+                        object-fit: contain;
+                    }
+
+                    .logo-text-container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .logo-text {
+                        font-size: 1.75rem;
+                        letter-spacing: 1px;
+                    }
+
+                    .logo-subtext {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        letter-spacing: 3px;
+                        margin-top: 0.25rem;
+                        text-align: left;
+                    }
+
+                    .nav-links {
+                        display: flex;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        align-items: center;
+                        gap: 1.5rem;
+                    }
+
+                    .nav-links li {
+                        margin-left: 2rem;
+                        position: relative;
+                    }
+
+                    .nav-links a {
+                        color: var(--gris-oscuro);
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        transition: color 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        font-family: var(--font-subtitulos);
+                        position: relative;
+                        padding: 0.5rem 0;
+                    }
+
+                    .nav-links a::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: var(--naranja-principal);
+                        transition: width 0.3s ease;
+                    }
+
+                    .nav-links a:hover::after,
+                    .nav-links a.active::after {
+                        width: 100%;
+                    }
+
+                    .nav-links a:hover,
+                    .nav-links a.active {
+                        color: var(--naranja-principal);
+                        font-weight: 600;
+                    }
+
+                    /* Dropdown Menu */
+                    .dropdown {
+                        position: relative;
+                    }
+
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: -1rem;
+                        background-color: white;
+                        min-width: 250px;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                        border-radius: 8px;
+                        padding: 0.75rem 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(15px);
+                        transition: all 0.3s ease;
+                        z-index: 1001;
+                        list-style: none;
+                        margin: 0;
+                    }
+
+                    .dropdown:hover .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(5px);
+                    }
+
+                    .dropdown-menu li {
+                        margin: 0;
+                        width: 100%;
+                        padding: 0.5rem 1.5rem;
+                        transition: all 0.2s ease;
+                    }
+
+                    .dropdown-menu li:hover {
+                        background-color: rgba(230, 126, 34, 0.05);
+                    }
+
+                    .dropdown-menu a {
+                        padding: 0.5rem 0;
+                        display: block;
+                        white-space: nowrap;
+                        transition: all 0.2s ease;
+                        color: var(--gris-oscuro);
+                        font-size: 0.9rem;
+                        text-decoration: none;
+                    }
+
+                    .dropdown-menu a:hover {
+                        color: var(--amarillo-dorado);
+                        padding-left: 0.5rem;
+                    }
+
+                    /* Featured Menu Item Styling */
+                    .featured-menu-item {
+                        background-color: var(--naranja-principal);
+                        border-radius: 6px;
+                        margin: 0.25rem 0;
+                        padding: 0.75rem 1.5rem !important;
+                    }
+
+                    .featured-menu-item a {
+                        color: white !important;
+                        font-weight: 600 !important;
+                        font-size: 1rem !important;
+                    }
+
+                    .dropdown-toggle {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .dropdown-toggle i {
+                        font-size: 0.7rem;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .dropdown:hover .dropdown-toggle i {
+                        transform: rotate(180deg);
+                    }
+
+                    /* Botón de WhatsApp */
+                    .cta-nav .btn {
+                        padding: 0.6rem 1.25rem;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                        margin-left: 0.5rem;
+                        background-color: var(--naranja-principal);
+                        color: white;
+                        border: none;
+                        font-family: var(--font-subtitulos);
+                        white-space: nowrap;
+                        font-size: 0.9rem;
+                        text-decoration: none;
+                        display: inline-flex;
+                        align-items: center;
+                    }
+
+                    .cta-nav .btn:hover {
+                        background-color: var(--marron-calido);
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+                    }
+
+                    .cta-nav .btn i {
+                        margin-right: 0.5rem;
+                    }
+
+                    /* Menú móvil */
+                    .menu-toggle {
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 28px;
+                        height: 20px;
+                        cursor: pointer;
+                        z-index: 1002;
+                        background: none;
+                        border: none;
+                        padding: 0;
+                    }
+
+                    .menu-toggle span {
+                        display: block;
+                        width: 100%;
+                        height: 3px;
+                        background-color: var(--naranja-principal);
+                        transition: all 0.3s ease;
+                        border-radius: 3px;
+                    }
+
+                    .menu-toggle.active span:nth-child(1) {
+                        transform: translateY(8.5px) rotate(45deg);
+                    }
+
+                    .menu-toggle.active span:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    .menu-toggle.active span:nth-child(3) {
+                        transform: translateY(-8.5px) rotate(-45deg);
+                    }
+
+                    /* Estilos responsivos */
+                    @media (max-width: 992px) {
+                        .menu-toggle {
+                            display: flex;
+                        }
+
+                        .nav-links {
+                            position: fixed;
+                            top: 0;
+                            right: -100%;
+                            width: 85%;
+                            max-width: 400px;
+                            height: 100vh;
+                            background: white;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            padding: 6rem 2rem 2rem;
+                            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+                            overflow-y: auto;
+                        }
+
+                        .nav-links.active {
+                            right: 0;
+                        }
+
+                        .nav-links li {
+                            margin: 0 0 1.5rem 0;
+                            width: 100%;
+                        }
+
+                        .nav-links a {
+                            font-size: 1.1rem;
+                            padding: 0.5rem 0;
+                            display: block;
+                            width: 100%;
+                        }
+
+                        .dropdown-menu {
+                            position: static;
+                            display: none;
+                            box-shadow: none;
+                            padding: 0.5rem 0 0 1rem;
+                            opacity: 1;
+                            visibility: visible;
+                            transform: none;
+                            background: transparent;
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.4s ease, padding 0.4s ease;
+                            margin-top: 0;
+                        }
+
+                        .dropdown.active .dropdown-menu {
+                            display: block;
+                            max-height: 1000px;
+                            padding: 0.5rem 0 0.5rem 1rem;
+                        }
+
+                        .cta-nav {
+                            margin-top: 1rem;
+                            width: 100%;
+                        }
+
+                        .cta-nav .btn {
+                            display: block;
+                            text-align: center;
+                            margin: 1rem 0 0 0;
+                            width: 100%;
+                            justify-content: center;
+                        }
+
+                        body.menu-open {
+                            overflow: hidden;
+                        }
+                    }
+
+                    @media (max-width: 576px) {
+                        .logo-text {
+                            font-size: 1.5rem;
+                        }
+
+                        .logo-subtext {
+                            font-size: 0.85rem;
+                        }
+
+                        .header {
+                            padding: 0.5rem 0;
+                        }
+
+                        .header.scrolled {
+                            padding: 0.25rem 0;
+                        }
+
+                        .navbar {
+                            padding: 0 1rem;
+                        }
+                    }
+                </style>
+            `;
+
+            // Inicializar funcionalidades del header
+            initHeader();
+        }
+
+        // Inicializar funcionalidades del header
+        function initHeader() {
+            const header = document.querySelector('.header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            if (!header || !mobileMenu || !navLinks) return;
+
+            // Efecto de scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Menú móvil
+            mobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            // Dropdown para móvil
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 992) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+
+                    // Cerrar menú al hacer clic en un enlace
+                    dropdown.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', function() {
+                            if (window.innerWidth <= 992) {
+                                mobileMenu.classList.remove('active');
+                                navLinks.classList.remove('active');
+                                document.body.classList.remove('menu-open');
+                            }
+                        });
+                    });
+                }
+            });
+
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992 &&
+                    !e.target.closest('.navbar') &&
+                    navLinks.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+
+            // Cerrar menú al cambiar el tamaño de la ventana
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+
+                    // Cerrar todos los dropdowns en desktop
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+
+            console.log('✅ Header initialized successfully');
+        }
+
+        // Función para manejar la carga de la página
+        function handlePageLoad() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // Cargar el header
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadHeader);
+            } else {
+                loadHeader();
+            }
+            
+            // Esperar a que cargue todo el contenido
+            window.addEventListener('load', function() {
+                // Pequeño retraso para asegurar que todo esté listo
+                setTimeout(function() {
+                    // Ocultar el loader
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Mostrar el contenido
+                        document.body.classList.remove('loading');
+                        document.body.classList.add('loaded');
+                        
+                        // Eliminar el loader del DOM después de la animación
+                        setTimeout(function() {
+                            loadingScreen.remove();
+                        }, 500);
+                    }
+                }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
+            });
+        }
+        
+        // Iniciar la carga de la página
+        handlePageLoad();
+    </script>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section for Camarón Reventado Page -->
+        <section class="camaron-hero">
+            <div class="camaron-hero-content">
+                <h1>Camarón Reventado en Loja</h1>
+                <p>El Crujido del Mar que Enamoró a la Sierra</p>
+            </div>
+        </section>
+
+        <section id="camaron-page">
+            <div class="container">
+                <!-- Título Principal -->
+                <h2 class="page-title">Camarón Reventado en Loja: El Crujido del Mar que Enamoró a la Sierra</h2>
+            </div>
+
+            <!-- Contenedor Principal con Grid Profesional -->
+            <div class="camaron-layout">
+                <!-- Columna Principal: Imagen y Narrativa -->
+                <div class="camaron-main">
+                    <!-- Banner Principal Full-Width -->
+                    <div class="camaron-banner">
+                        <img src="/assets/images/platos/camaron-reventado-banner.webp" alt="Camarón Reventado - Chicharrón de camarón crujiente servido con papas fritas en 200 Millas Loja" loading="lazy">
+                    </div>
+
+                    <!-- Sección de Narrativa -->
+                    <div class="camaron-narrative">
+                        <h3>Frescura Costeña con un Crujido Inolvidable</h3>
+                        <p>Nuestros camarones reventados no son simplemente camarones fritos, son toda una experiencia de sabor: Crujientes por fuera e irresistibles por dentro. Son realmente deliciosos y adictivos!! Acompañados de yuca lojana, chifles, ensalada y nuestra deliciosa mayonesa de la casa. Un gusto que no te puedes perder!!!</p>
+                    </div>
+
+                    <!-- Galería de Imágenes/Carrusel -->
+                    <div class="camaron-gallery">
+                        <h3>Descubre el Crujido en Cada Detalle</h3>
+                        <div class="gallery-container">
+                            <div class="gallery-item active">
+                                <img src="/assets/images/platos/camaron-reventado-macro.webp" alt="Primer plano del camarón crujiente y dorado" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="/assets/images/platos/camaron-reventado-completo.webp" alt="Camarón Reventado completo con papas fritas y salsa" loading="lazy">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="/assets/images/platos/camaron-reventado-accion.webp" alt="Camarón Reventado siendo disfrutado en 200 Millas Loja" loading="lazy">
+                            </div>
+                        </div>
+                        <div class="gallery-nav">
+                            <button class="gallery-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card de Pedido Flotante/Pegajoso -->
+                <div class="sticky-order-card">
+                    <div class="order-card">
+                        <h4>Pide tu Camarón Reventado Ahora</h4>
+                        <div class="price-info">
+                            <div class="price-option">
+                                <span class="size">Plato Grande</span>
+                                <span class="amount">$11.25 USD</span>
+                            </div>
+                            <div class="price-option">
+                                <span class="size">Plato Pequeño</span>
+                                <span class="amount">$7.75 USD</span>
+                            </div>
+                        </div>
+                        <div class="accompaniment">
+                            <strong>Acompañamiento Clásico:</strong> Papas Fritas (Este punto es crucial), además de la salsa de la casa
+                        </div>
+                        <a href="https://wa.me/593997533304?text=¡Hola! Quiero pedir un Camarón Reventado para delivery en Loja." class="cta-button" target="_blank" rel="noopener">
+                            ¡PIDE TU PORCIÓN CRUJIENTE EN LOJA!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar el componente footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+
+                    // Cargar los estilos del footer
+                    const footerStyles = document.createElement('link');
+                    footerStyles.rel = 'stylesheet';
+                    footerStyles.href = '/components/footer/footer.css';
+                    document.head.appendChild(footerStyles);
+
+                    // Cargar el JavaScript del footer si existe
+                    const footerScript = document.createElement('script');
+                    footerScript.src = '/components/footer/footer.js';
+                    document.body.appendChild(footerScript);
+
+                    console.log('✅ Footer component cargado correctamente');
+                })
+                .catch(error => {
+                    console.error('❌ Error cargando footer:', error);
+                });
+        }
+
+        // Cargar el footer cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadFooter);
+
+        // Carrusel de Galería
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-item');
+
+        if (slides.length > 0) {
+            function changeSlide(direction) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Auto-slide cada 4 segundos
+            setInterval(() => changeSlide(1), 4000);
+        }
+    </script>
+
+    <!-- Estilos Específicos para la Página de Camarón Reventado -->
+    <style>
+        /* Animación de carga */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Ocultar contenido hasta que se cargue */
+        body.loading main,
+        body.loading #footer-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.loaded main,
+        body.loaded #footer-placeholder {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Variables de Branding */
+        :root {
+            --naranja-principal: #E67E22;
+            --marron-calido: #D35400;
+            --amarillo-dorado: #F39C12;
+            --gris-oscuro: #2C3E50;
+            --gris-claro: #ECF0F1;
+            --crema: #FDF2E9;
+            --blanco: #FFFFFF;
+
+            --font-titulos: 'Playfair Display', serif;
+            --font-subtitulos: 'Montserrat', sans-serif;
+            --font-cuerpo: 'Open Sans', sans-serif;
+        }
+
+        /* Sección Principal */
+        #camaron-page {
+            background-color: var(--gris-claro);
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Estilos específicos para la página de camarón reventado */
+        .menu-category-page {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            overflow: hidden;
+        }
+        
+        /* Camarón Hero Styles */
+        .camaron-hero {
+            width: 100%;
+            height: 100vh;
+            min-height: -webkit-fill-available;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('/assets/images/hero-camaron-bg.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .camaron-hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .camaron-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .camaron-hero-content p {
+            font-size: 1.5rem;
+            font-family: var(--font-cuerpo);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Page Title */
+        .page-title {
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            color: var(--gris-oscuro);
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Principal con Grid Profesional */
+        .camaron-layout {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            align-items: start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Columna Principal */
+        .camaron-main {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Banner Principal Full-Width */
+        .camaron-banner {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .camaron-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .camaron-banner:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Narrativa */
+        .camaron-narrative {
+            padding: 3rem;
+        }
+
+        .camaron-narrative h3 {
+            font-family: var(--font-titulos);
+            font-size: 2rem;
+            color: var(--naranja-principal);
+            margin-bottom: 1.5rem;
+        }
+
+        .camaron-narrative p {
+            font-family: var(--font-cuerpo);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gris-oscuro);
+        }
+
+        /* Galería de Imágenes */
+        .menu-category-content {
+            padding: 40px 0;
+            background-color: #f8f9fa;
+            position: relative;
+            z-index: 2;
+            margin-top: 0;
+        }
+
+        .camaron-gallery h3 {
+            font-family: var(--font-subtitulos);
+            font-size: 1.8rem;
+            color: var(--gris-oscuro);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .gallery-container {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .gallery-item.active {
+            opacity: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-btn {
+            background: var(--naranja-principal);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-btn:hover {
+            background: var(--marron-calido);
+            transform: scale(1.1);
+        }
+
+        /* Card de Pedido Flotante/Pegajoso */
+        .sticky-order-card {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-left: 5px solid var(--naranja-principal);
+        }
+
+        .order-card h4 {
+            font-family: var(--font-subtitulos);
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .price-info {
+            margin-bottom: 2rem;
+        }
+
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--gris-claro);
+        }
+
+        .size {
+            font-family: var(--font-cuerpo);
+            font-weight: 600;
+            color: var(--gris-oscuro);
+        }
+
+        .amount {
+            font-family: var(--font-subtitulos);
+            font-weight: 800;
+            color: var(--naranja-principal);
+            font-size: 1.2rem;
+        }
+
+        .accompaniment {
+            font-family: var(--font-cuerpo);
+            color: var(--gris-oscuro);
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: var(--amarillo-dorado);
+            border-radius: 8px;
+            opacity: 0.9;
+        }
+
+        /* Botón CTA */
+        .cta-button {
+            display: block;
+            background-color: var(--naranja-principal);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: var(--font-subtitulos);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid var(--naranja-principal);
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: var(--marron-calido);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.4);
+        }
+
+        /* Responsividad */
+        @media (max-width: 1024px) {
+            .camaron-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sticky-order-card {
+                position: static;
+                order: -1;
+            }
+
+            .order-card {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .camaron-hero {
+                height: 60vh;
+            }
+
+            .camaron-hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .camaron-hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .camaron-banner {
+                height: 250px;
+            }
+
+            .camaron-narrative,
+            .camaron-gallery {
+                padding: 2rem;
+            }
+
+            .camaron-narrative h3 {
+                font-size: 1.5rem;
+            }
+
+            .camaron-gallery h3 {
+                font-size: 1.5rem;
+            }
+
+            .gallery-container {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .camaron-hero {
+                height: 100vh !important;
+                min-height: 100vh !important;
+                min-height: -webkit-fill-available !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                position: relative !important;
+                z-index: 1 !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .camaron-hero-content {
+                padding: 80px 20px 40px 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                position: relative !important;
+                z-index: 2 !important;
+                box-sizing: border-box !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            .camaron-hero h1 {
+                font-size: 2.5rem !important;
+                margin: 0 0 1rem 0 !important;
+                line-height: 1.2 !important;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+            
+            .camaron-hero p {
+                font-size: 1.2rem !important;
+                margin: 0.5rem 0 0 0 !important;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .camaron-banner {
+                height: 200px;
+            }
+
+            .camaron-narrative,
+            .camaron-gallery {
+                padding: 1.5rem;
+            }
+
+            .order-card {
+                padding: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

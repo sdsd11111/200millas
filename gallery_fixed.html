@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja</title>
+    <meta name="description" content="Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve en 200 Millas Loja.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/gallery">
+    <meta property="og:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
+    <meta property="og:description" content="Descubre la historia visual de 200 Millas en Loja a través de clientes satisfechos, eventos especiales y platos icónicos.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/gallery">
+    <meta name="twitter:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
+    <meta name="twitter:description" content="Explora la galería de 200 Millas: clientes, eventos y platos destacados en Loja.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script>
+        // Cargar el CSS del header primero
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/components/header/header.css';
+        document.head.appendChild(link);
+        
+        // Función para cargar el header
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        // Cargar el JS del header
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false; // Importante: cargar de forma síncrona
+                        document.body.appendChild(script);
+                        
+                        // Forzar la inicialización después de un breve retraso
+                        setTimeout(() => {
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                        }, 100);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header HTML:', error);
+                });
+        }
+        
+        // Cargar el header cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadHeader);
+        } else {
+            loadHeader();
+        }
+    </script>
+
+    <main>
+        <!-- Hero Section for Gallery Page -->
+        <section class="gallery-hero">
+            <div class="gallery-hero-content">
+                <h1>Nuestra Galería</h1>
+                <p>Momentos, Tradición y Sabores de 200 Millas en Loja</p>
+            </div>
+        </section>
+
+        <section id="gallery-page">
+            <div class="container">
+                <!-- Subtítulo -->
+                <p class="gallery-subtitle">Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve.</p>
+
+                <!-- Navegación de Pestañas -->
+                <div class="gallery-tabs">
+                    <button class="tab-btn active" data-tab="clientes">Clientes</button>
+                    <button class="tab-btn" data-tab="eventos">Eventos</button>
+                    <button class="tab-btn" data-tab="platos">Platos</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <!-- Contenido de la galería se cargará aquí dinámicamente -->
+                </div>
+
+                <!-- Lightbox/Modal -->
+                <div id="lightbox" class="lightbox">
+                    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                    <div class="lightbox-content">
+                        <img id="lightbox-img" src="" alt="Imagen ampliada">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar el componente footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    if (footerPlaceholder) {
+                        footerPlaceholder.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el footer:', error);
+                });
+        }
+
+        // Cargar el footer cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadFooter);
+
+        // Funcionalidad de Filtrado de Pestañas
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remover clase active de todos los botones
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Agregar clase active al botón clickeado
+                button.classList.add('active');
+                
+                // Filtrar galería según la pestaña seleccionada
+                const category = button.getAttribute('data-tab');
+                filterGallery(category);
+            });
+        });
+
+        // Función para filtrar la galería
+        function filterGallery(category) {
+            const galleryItems = document.querySelectorAll('.gallery-card');
+            galleryItems.forEach(item => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Inicializar lightbox
+        function initLightbox() {
+            const galleryImages = document.querySelectorAll('.gallery-card img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            galleryImages.forEach(image => {
+                image.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = image.src;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+        }
+
+        // Función para cerrar lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Inicializar todo cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar lightbox
+            initLightbox();
+            
+            // Cerrar lightbox al hacer clic fuera de la imagen
+            const lightbox = document.getElementById('lightbox');
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Cerrar con tecla ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+
+    <!-- Estilos Específicos para la Página de Galería -->
+    <style>
+        /* Variables de Branding */
+        :root {
+            --naranja-principal: #E67E22;
+            --marron-calido: #D35400;
+            --blanco: #FFFFFF;
+            --gris-oscuro: #333333;
+            --gris-claro: #F5F5F5;
+            --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transicion: all 0.3s ease;
+        }
+
+        /* Estilos del Hero */
+        .gallery-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 1rem;
+        }
+
+        .gallery-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gallery-hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos de la galería */
+        #gallery-page {
+            padding: 4rem 0;
+        }
+
+        .gallery-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+        }
+
+        .gallery-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: 2px solid var(--naranja-principal);
+            color: var(--naranja-principal);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transicion);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--naranja-principal);
+            color: var(--blanco);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: var(--transicion);
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1.5rem;
+            color: var(--blanco);
+            opacity: 0;
+            transition: var(--transicion);
+        }
+
+        .gallery-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .card-overlay h3 {
+            margin: 0 0 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .card-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            border: 3px solid var(--blanco);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transicion);
+        }
+
+        .lightbox-close:hover {
+            color: var(--naranja-principal);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .gallery-hero {
+                height: 50vh;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                height: 40vh;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .gallery-subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .gallery-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-btn {
+                width: 80%;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-hero {
+                height: 35vh;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-hero-content p {
+                font-size: 1rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-btn {
+                width: 100%;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Completo | 200 Millas Loja - Mariscos Frescos</title>
+    <meta name="description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja. Desde 1979 ofreciendo la mejor cocina marina en el sur de Ecuador.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/menu">
+    <meta property="og:title" content="Menú Completo | 200 Millas Loja">
+    <meta property="og:description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/menu">
+    <meta name="twitter:title" content="Menú Completo | 200 Millas Loja">
+    <meta name="twitter:description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script>
+        // Cargar el CSS del header primero
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/components/header/header.css';
+        document.head.appendChild(link);
+        
+        // Función para cargar el header
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        // Cargar el JS del header
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false; // Importante: cargar de forma síncrona
+                        document.body.appendChild(script);
+                        
+                        // Forzar la inicialización después de un breve retraso
+                        setTimeout(() => {
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                        }, 100);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header HTML:', error);
+                });
+        }
+        
+        // Cargar el header cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadHeader);
+        } else {
+            loadHeader();
+        }
+    </script>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section for Menu Page -->
+        <section class="menu-hero">
+            <div class="menu-hero-content">
+                <h1>Menu 200 Millas</h1>
+                <p>Descubre nuestra amplia selección de mariscos frescos y platos tradicionales</p>
+            </div>
+        </section>
+
+        <div class="menu-categories-with-sliders">
+            <!-- Categoría 1: Sopas -->
+            <div class="menu-category-block">
+                <h3 class="category-title">Sopas</h3>
+                <div class="category-grid">
+                    <ul class="dish-list">
+                        <li class="dish-item">
+                            <span class="dish-name">Chupé de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chupé mixto (Camarón pescado)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Parihuela (Sopa marinera)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.00</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño de parihuela</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Sudado de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$9.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Concentrado de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Orgia de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$12.00</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Encebollado de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$5.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Encebollado mixto (Camarón y pescado)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$6.60</span>
+                        </li>
+                    </ul>
+                    <div class="category-slider">
+                        <div class="multi-image-container">
+                            <img src="/assets/images/platos/parihuela.webp" alt="Sopa marinera tradicional - Parihuela" class="category-image">
+                            <img src="/assets/images/platos/encebollado.webp" alt="Encebollado de pescado - Plato tradicional" class="category-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría 2: Ceviches -->
+            <div class="menu-category-block">
+                <h3 class="category-title">Ceviches</h3>
+                <div class="category-grid">
+                    <div class="category-slider">
+                        <img src="/assets/images/platos/ceviche-mixto.webp" alt="Ceviche Mixto - Especialidad de la casa">
+                    </div>
+                    <ul class="dish-list">
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche 200 Millas</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche de camarón</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche de conchas</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.00</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$9.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche mixto (Camarón Concha pescado)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Ceviche doble (Camarón pescado)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Leche de tigre</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$3.00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Categoría 3: Segundos (Mariscos y Pescados) -->
+            <div class="menu-category-block">
+                <h3 class="category-title">Segundos (Mariscos y Pescados)</h3>
+                <div class="category-grid">
+                    <ul class="dish-list">
+                        <li class="dish-item">
+                            <span class="dish-name">Chicharrón de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño de chicharrón de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chicharrón de calamares</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chicharrón mixto</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chicharrón de camarón</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño de chicharrón de camarón</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Picante de camarones</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Picante de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Filete de pescado</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Filete de pescado mediano</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$6.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Filete en salsa de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Cangrejo solo</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$3.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chaulafán de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Arroz con camarones</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño de arroz con camarón</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Arroz con mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño de arroz con mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Arroz con concha</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Chaulafán de camarones y pollo</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$10.50</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Plato pequeño chaulafán de camarones</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$7.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Mariscos al ajillo</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                    </ul>
+                    <div class="category-slider">
+                        <div class="multi-image-grid">
+                            <img src="/assets/images/platos/chicharron-pescado.webp" alt="Chicharrón de pescado - Plato típico" class="grid-image">
+                            <img src="/assets/images/platos/arroz-mariscos.webp" alt="Arroz con mariscos - Clásico abundante" class="grid-image">
+                            <img src="/assets/images/platos/filete-pescado.webp" alt="Filete de pescado - Opción saludable" class="grid-image">
+                            <img src="/assets/images/platos/mariscos-ajillo.webp" alt="Mariscos al ajillo - Plato gourmet" class="grid-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoría 4: Especialidades y Plato Lojano -->
+            <div class="menu-category-block">
+                <h3 class="category-title">Especialidades y Plato Lojano</h3>
+                <div class="category-grid">
+                    <div class="category-slider">
+                        <img src="/assets/images/platos/pollo-acullado.jpg" alt="Pollo Acullado - Especialidad lojana">
+                    </div>
+                    <ul class="dish-list">
+                        <li class="dish-item">
+                            <span class="dish-name">Majarisco</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$12.00</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Conchas asadas (Porción 20 und. Con chifles y salsa)</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Camarones al ajillo</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Filete en salsa de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Encocado de Mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$12.25</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Encocado de camarones</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$11.75</span>
+                        </li>
+                        <li class="dish-item">
+                            <span class="dish-name">Salmón en salsa de mariscos</span>
+                            <span class="dotted-line"></span>
+                            <span class="dish-price">$14.50</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar el componente footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+
+                    // Cargar los estilos del footer
+                    const footerStyles = document.createElement('link');
+                    footerStyles.rel = 'stylesheet';
+                    footerStyles.href = '/components/footer/footer.css';
+                    document.head.appendChild(footerStyles);
+
+                    // Cargar el JavaScript del footer si existe
+                    const footerScript = document.createElement('script');
+                    footerScript.src = '/components/footer/footer.js';
+                    document.body.appendChild(footerScript);
+
+                    console.log('✅ Footer component cargado correctamente');
+                })
+                .catch(error => {
+                    console.error('❌ Error cargando footer:', error);
+                });
+        }
+
+        // Cargar el footer cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadFooter);
+    </script>
+
+    <!-- Menu Category Sliders Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar todos los sliders de categorías
+            const categorySliders = document.querySelectorAll('.category-slider');
+
+            categorySliders.forEach(slider => {
+                const slides = slider.querySelectorAll('.slide-item');
+                const prevBtn = slider.querySelector('.prev');
+                const nextBtn = slider.querySelector('.next');
+                let currentSlide = 0;
+
+                if (slides.length === 0) return;
+
+                // Función para ajustar altura dinámica del slider
+                function adjustSliderHeight() {
+                    const categoryBlock = slider.closest('.category-block');
+                    const categoryMenu = categoryBlock.querySelector('.category-menu');
+                    const menuHeight = categoryMenu.offsetHeight;
+
+                    // Ajustar altura del slider al contenido del menú
+                    const sliderContainer = slider.querySelector('.slider-container');
+                    if (sliderContainer) {
+                        sliderContainer.style.height = menuHeight + 'px';
+                    }
+                }
+
+                // Función mejorada para ajustar altura después de que se renderice completamente
+                function adjustHeightWithDelay() {
+                    setTimeout(adjustSliderHeight, 100);
+                    setTimeout(adjustSliderHeight, 500);
+                }
+
+                // Ajustar altura inicialmente
+                adjustHeightWithDelay();
+
+                // Reajustar altura cuando cambie el tamaño de ventana
+                window.addEventListener('resize', adjustHeightWithDelay);
+
+                function showSlide(index) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = index;
+                    if (currentSlide >= slides.length) currentSlide = 0;
+                    if (currentSlide < 0) currentSlide = slides.length - 1;
+                    slides[currentSlide].classList.add('active');
+                }
+
+                function nextSlide() {
+                    showSlide(currentSlide + 1);
+                }
+
+                function prevSlide() {
+                    showSlide(currentSlide - 1);
+                }
+
+                // Event listeners para navegación
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', nextSlide);
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', prevSlide);
+                }
+
+                // Auto-slide cada 4 segundos
+                setInterval(nextSlide, 4000);
+
+                // Pausar auto-slide al hacer hover
+                slider.addEventListener('mouseenter', function() {
+                    clearInterval(slider.autoSlideInterval);
+                });
+
+                slider.addEventListener('mouseleave', function() {
+                    slider.autoSlideInterval = setInterval(nextSlide, 4000);
+                });
+            });
+        });
+    </script>
+
+    <!-- Additional Styles for Menu Page -->
+    <style>
+        /* Menu Hero Styles */
+        .menu-hero {
+            height: 70vh; /* Approximately 70% of viewport height */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .menu-hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .menu-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .menu-hero-content p {
+            font-size: 1.5rem;
+            font-family: var(--font-cuerpo);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hero {
+                height: 60vh; /* Slightly less on mobile */
+            }
+
+            .menu-hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .menu-hero-content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .menu-hero {
+                height: 50vh; /* Even less on very small screens */
+            }
+
+            .menu-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Menu Categories Styles */
+        .menu-categories-with-sliders {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem; /* Added top padding for separation from hero */
+        }
+
+        .menu-category-block {
+            margin-bottom: 60px;
+            padding: 30px;
+            background-color: var(--blanco);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-title {
+            font-family: var(--font-subtitulos);
+            font-size: 2rem;
+            color: var(--naranja-principal);
+            border-bottom: 3px solid var(--naranja-principal);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 25px;
+        }
+
+        .category-grid {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .dish-list {
+            flex-grow: 1;
+            width: 65%;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .category-slider {
+            width: 35%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .category-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Multi-image container for 2 images stacked vertically */
+        .multi-image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            height: 100%;
+        }
+
+        .category-image {
+            flex: 1;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Multi-image grid for 4 images stacked vertically */
+        .multi-image-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            height: 100%;
+        }
+
+        .grid-image {
+            flex: 1;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .dish-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--gris-claro);
+            font-family: var(--font-cuerpo);
+            font-size: 1.1rem;
+        }
+
+        .dish-name {
+            white-space: nowrap;
+            font-weight: 600;
+            color: black !important; /* Changed to black for emphasis and forced with !important */
+        }
+
+        .dotted-line {
+            flex-grow: 1;
+            margin: 0 15px;
+            border-bottom: 2px dotted #aaa;
+            align-self: flex-end;
+            height: 1em;
+            opacity: 0.7;
+        }
+
+        .dish-price {
+            white-space: nowrap;
+            font-family: var(--font-subtitulos);
+            font-weight: 800;
+            color: var(--naranja-principal);
+            font-size: 1.2rem;
+            background-color: var(--naranja-principal);
+            color: var(--blanco);
+            padding: 4px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .category-grid {
+                flex-direction: column;
+            }
+
+            .dish-list,
+            .category-slider {
+                width: 100%;
+            }
+
+            .category-slider {
+                height: 300px;
+                margin-top: 20px;
+            }
+
+            .category-title {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .menu-categories-with-sliders {
+                padding: 0 1rem;
+            }
+
+            .menu-category-block {
+                padding: 20px;
+            }
+
+            .dish-item {
+                font-size: 1rem;
+                padding: 10px 0;
+            }
+
+            .dish-name {
+                white-space: normal;
+            }
+
+            .dotted-line {
+                margin: 0 8px;
+                border-bottom-width: 1px;
+            }
+
+            .dish-price {
+                font-size: 1.1rem;
+                padding: 3px 8px;
+                min-width: 50px;
+            }
+
+            .category-slider {
+                height: 250px;
+            }
+        }
+    </style>
+</body>
+</html>

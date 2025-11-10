@@ -1,0 +1,29 @@
+:root {
+  /* Colores Principales */
+  --naranja-principal: #E67E22;
+  --marron-calido: #8B4513;
+  --rojo-acento: #C0392B;
+
+  /* Colores Secundarios */
+  --amarillo-dorado: #F39C12;
+  --crema: #FDF6E3;
+
+  /* Colores Neutrales */
+  --blanco: #FFFFFF;
+  --gris-claro: #ECF0F1;
+  --gris-oscuro: #2C3E50;
+  --negro-suave: #1A1A1A;
+
+  /* Tipografía */
+  --font-titulos: 'Playfair Display', serif;
+  --font-subtitulos: 'Montserrat', sans-serif;
+  --font-cuerpo: 'Open Sans', sans-serif;
+
+  /* Aplicaciones específicas */
+  --color-cta: var(--naranja-principal);
+  --color-texto-principal: var(--negro-suave);
+  --color-texto-secundario: var(--gris-oscuro);
+  --color-fondo-oscuro: var(--negro-suave);
+  --color-fondo-claro: var(--crema);
+  --color-hover: var(--amarillo-dorado);
+}

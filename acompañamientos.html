@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guarniciones y Bebidas | 200 Millas</title>
+    <meta name="description" content="Complementa tu plato de 200 Millas con nuestras porciones de patacones, chifles y yuca. Descubre también nuestras jarras de limonada y la horchata más refrescante de Loja.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+    <link rel="stylesheet" href="/assets/css/menu-pages.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/acompanamientos">
+    <meta property="og:title" content="Guarniciones y Bebidas | 200 Millas">
+    <meta property="og:description" content="Complementa tu plato de 200 Millas con nuestras porciones de patacones, chifles y yuca. Descubre también nuestras jarras de limonada y la horchata más refrescante de Loja.">
+    <meta property="og:image" content="/assets/images/acompañamientos/guarniciones-banner.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/acompanamientos">
+    <meta name="twitter:title" content="Guarniciones y Bebidas | 200 Millas">
+    <meta name="twitter:description" content="El Toque Final que Eleva tu Plato - Disfruta de nuestras guarniciones y bebidas en 200 Millas, Loja.">
+    <meta name="twitter:image" content="/assets/images/acompañamientos/guarniciones-banner.webp">
+</head>
+<body>
+    <!-- Contenedor del header -->
+    <div id="header-container"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+        <div style="text-align: center;">
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+    
+
+    <main class="menu-category-page">
+        <!-- Hero Section -->
+        <section class="category-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/acompañamientos/leche-tigre.webp');">
+            <div class="container">
+                <h1>Guarniciones y Bebidas</h1>
+                <p class="subtitle">El Acompañamiento Perfecto para tus Mariscos en Loja</p>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <section class="menu-category-content">
+            <div class="container">
+                <div class="menu-grid">
+                    <!-- Main Content -->
+                    <div class="menu-main">
+                        <!-- Category Description -->
+                        <div class="category-description">
+                            <h2>El Toque Final que Eleva tu Plato</h2>
+                            <div class="description-text">
+                                <span class="short-text">En 200 Millas, los detalles son importantes. Nuestras Guarniciones están pensadas para complementar a la perfección la frescura de nuestros mariscos, ofreciendo el crujido ideal de los patacones o la yuca, y la sencillez del arroz.</span>
+                                <span class="full-text"> Para calmar la sed, ofrecemos Bebidas naturales y tradicionales, como nuestra famosa horchata y limonada, preparadas al momento. Elige tu combinación ideal y haz de tu comida una experiencia 100% satisfactoria en Loja.</span>
+                                <button class="read-more-btn">seguir leyendo</button>
+                            </div>
+                        </div>
+                        <style>
+                            .description-text {
+                                display: block;
+                                margin-bottom: 15px;
+                            }
+                            .read-more-btn {
+                                background: none;
+                                border: none;
+                                color: #e67e22;
+                                font-family: 'Montserrat', sans-serif;
+                                font-weight: 600;
+                                padding: 0;
+                                margin: 5px 0 0 0;
+                                cursor: pointer;
+                                display: block;
+                                font-size: 0.95rem;
+                                text-align: left;
+                            }
+                            .read-more-btn:focus {
+                                outline: none;
+                            }
+                            .full-text {
+                                display: none;
+                            }
+                            @media (min-width: 769px) {
+                                .read-more-btn {
+                                    display: none;
+                                }
+                                .full-text {
+                                    display: inline !important;
+                                }
+                            }
+                        </style>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const readMoreBtn = document.querySelector('.read-more-btn');
+                                const fullText = document.querySelector('.full-text');
+                                
+                                if (readMoreBtn && fullText) {
+                                    // Initial state for mobile
+                                    if (window.innerWidth < 769) {
+                                        fullText.style.display = 'none';
+                                        readMoreBtn.style.display = 'block';
+                                    }
+                                    
+                                    // Toggle function
+                                    readMoreBtn.onclick = function(e) {
+                                        e.preventDefault();
+                                        if (fullText.style.display === 'none' || !fullText.style.display) {
+                                            fullText.style.display = 'inline';
+                                            this.textContent = 'mostrar menos';
+                                        } else {
+                                            fullText.style.display = 'none';
+                                            this.textContent = 'seguir leyendo';
+                                        }
+                                    };
+                                    
+                                    // Handle window resize
+                                    function handleResize() {
+                                        if (window.innerWidth >= 769) {
+                                            fullText.style.display = 'inline';
+                                            readMoreBtn.style.display = 'none';
+                                        } else {
+                                            readMoreBtn.style.display = 'block';
+                                            if (readMoreBtn.textContent === 'mostrar menos') {
+                                                fullText.style.display = 'inline';
+                                            } else {
+                                                fullText.style.display = 'none';
+                                            }
+                                        }
+                                    }
+                                    
+                                    // Add resize listener with debounce
+                                    let resizeTimer;
+                                    window.addEventListener('resize', function() {
+                                        clearTimeout(resizeTimer);
+                                        resizeTimer = setTimeout(handleResize, 100);
+                                    });
+                                }
+                            });
+                        </script>
+
+                        <!-- Menu Items -->
+                        <div class="menu-items-container">
+                            <!-- Guarniciones -->
+                            <div class="menu-items">
+                                <h3>Guarniciones</h3>
+                                
+                                <div class="menu-item">
+                                    <div class="dish-info">
+                                        <div class="dish-name">Porción de arroz</div>
+                                        <p class="dish-description">Arroz blanco simple <span class="dish-price">1.75</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-info">
+                                        <div class="dish-name">Porción de chifles</div>
+                                        <p class="dish-description">Rodajas finas de plátano verde frito <span class="dish-price">1.25</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-info">
+                                        <div class="dish-name">Porción de patacones</div>
+                                        <p class="dish-description">Plátano verde frito y machacado <span class="dish-price">2.25</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-info">
+                                        <div class="dish-name">Porción de yuca o canguil</div>
+                                        <p class="dish-description">Opciones variadas <span class="dish-price">1.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bebidas -->
+                            <div class="menu-items">
+                                <h3>Bebidas</h3>
+                                
+                                <div class="menu-item featured-drink">
+                                    <div class="dish-info">
+                                        <div class="dish-name">Leche de Tigre <span class="popular-tag">¡MÁS PEDIDO!</span></div>
+                                        <p class="dish-description">De lo más pedido en 200 Millas Loja, está ligada a nuestros clásicos ceviches. Es una bebida resultante de la marinación del pescado en el ceviche, con ají peruano y cilantro. Refrescante, de color blanquecino y aspecto lechoso, de allí su nombre. ¡Ven y pruébala, es un gran aperitivo revitalizante! <span class="dish-price featured-price">$3.50</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Jarra de limonada</div>
+                                    <div class="dish-price">$5.00</div>
+                                    <p class="dish-description">Jarra grande (aprox. 1 litro)</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Jarra limonada pequeña</div>
+                                    <div class="dish-price">$2.75</div>
+                                    <p class="dish-description">Jarra personal</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Jarra de horchata</div>
+                                    <div class="dish-price">$4.50</div>
+                                    <p class="dish-description">Jarra grande (refresco tradicional)</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Jarra pequeña de horchata</div>
+                                    <div class="dish-price">$2.25</div>
+                                    <p class="dish-description">Jarra personal</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Cola mediana</div>
+                                    <div class="dish-price">$1.00</div>
+                                    <p class="dish-description">Gaseosa estándar</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Agua con gas</div>
+                                    <div class="dish-price">$1.25</div>
+                                    <p class="dish-description">Botella</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Agua sin gas</div>
+                                    <div class="dish-price">$1.00</div>
+                                    <p class="dish-description">Botella</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Cerveza Club</div>
+                                    <div class="dish-price">Consultar</div>
+                                    <p class="dish-description">Bebida alcohólica</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Cerveza Corona</div>
+                                    <div class="dish-price">Consultar</div>
+                                    <p class="dish-description">Bebida alcohólica</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-name">Cerveza Pilsener</div>
+                                    <div class="dish-price">Consultar</div>
+                                    <p class="dish-description">Bebida alcohólica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="menu-sidebar">
+                        <div class="sidebar-card">
+                            <h3>¡Combina con Nuestros Platos!</h3>
+                            <p>Disfruta de nuestras guarniciones y bebidas como acompañamiento perfecto para tus platos favoritos de mariscos.</p>
+                            <a href="https://wa.me/593997533304?text=¡Hola!%20Quisiera%20más%20información%20sobre%20sus%20guarniciones%20y%20bebidas" class="cta-button">
+                                <i class="fab fa-whatsapp"></i> Pregunta por Nuestras Especialidades
+                            </a>
+                        </div>
+                        
+                        <div class="sidebar-image">
+                            <img src="/assets/images/acompañamientos/guarniciones-sidebar.webp" alt="Guarniciones 200 Millas" class="img-fluid">
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slider de Imágenes -->
+        <section class="sopas-slider">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestras Guarniciones y Bebidas</h2>
+                <div class="sopas-slider-container" id="guarniciones-slider">
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/arroz-blanco.webp" alt="Arroz Blanco" class="img-fluid">
+                        <p>Arroz Blanco</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/patacones.webp" alt="Patacones" class="img-fluid">
+                        <p>Patacones</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/chifles.webp" alt="Chifles" class="img-fluid">
+                        <p>Chifles</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/inicio/cocina-200millas.webp" alt="Nuestra Leche de Tigre" class="img-fluid">
+                        <p>Nuestra Leche de Tigre</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/limonada.webp" alt="Limonada" class="img-fluid">
+                        <p>Limonada</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/horchata.webp" alt="Horchata" class="img-fluid">
+                        <p>Horchata</p>
+                    </div>
+                    <div class="sopas-slide">
+                        <img src="/assets/images/acompañamientos/leche-tigre.webp" alt="Leche de Tigre" class="img-fluid">
+                        <p>Leche de Tigre</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <div class="container">
+                <h2 class="text-center mb-4">Conoce Nuestras Guarniciones</h2>
+                <div class="video-container">
+                    <video controls class="img-fluid" style="width: 100%; max-width: 800px; margin: 0 auto; display: block; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                        <source src="/assets/images/acompañamientos/guarniciones-video.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Visual Experience Component -->
+        <div id="visual-experience-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/load-visual-experience.js"></script>
+    <!-- Cargar el header dinámicamente -->
+    <script src="/assets/js/load-header.js" defer></script>
+    <script>
+        // Función para cargar el footer dinámicamente
+
+        // Cargar el footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    if (footerPlaceholder) {
+                        footerPlaceholder.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el footer:', error);
+                });
+        }
+
+        // Configuración de la altura del viewport
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        // Configuración inicial
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // Cargar header y footer
+            loadHeader();
+            loadFooter();
+            setViewportHeight();
+            
+            // Actualizar en cambios de tamaño u orientación
+            window.addEventListener('resize', setViewportHeight);
+            window.addEventListener('orientationchange', setViewportHeight);
+            
+            // Esperar a que cargue todo el contenido
+            window.addEventListener('load', function() {
+                // Pequeño retraso para asegurar que todo esté listo
+                setTimeout(function() {
+                    // Ocultar el loader
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Mostrar el contenido
+                        document.body.classList.remove('loading');
+                        document.body.classList.add('loaded');
+                        
+                        // Eliminar el loader del DOM después de la animación
+                        setTimeout(function() {
+                            loadingScreen.remove();
+                        }, 500);
+                    }
+                }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
+            });
+            
+            // Habilitar scroll horizontal táctil para el slider
+            const slider = document.getElementById('guarniciones-slider');
+            if (slider) {
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+
+                slider.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    startX = e.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                    slider.style.cursor = 'grabbing';
+                    slider.style.userSelect = 'none';
+                });
+
+                slider.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    isDown = false;
+                    slider.style.cursor = 'grab';
+                });
+
+                slider.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - slider.offsetLeft;
+                    const walk = (x - startX) * 2;
+                    slider.scrollLeft = scrollLeft - walk;
+                });
+
+                // Soporte táctil
+                slider.addEventListener('touchstart', (e) => {
+                    const touch = e.touches[0];
+                    startX = touch.pageX - slider.offsetLeft;
+                    scrollLeft = slider.scrollLeft;
+                }, { passive: true });
+
+                slider.addEventListener('touchmove', (e) => {
+                    if (!e.touches[0]) return;
+                    const touch = e.touches[0];
+                    const x = touch.pageX - slider.offsetLeft;
+                    const walk = (x - startX);
+                    slider.scrollLeft = scrollLeft - walk;
+                }, { passive: true });
+            }
+        });
+    </script>
+    <style>
+        /* Animación de carga */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Ocultar contenido hasta que se cargue */
+        body.loading .menu-category-page,
+        body.loading #footer-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.loaded .menu-category-page,
+        body.loaded #footer-placeholder {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Estilos específicos para la página de guarniciones */
+        .popular-tag {
+            display: inline-block;
+            background-color: #FFD700;
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .featured-drink {
+            background-color: rgba(255, 248, 220, 0.3);
+            border-left: 4px solid #FFD700;
+            padding-left: 15px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-drink::before {
+            content: '⭐';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .featured-price {
+            color: #E67E22 !important;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .menu-category-page {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+        .menu-category-content {
+            padding: 6rem 0 4rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 240px;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Estilos para escritorio */
+        @media (min-width: 993px) {
+            .menu-grid {
+                grid-template-columns: 1fr 220px;
+                gap: 15px;
+            }
+            .sidebar-card {
+                padding: 12px 10px;
+            }
+            .sidebar-card h3 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            .sidebar-card p {
+                font-size: 0.75rem;
+                margin-bottom: 10px;
+                line-height: 1.3;
+            }
+            .cta-button {
+                padding: 6px 8px;
+                font-size: 0.7rem;
+            }
+            .sidebar-image {
+                padding-top: 45%;
+            }
+        }
+
+        /* Estilos para móviles */
+        @media (max-width: 992px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .menu-main {
+            min-width: 0;
+        }
+
+        .menu-items h3 {
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E67E22;
+            display: inline-block;
+        }
+
+        .menu-items h3 {
+            color: #000000 !important;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dish-name {
+            font-weight: 700;
+            color: #000000 !important;
+            margin: 0 0 5px 0;
+        }
+        
+        .dish-price {
+            font-weight: 700;
+            color: #E67E22;
+            margin-left: 10px;
+            white-space: nowrap;
+            float: right;
+        }
+
+        .dish-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+            font-style: italic;
+            overflow: hidden;
+        }
+
+        .sopas-slider {
+            margin: 20px 0;
+            overflow: hidden;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sopas-slider h2 {
+            color: #000000 !important;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+        }
+
+        .sopas-slider h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #E67E22;
+        }
+
+        .sopas-slider-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 20px 10px 30px;
+            margin: 0 -10px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            scroll-behavior: smooth;
+            cursor: grab;
+        }
+
+        .sopas-slider-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sopas-slide {
+            flex: 0 0 auto;
+            width: 180px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            margin: 0 8px;
+            text-align: center;
+        }
+
+        .sopas-slide:active {
+            cursor: grabbing;
+        }
+
+        .sopas-slide img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .sopas-slide p {
+            font-size: 0.85rem;
+            color: #333;
+            margin: 0;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .sopas-slide:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .video-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .video-section h2 {
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .video-section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #E67E22;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .sidebar-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 6px;
+        }
+        
+        .sidebar-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background: #E67E22;
+        }
+
+        .sidebar-card p {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            font-size: 0.8rem;
+        }
+
+        .sidebar-image {
+            overflow: hidden;
+            position: relative;
+            padding-top: 25%;
+            max-height: 100px;
+            margin: 8px 0;
+        }
+        
+        .sidebar-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .sidebar-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white !important;
+            padding: 8px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 5px rgba(37, 211, 102, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .menu-items {
+                min-width: 100%;
+            }
+            
+            .sopas-slide {
+                width: 260px;
+            }
+            
+            .sopas-slide img {
+                height: 180px;
+            }
+            
+            .video-section {
+                padding: 30px 0;
+            }
+            
+            .video-section h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Estilos específicos para la página de acompañamientos */
+        .menu-category-page {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            overflow: hidden;
+        }
+        
+        .category-hero {
+            width: 100%;
+            height: 100vh;
+            min-height: -webkit-fill-available;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/acompañamientos/guarniciones-banner.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .category-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .category-hero .subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (max-width: 992px) {
+            .category-hero {
+                height: 100vh !important;
+                min-height: 100vh !important;
+                min-height: -webkit-fill-available !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                position: relative !important;
+                z-index: 1 !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .category-hero .container {
+                padding: 80px 20px 40px 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                position: relative !important;
+                z-index: 2 !important;
+                box-sizing: border-box !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+            
+            .category-hero h1 {
+                font-size: 2.5rem !important;
+                margin: 0 0 1rem 0 !important;
+                line-height: 1.2 !important;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+            
+            .category-hero .subtitle {
+                font-size: 1.2rem !important;
+                margin: 0.5rem 0 0 0 !important;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+                width: 100% !important;
+                max-width: 800px !important;
+                padding: 0 15px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-hero h1 {
+                font-size: 2rem !important;
+            }
+            
+            .category-hero .subtitle {
+                font-size: 1.1rem !important;
+            }
+        }
+    </style>
+</body>
+</html>

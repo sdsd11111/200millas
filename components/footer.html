@@ -1,0 +1,525 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Columna 1: Marca y Propósito -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <span class="logo-text">200 Millas</span>
+                    <span class="logo-subtext">Loja</span>
+                </div>
+                <p class="footer-slogan">Algo muy especial en mariscos</p>
+                <p class="footer-history">Desde 1979</p>
+                <p class="footer-description">Ofreciendo los sabores más auténticos de la cocina marina con tradición familiar.</p>
+            </div>
+
+            <!-- Columna 2: Información de Contacto -->
+            <div class="footer-col">
+                <h3 class="footer-title">Contacto</h3>
+                <address class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> 10 de Agosto y Juan José Peña, Loja, Ecuador</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+593997533304">+593 99 753 3304</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@200millasloja.com">info@200millasloja.com</a></p>
+                    <div class="footer-hours">
+                        <p><strong>Horarios de Atención:</strong></p>
+                        <p>Lunes a Jueves: 10:00 - 16:00</p>
+                        <p>Sábado y Domingo: 09:30 - 16:45</p>
+                        <p>Viernes: Cerrado</p>
+                    </div>
+                </address>
+            </div>
+
+            <!-- Columna 3: Enlaces Generales -->
+            <div class="footer-col">
+                <h3 class="footer-title">Navegación</h3>
+                <ul class="footer-links">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/gallery/">Galería</a></li>
+                    <li><a href="/contact/">Contacto</a></li>
+                    <li><a href="/about/">Quiénes Somos</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/testimonials/">Testimonios</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Menú Destacado -->
+            <div class="footer-col">
+                <h3 class="footer-title">Menú Destacado</h3>
+                <ul class="footer-menu">
+                    <li><a href="#pariguera">Parigüera</a></li>
+                    <li><a href="#camaron-reventado">Camarón Reventado</a></li>
+                    <li><a href="#ceviche-mixto">Ceviche Mixto</a></li>
+                    <li><a href="#pollo-acullado">Pollo Acullado</a></li>
+                    <li><a href="#ensalada-mariscos">Ensalada de Mariscos</a></li>
+                    <li><a href="#arroz-marinero">Arroz Marinero</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <h4>Síguenos en:</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/593997533304" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                <p class="copyright">&copy; <span id="current-year">2025</span> 200 Millas Loja. Todos los derechos reservados.</p>
+                <div class="legal-links">
+                    <a href="/privacy-policy/">Política de Privacidad</a>
+                    <span>|</span>
+                    <a href="/terms-of-service/">Términos de Servicio</a>
+                    <span>|</span>
+                    <a href="/sitemap/">Mapa del Sitio</a>
+                </div>
+            </div>
+            
+            <div class="footer-payment">
+                <p>Aceptamos:</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fas fa-money-bill-wave" title="Efectivo"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Botón de WhatsApp flotante -->
+    <a href="https://wa.me/593998941753" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Reservar</span>
+    </a>
+</footer>
+
+<style>
+    /* Estilos del Footer */
+    .footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 4rem 0 0;
+        position: relative;
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+    
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--secondary), var(--primary));
+    }
+    
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .footer-col {
+        padding: 0 1rem;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-heading);
+        color: white;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-logo .logo-text {
+        font-size: 1.75rem;
+        line-height: 1;
+        letter-spacing: 1px;
+    }
+    
+    .footer-logo .logo-subtext {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 3px;
+        margin-top: 0.25rem;
+    }
+    
+    .footer-slogan {
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .footer-history {
+        font-size: 0.9rem;
+        color: var(--secondary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-description {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .footer-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+        font-family: var(--font-heading);
+        color: white;
+    }
+    
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary);
+    }
+    
+    .footer-contact p {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-contact i {
+        margin-right: 0.75rem;
+        color: var(--secondary);
+        margin-top: 0.25rem;
+        min-width: 20px;
+        text-align: center;
+    }
+    
+    .footer-contact a {
+        color: rgba(255, 255, 255, 0.9);
+        transition: color 0.3s ease;
+    }
+    
+    .footer-contact a:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+    
+    .footer-hours {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-hours p {
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .footer-hours p:first-child {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-hours strong {
+        color: white;
+        font-weight: 600;
+    }
+    
+    .footer-links, 
+    .footer-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-links li, 
+    .footer-menu li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a, 
+    .footer-menu a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        position: relative;
+        padding-left: 1.25rem;
+        display: inline-block;
+    }
+    
+    .footer-links a::before, 
+    .footer-menu a::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--secondary);
+        transition: transform 0.3s ease;
+        opacity: 0;
+    }
+    
+    .footer-links a:hover, 
+    .footer-menu a:hover {
+        color: white;
+        padding-left: 1.5rem;
+        text-decoration: none;
+    }
+    
+    .footer-links a:hover::before, 
+    .footer-menu a:hover::before {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem 0;
+        margin-top: 2rem;
+    }
+    
+    .footer-social {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-social h4 {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        color: white;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+    }
+    
+    .social-links a:hover {
+        background-color: var(--secondary);
+        transform: translateY(-3px);
+        color: white;
+    }
+    
+    .footer-legal {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .copyright {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 1rem;
+    }
+    
+    .legal-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    
+    .legal-links a {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        transition: color 0.3s ease;
+    }
+    
+    .legal-links a:hover {
+        color: var(--secondary);
+        text-decoration: underline;
+    }
+    
+    .legal-links span {
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.85rem;
+    }
+    
+    .footer-payment {
+        text-align: center;
+    }
+    
+    .footer-payment p {
+        margin-bottom: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+    }
+    
+    .payment-methods {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .payment-methods i {
+        transition: all 0.3s ease;
+    }
+    
+    .payment-methods i:hover {
+        color: var(--secondary);
+        transform: translateY(-3px);
+    }
+    
+    /* Botón de WhatsApp flotante */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background-color: #25d366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 2rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+    
+    .whatsapp-float i {
+        margin-bottom: -5px;
+    }
+    
+    .whatsapp-float span {
+        font-size: 0.6rem;
+        font-weight: 600;
+        display: block;
+        margin-top: 2px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    .whatsapp-float:hover span {
+        opacity: 1;
+    }
+    
+    /* Estilos responsivos */
+    @media (max-width: 992px) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .footer-col {
+            padding: 0;
+        }
+        
+        .footer-title {
+            margin-bottom: 1.25rem;
+        }
+        
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            font-size: 1.75rem;
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+        
+        .whatsapp-float span {
+            display: none;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .footer {
+            padding: 3rem 0 0;
+        }
+        
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        
+        .footer-logo .logo-text {
+            font-size: 1.5rem;
+        }
+        
+        .footer-logo .logo-subtext {
+            font-size: 0.9rem;
+        }
+        
+        .footer-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-bottom {
+            padding: 1.5rem 0;
+        }
+        
+        .legal-links {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .legal-links span {
+            display: none;
+        }
+        
+        .whatsapp-float {
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
+            bottom: 1rem;
+            right: 1rem;
+        }
+    }
+</style>
+
+<script>
+    // Actualizar año de copyright
+    document.addEventListener('DOMContentLoaded', function() {
+        const yearElement = document.getElementById('current-year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+        
+        // Inicializar tooltips para métodos de pago
+        const paymentIcons = document.querySelectorAll('.payment-methods i');
+        paymentIcons.forEach(icon => {
+            const title = icon.getAttribute('title');
+            if (title) {
+                icon.setAttribute('data-bs-toggle', 'tooltip');
+                icon.setAttribute('data-bs-placement', 'top');
+                icon.setAttribute('title', title);
+            }
+        });
+    });
+</script>

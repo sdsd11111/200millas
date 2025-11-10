@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja</title>
+    <meta name="description" content="Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve en 200 Millas Loja.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/gallery">
+    <meta property="og:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
+    <meta property="og:description" content="Descubre la historia visual de 200 Millas en Loja a través de clientes satisfechos, eventos especiales y platos icónicos.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/gallery">
+    <meta name="twitter:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
+    <meta name="twitter:description" content="Explora la galería de 200 Millas: clientes, eventos y platos destacados en Loja.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+        <div style="text-align: center;">
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+    
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script>
+        // Cargar el CSS del header primero
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/components/header/header.css';
+        document.head.appendChild(link);
+        
+        // Función para cargar el header
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        // Cargar el JS del header
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false; // Importante: cargar de forma síncrona
+                        script.onload = function() {
+                            // Asegurarse de que el header se inicialice correctamente
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                            // Asegurarse de que el header tenga la clase scrolled al cargar
+                            const header = document.querySelector('.header');
+                            if (header) {
+                                header.classList.add('scrolled');
+                            }
+                        };
+                        document.body.appendChild(script);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header HTML:', error);
+                });
+        }
+        
+        // Función para manejar la carga de la página
+        function handlePageLoad() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // Cargar el header
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadHeader);
+            } else {
+                loadHeader();
+            }
+            
+            // Esperar a que cargue todo el contenido
+            window.addEventListener('load', function() {
+                // Pequeño retraso para asegurar que todo esté listo
+                setTimeout(function() {
+                    // Ocultar el loader
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Mostrar el contenido
+                        document.body.classList.remove('loading');
+                        document.body.classList.add('loaded');
+                        
+                        // Eliminar el loader del DOM después de la animación
+                        setTimeout(function() {
+                            loadingScreen.remove();
+                        }, 500);
+                    }
+                }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
+            });
+        }
+        
+        // Iniciar la carga de la página
+        handlePageLoad();
+    </script>
+
+    <main>
+        <!-- Hero Section for Gallery Page -->
+        <section class="gallery-hero">
+            <div class="gallery-hero-content">
+                <h1>Nuestra Galería</h1>
+                <p>Momentos, Tradición y Sabores de 200 Millas en Loja</p>
+            </div>
+        </section>
+
+        <section id="gallery-page">
+            <div class="container">
+                <!-- Subtítulo -->
+                <p class="gallery-subtitle">Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve.</p>
+
+                <!-- Navegación de Pestañas -->
+                <div class="tabs-navigation">
+                    <button class="tab-btn active" data-filter="all">Todas</button>
+                    <button class="tab-btn" data-filter="cliente">Clientes</button>
+                    <button class="tab-btn" data-filter="evento">Eventos</button>
+                    <button class="tab-btn" data-filter="plato">Platos Destacados</button>
+                </div>
+
+                <!-- Grid de Galería -->
+                <div class="gallery-grid">
+                    <!-- Cliente 1 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-1.webp" alt="Clientes Felices">
+                        <div class="card-overlay">
+                            <h3>Clientes Felices</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 2 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-2.webp" alt="La Familia 200 Millas">
+                        <div class="card-overlay">
+                            <h3>La Familia 200 Millas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 3 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-3.webp" alt="Cena de Amigos">
+                        <div class="card-overlay">
+                            <h3>Cena de Amigos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 4 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-4.webp" alt="Visitantes Lojanos">
+                        <div class="card-overlay">
+                            <h3>Visitantes Lojanos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 5 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-5.webp" alt="Clientes Satisfechos">
+                        <div class="card-overlay">
+                            <h3>Clientes Satisfechos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 6 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-6.webp" alt="Clientes Alegres">
+                        <div class="card-overlay">
+                            <h3>Clientes Alegres</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 1 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-1.webp" alt="Aniversario 2025">
+                        <div class="card-overlay">
+                            <h3>Aniversario 2025</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-2.webp" alt="Misa de Acción de Gracias">
+                        <div class="card-overlay">
+                            <h3>Misa de Acción de Gracias</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 3 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-3.webp" alt="Evento Corporativo">
+                        <div class="card-overlay">
+                            <h3>Evento Corporativo</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 4 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-4.webp" alt="Brindis de Fin de Año">
+                        <div class="card-overlay">
+                            <h3>Brindis de Fin de Año</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 5 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-5.webp" alt="Evento Especial">
+                        <div class="card-overlay">
+                            <h3>Evento Especial</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 6 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-6.webp" alt="Celebración">
+                        <div class="card-overlay">
+                            <h3>Celebración</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 1 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/parihuela.webp" alt="Pariguela">
+                        <div class="card-overlay">
+                            <h3>Parihuela</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 2 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/chicharron-pescado.webp" alt="Camarón Reventado">
+                        <div class="card-overlay">
+                            <h3>Camarón Reventado</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 3 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/ceviche-mixto.webp" alt="Ceviche Mixto">
+                        <div class="card-overlay">
+                            <h3>Ceviche Mixto</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 4 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/arroz-mariscos.webp" alt="Arroz con Mariscos">
+                        <div class="card-overlay">
+                            <h3>Arroz con Mariscos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 5 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/conchas-asadas.webp" alt="Conchas Asadas">
+                        <div class="card-overlay">
+                            <h3>Conchas Asadas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Plato 6 -->
+                    <div class="gallery-card plato">
+                        <img src="/assets/images/platos/majarisco.webp" alt="Majarisco">
+                        <div class="card-overlay">
+                            <h3>Majarisco</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lightbox/Modal -->
+                <div id="lightbox" class="lightbox">
+                    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+                    <img class="lightbox-content" id="lightbox-img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar el componente footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+
+                    // Cargar los estilos del footer
+                    const footerStyles = document.createElement('link');
+                    footerStyles.rel = 'stylesheet';
+                    footerStyles.href = '/components/footer/footer.css';
+                    document.head.appendChild(footerStyles);
+
+                    // Cargar el JavaScript del footer si existe
+                    const footerScript = document.createElement('script');
+                    footerScript.src = '/components/footer/footer.js';
+                    document.body.appendChild(footerScript);
+
+                    console.log('✅ Footer component cargado correctamente');
+                })
+                .catch(error => {
+                    console.error('❌ Error cargando footer:', error);
+                });
+        }
+
+        // Cargar el footer cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadFooter);
+
+        // Funcionalidad de Filtrado de Pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const galleryCards = document.querySelectorAll('.gallery-card');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover clase activa de todas las pestañas
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    // Agregar clase activa a la pestaña clickeada
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    // Mostrar/Ocultar tarjetas basado en el filtro
+                    galleryCards.forEach(card => {
+                        if (filter === 'all' || card.classList.contains(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Funcionalidad de Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            if (lightbox && lightboxImg) {
+                galleryCards.forEach(card => {
+                    card.addEventListener('click', function() {
+                        const img = this.querySelector('img');
+                        if (img) {
+                            lightboxImg.src = img.src;
+                            lightbox.style.display = 'flex';
+                        }
+                    });
+                });
+
+                // Función para cerrar lightbox
+                window.closeLightbox = function() {
+                    lightbox.style.display = 'none';
+                };
+            }
+        });
+    </script>
+
+    <!-- Estilos Específicos para la Página de Galería -->
+    <style>
+        /* Animación de carga */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Ocultar contenido hasta que se cargue */
+        body.loading main,
+        body.loading #footer-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.loaded main,
+        body.loaded #footer-placeholder {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Variables de Branding */
+        :root {
+            --naranja-principal: #E67E22;
+            --marron-calido: #D35400;
+            --amarillo-dorado: #F39C12;
+            --gris-oscuro: #2C3E50;
+            --gris-claro: #ECF0F1;
+            --crema: #FDF2E9;
+            --blanco: #FFFFFF;
+
+            --font-titulos: 'Playfair Display', serif;
+            --font-subtitulos: 'Montserrat', sans-serif;
+            --font-cuerpo: 'Open Sans', sans-serif;
+        }
+
+        /* Sección Principal */
+        #gallery-page {
+            background-color: var(--gris-claro);
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Gallery Hero Styles */
+        .gallery-hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin: 0;
+            padding-top: 80px; /* Espacio para el header fijo */
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .gallery-hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .gallery-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .gallery-hero-content p {
+            font-size: 1.5rem;
+            font-family: var(--font-cuerpo);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .gallery-subtitle {
+            font-family: var(--font-cuerpo);
+            font-size: 1.2rem;
+            color: var(--gris-oscuro);
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        /* Navegación de Pestañas */
+        .tabs-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            padding: 0 0.5rem;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1.2rem;
+            font-family: var(--font-subtitulos);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gris-oscuro);
+            background-color: transparent;
+            border: 2px solid var(--naranja-principal);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background-color: rgba(230, 126, 34, 0.1);
+        }
+
+        .tab-btn.active {
+            background-color: var(--naranja-principal);
+            color: white;
+            border-color: var(--naranja-principal);
+        }
+
+        /* Grid de Galería */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .gallery-card {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .card-overlay h3 {
+            font-family: var(--font-subtitulos);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Lightbox/Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            color: var(--naranja-principal);
+        }
+
+        /* Responsividad */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .gallery-hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .gallery-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .tabs-navigation {
+                gap: 0.5rem;
+            }
+
+            .tab-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .gallery-card {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                height: 100vh;
+                min-height: -webkit-fill-available;
+                padding: 60px 0 0; /* Espacio para el header en móviles */
+                margin: 0;
+                position: relative;
+            }
+            
+            .gallery-hero-content {
+                padding: 1rem;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+            }
+
+            .gallery-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            }
+
+            .gallery-hero-content p {
+                font-size: 1.3rem;
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .gallery-subtitle {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .tabs-navigation {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 5px;
+                padding: 0 10px;
+                margin: 0 0 1.5rem;
+                width: 100%;
+                box-sizing: border-box;
+                justify-content: space-between;
+            }
+
+            .tab-btn {
+                width: 100%;
+                white-space: nowrap;
+                padding: 6px 4px;
+                font-size: 0.7rem;
+                border-radius: 12px;
+                background: #f5f5f5;
+                border: 1px solid #ddd;
+                text-align: center;
+                transition: all 0.2s ease;
+                font-weight: 600;
+                letter-spacing: 0.3px;
+            }
+
+            .tab-btn.active {
+                background: var(--naranja-principal);
+                color: white;
+                border-color: var(--naranja-principal);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .gallery-card {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 1;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                margin: 0 auto;
+            }
+            
+            .gallery-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            }
+            
+            .gallery-card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+            
+            .gallery-card:hover img {
+                transform: scale(1.05);
+            }
+            
+            .card-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(transparent, rgba(0,0,0,0.7));
+                padding: 20px;
+                color: white;
+            }
+            
+            .card-overlay h3 {
+                margin: 0;
+                font-size: 1.3rem;
+                font-weight: 600;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Configuración del archivo robots.txt para 200 Millas
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /node_modules/
+
+# Sitemaps
+Sitemap: https://200millas.vercel.app/sitemap.xml
+
+# Velocidad de rastreo (opcional, solicita al motor de búsqueda que espere 1 segundo entre solicitudes)
+Crawl-delay: 1
+
+# Especificar el host principal
+Host: https://200millas.vercel.app/

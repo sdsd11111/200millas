@@ -1,0 +1,416 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="/" class="logo">
+                <span class="logo-text">200 Millas</span>
+                <span class="logo-subtext">Loja</span>
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="/" class="active">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Menú <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#pariguera">Parigüera</a></li>
+                        <li><a href="#camaron-reventado">Camarón Reventado</a></li>
+                        <li><a href="#ceviche-mixto">Ceviche Mixto</a></li>
+                        <li><a href="#pollo-acullado">Pollo Acullado</a></li>
+                        <li><a href="#ensalada-mariscos">Ensalada de Mariscos</a></li>
+                        <li><a href="#arroz-marinero">Arroz Marinero</a></li>
+                        <li><a href="#corviche">Corviche de Pescado</a></li>
+                        <li><a href="#bollo-pescado">Bollo de Pescado</a></li>
+                        <li><a href="#cazuela-mariscos">Cazuela de Mariscos</a></li>
+                        <li><a href="#pescado-frito">Pescado Frito</a></li>
+                    </ul>
+                </li>
+                <li><a href="/gallery/">Galería</a></li>
+                <li><a href="/contact/">Contacto</a></li>
+                <li class="cta-nav">
+                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i> Reservar
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    /* Estilos del Header */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 0.75rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .header.scrolled {
+        padding: 0.5rem 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        display: flex;
+        flex-direction: column;
+        font-family: var(--font-heading);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+    
+    .logo-text {
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo-subtext {
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 3px;
+        margin-top: 0.25rem;
+        text-align: center;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links a {
+        color: var(--dark);
+        font-weight: 500;
+        position: relative;
+        padding: 0.5rem 0;
+        font-size: 0.95rem;
+    }
+    
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary);
+        transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+        width: 100%;
+    }
+    
+    .nav-links a.active {
+        color: var(--primary);
+        font-weight: 600;
+    }
+    
+    /* Dropdown Menu */
+    .dropdown {
+        position: relative;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: -1rem;
+        background: white;
+        min-width: 250px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 0.75rem 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s ease;
+        z-index: 100;
+        list-style: none;
+        margin: 0;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(5px);
+    }
+    
+    .dropdown-menu li {
+        padding: 0.5rem 1.5rem;
+        transition: all 0.2s ease;
+    }
+    
+    .dropdown-menu li:hover {
+        background-color: rgba(212, 106, 31, 0.05);
+    }
+    
+    .dropdown-menu a {
+        display: block;
+        color: var(--dark);
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+    
+    .dropdown-menu a:hover {
+        color: var(--secondary);
+    }
+    
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .dropdown-toggle i {
+        font-size: 0.7rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown:hover .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    /* Botón de WhatsApp */
+    .cta-nav .btn {
+        margin-left: 0.5rem;
+        white-space: nowrap;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .cta-nav .btn i {
+        margin-right: 0.5rem;
+    }
+    
+    /* Menú móvil */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: var(--primary);
+        transition: all 0.3s ease;
+        border-radius: 3px;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+    
+    /* Estilos responsivos */
+    @media (max-width: 992px) {
+        .menu-toggle {
+            display: flex;
+        }
+        
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 85%;
+            max-width: 400px;
+            height: 100vh;
+            background: white;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 6rem 2rem 2rem;
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        
+        .nav-links.active {
+            right: 0;
+        }
+        
+        .nav-links li {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a {
+            font-size: 1.1rem;
+            padding: 0.75rem 0;
+            display: block;
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            box-shadow: none;
+            padding: 0 0 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: transparent;
+            margin-top: 0;
+        }
+        
+        .dropdown.active .dropdown-menu {
+            max-height: 1000px;
+            padding: 0.5rem 0 0.5rem 1.5rem;
+        }
+        
+        .dropdown-toggle {
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .dropdown-toggle i {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown.active .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .cta-nav {
+            width: 100%;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-nav .btn {
+            width: 100%;
+            margin: 0;
+            justify-content: center;
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .logo-text {
+            font-size: 1.5rem;
+        }
+        
+        .logo-subtext {
+            font-size: 0.85rem;
+        }
+        
+        .header {
+            padding: 0.5rem 0;
+        }
+        
+        .header.scrolled {
+            padding: 0.25rem 0;
+        }
+    }
+</style>
+
+<script>
+    // Efecto de scroll en el header y menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.header');
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        
+        // Efecto de scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Toggle del menú móvil
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+        }
+        
+        // Toggle de los submenús desplegables
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.closest('.dropdown');
+                dropdown.classList.toggle('active');
+            });
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+        
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.navbar') && window.innerWidth <= 992) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+    
+    // Cerrar menú al cambiar el tamaño de la ventana
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+            const menuToggle = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        }
+    });
+</script>

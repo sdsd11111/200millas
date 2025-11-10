@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Ubicación: Visítanos o Pide tu Mariscos a Domicilio en Loja</title>
+    <meta name="description" content="Estamos en Loja, en Juan José Peña y 10 de Agosto. Consulta nuestros horarios y haz tu reserva o pedido a domicilio de mariscos por WhatsApp: +593 99 894 1753.">
+
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/branding.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/contact">
+    <meta property="og:title" content="Contacto y Ubicación: Visítanos o Pide tu Mariscos a Domicilio en Loja">
+    <meta property="og:description" content="Encuentra 200 Millas en Loja: Juan José Peña y 10 de Agosto. Horarios, reservas y pedidos por WhatsApp.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-contact.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/contact">
+    <meta name="twitter:title" content="Contacto y Ubicación: Visítanos o Pide tu Mariscos a Domicilio en Loja">
+    <meta name="twitter:description" content="Ubicación y horarios de 200 Millas en Loja. Reservas y pedidos por WhatsApp.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-contact.jpg">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+        <div style="text-align: center;">
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+        </div>
+    </div>
+    
+    <!-- Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Cargar el header dinámicamente -->
+    <script>
+        // Cargar el CSS del header primero
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/components/header/header.css';
+        document.head.appendChild(link);
+        
+        // Función para cargar el header
+        function loadHeader() {
+            fetch('/components/header/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerContainer = document.getElementById('header-container');
+                    if (headerContainer) {
+                        headerContainer.innerHTML = html;
+                        
+                        // Cargar el JS del header
+                        const script = document.createElement('script');
+                        script.src = '/components/header/header.js';
+                        script.async = false; // Importante: cargar de forma síncrona
+                        script.onload = function() {
+                            // Asegurarse de que el header se inicialice correctamente
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                            // Asegurarse de que el header tenga la clase scrolled al cargar
+                            const header = document.querySelector('.header');
+                            if (header) {
+                                header.classList.add('scrolled');
+                            }
+                        };
+                        document.body.appendChild(script);
+                        
+                        // Forzar la inicialización después de un breve retraso
+                        setTimeout(() => {
+                            if (window.initHeader) {
+                                window.initHeader();
+                            }
+                        }, 100);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error cargando el header HTML:', error);
+                });
+
+            // Crear el header directamente en el DOM
+            headerContainer.innerHTML = `
+                <header class="header">
+                    <div class="container">
+                        <nav class="navbar">
+                            <a href="tel:+593998941753" class="phone-link">
+                                <i class="fas fa-phone-alt"></i> +593 99 894 1753
+                            </a>
+                            <a href="/" class="logo">
+                                <img src="/assets/images/logo-200-millas.png" alt="Logo 200 Millas" class="logo-image">
+                                <div class="logo-text-container">
+                                    <span class="logo-text">200 Millas</span>
+                                    <span class="logo-subtext">Loja</span>
+                                </div>
+                            </a>
+
+                            <div class="menu-toggle" id="mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <ul class="nav-links">
+                                <li><a href="/">Inicio</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">Menú <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="featured-menu-item"><a href="/menu">Menu Completo</a></li>
+                                        <li><a href="/pariguela">Parihuela</a></li>
+                                        <li><a href="/camaron-reventado">Camarón Reventado</a></li>
+                                        <li><a href="/ceviche-mixto">Ceviche Mixto</a></li>
+                                        <li><a href="/arroz-con-mariscos">Arroz con Mariscos</a></li>
+                                        <li><a href="/conchas-asadas">Conchas Asadas</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/gallery/">Galería</a></li>
+                                <li><a href="/contact/" class="active">Contacto</a></li>
+                                <li class="cta-nav">
+                                    <!-- Botón de WhatsApp Flotante -->
+                                    <a href="https://wa.me/593998941753" class="whatsapp-float" target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <i class="fab fa-whatsapp"></i> WhatsApp: +593 99 894 1753
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <style>
+                    /* Estilos del Header */
+                    .header {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        background-color: var(--blanco);
+                        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+                        z-index: 1000;
+                        padding: 0.75rem 0;
+                        transition: all 0.3s ease;
+                    }
+
+                    .header.scrolled {
+                        padding: 0.5rem 0;
+                        background-color: rgba(255, 255, 255, 0.98);
+                        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .navbar {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 0 2rem;
+                    }
+
+                    .logo {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 1rem;
+                        font-family: var(--font-titulos);
+                        color: var(--naranja-principal);
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        line-height: 1;
+                        text-decoration: none;
+                    }
+
+                    .logo-image {
+                        width: 50px;
+                        height: 50px;
+                        object-fit: contain;
+                    }
+
+                    .logo-text-container {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .logo-text {
+                        font-size: 1.75rem;
+                        letter-spacing: 1px;
+                    }
+
+                    .logo-subtext {
+                        font-size: 1rem;
+                        font-weight: 400;
+                        letter-spacing: 3px;
+                        margin-top: 0.25rem;
+                        text-align: left;
+                    }
+
+                    .nav-links {
+                        display: flex;
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        align-items: center;
+                        gap: 1.5rem;
+                    }
+
+                    .nav-links li {
+                        margin-left: 2rem;
+                        position: relative;
+                    }
+
+                    .nav-links a {
+                        color: var(--gris-oscuro);
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 1rem;
+                        transition: color 0.3s ease;
+                        display: flex;
+                        align-items: center;
+                        font-family: var(--font-subtitulos);
+                        position: relative;
+                        padding: 0.5rem 0;
+                    }
+
+                    .nav-links a::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: var(--naranja-principal);
+                        transition: width 0.3s ease;
+                    }
+
+                    .nav-links a:hover::after,
+                    .nav-links a.active::after {
+                        width: 100%;
+                    }
+
+                    .nav-links a:hover,
+                    .nav-links a.active {
+                        color: var(--naranja-principal);
+                        font-weight: 600;
+                    }
+
+                    /* Dropdown Menu */
+                    .dropdown {
+                        position: relative;
+                    }
+
+                    .dropdown-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: -1rem;
+                        background-color: white;
+                        min-width: 250px;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                        border-radius: 8px;
+                        padding: 0.75rem 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(15px);
+                        transition: all 0.3s ease;
+                        z-index: 1001;
+                        list-style: none;
+                        margin: 0;
+                    }
+
+                    .dropdown:hover .dropdown-menu {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(5px);
+                    }
+
+                    .dropdown-menu li {
+                        margin: 0;
+                        width: 100%;
+                        padding: 0.5rem 1.5rem;
+                        transition: all 0.2s ease;
+                    }
+
+                    .dropdown-menu li:hover {
+                        background-color: rgba(230, 126, 34, 0.05);
+                    }
+
+                    .dropdown-menu a {
+                        padding: 0.5rem 0;
+                        display: block;
+                        white-space: nowrap;
+                        transition: all 0.2s ease;
+                        color: var(--gris-oscuro);
+                        font-size: 0.9rem;
+                        text-decoration: none;
+                    }
+
+                    .dropdown-menu a:hover {
+                        color: var(--amarillo-dorado);
+                        padding-left: 0.5rem;
+                    }
+
+                    /* Featured Menu Item Styling */
+                    .featured-menu-item {
+                        background-color: var(--naranja-principal);
+                        border-radius: 6px;
+                        margin: 0.25rem 0;
+                        padding: 0.75rem 1.5rem !important;
+                    }
+
+                    .featured-menu-item a {
+                        color: white !important;
+                        font-weight: 600 !important;
+                        font-size: 1rem !important;
+                    }
+
+                    .dropdown-toggle {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+
+                    .dropdown-toggle i {
+                        font-size: 0.7rem;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .dropdown:hover .dropdown-toggle i {
+                        transform: rotate(180deg);
+                    }
+
+                    /* Botón de WhatsApp */
+                    .cta-nav .btn {
+                        padding: 0.6rem 1.25rem;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                        margin-left: 0.5rem;
+                        background-color: var(--naranja-principal);
+                        color: white;
+                        border: none;
+                        font-family: var(--font-subtitulos);
+                        white-space: nowrap;
+                        font-size: 0.9rem;
+                        text-decoration: none;
+                        display: inline-flex;
+                        align-items: center;
+                    }
+
+                    .cta-nav .btn:hover {
+                        background-color: var(--marron-calido);
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+                    }
+
+                    .cta-nav .btn i {
+                        margin-right: 0.5rem;
+                    }
+
+                    /* Menú móvil */
+                    .menu-toggle {
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: 28px;
+                        height: 20px;
+                        cursor: pointer;
+                        z-index: 1002;
+                        background: none;
+                        border: none;
+                        padding: 0;
+                    }
+
+                    .menu-toggle span {
+                        display: block;
+                        width: 100%;
+                        height: 3px;
+                        background-color: var(--naranja-principal);
+                        transition: all 0.3s ease;
+                        border-radius: 3px;
+                    }
+
+                    .menu-toggle.active span:nth-child(1) {
+                        transform: translateY(8.5px) rotate(45deg);
+                    }
+
+                    .menu-toggle.active span:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    .menu-toggle.active span:nth-child(3) {
+                        transform: translateY(-8.5px) rotate(-45deg);
+                    }
+
+                    /* Estilos responsivos */
+                    @media (max-width: 992px) {
+                        .menu-toggle {
+                            display: flex;
+                        }
+
+                        .nav-links {
+                            position: fixed;
+                            top: 0;
+                            right: -100%;
+                            width: 85%;
+                            max-width: 400px;
+                            height: 100vh;
+                            background: white;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                            padding: 6rem 2rem 2rem;
+                            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+                            overflow-y: auto;
+                        }
+
+                        .nav-links.active {
+                            right: 0;
+                        }
+
+                        .nav-links li {
+                            margin: 0 0 1.5rem 0;
+                            width: 100%;
+                        }
+
+                        .nav-links a {
+                            font-size: 1.1rem;
+                            padding: 0.5rem 0;
+                            display: block;
+                            width: 100%;
+                        }
+
+                        .dropdown-menu {
+                            position: static;
+                            display: none;
+                            box-shadow: none;
+                            padding: 0.5rem 0 0 1rem;
+                            opacity: 1;
+                            visibility: visible;
+                            transform: none;
+                            background: transparent;
+                            max-height: 0;
+                            overflow: hidden;
+                            transition: max-height 0.4s ease, padding 0.4s ease;
+                            margin-top: 0;
+                        }
+
+                        .dropdown.active .dropdown-menu {
+                            display: block;
+                            max-height: 1000px;
+                            padding: 0.5rem 0 0.5rem 1rem;
+                        }
+
+                        .cta-nav {
+                            margin-top: 1rem;
+                            width: 100%;
+                        }
+
+                        .cta-nav .btn {
+                            display: block;
+                            text-align: center;
+                            margin: 1rem 0 0 0;
+                            width: 100%;
+                            justify-content: center;
+                        }
+
+                        body.menu-open {
+                            overflow: hidden;
+                        }
+                    }
+
+                    @media (max-width: 576px) {
+                        .logo-text {
+                            font-size: 1.5rem;
+                        }
+
+                        .logo-subtext {
+                            font-size: 0.85rem;
+                        }
+
+                        .header {
+                            padding: 0.5rem 0;
+                        }
+
+                        .header.scrolled {
+                            padding: 0.25rem 0;
+                        }
+
+                        .navbar {
+                            padding: 0 1rem;
+                        }
+                    }
+                </style>
+            `;
+
+            // Inicializar funcionalidades del header
+            initHeader();
+        }
+
+        // Inicializar funcionalidades del header
+        function initHeader() {
+            const header = document.querySelector('.header');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+
+            if (!header || !mobileMenu || !navLinks) return;
+
+            // Efecto de scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Menú móvil
+            mobileMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            });
+
+            // Dropdown para móvil
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+
+                if (toggle) {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 992) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+
+                    // Cerrar menú al hacer clic en un enlace
+                    dropdown.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', function() {
+                            if (window.innerWidth <= 992) {
+                                mobileMenu.classList.remove('active');
+                                navLinks.classList.remove('active');
+                                document.body.classList.remove('menu-open');
+                            }
+                        });
+                    });
+                }
+            });
+
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 992 &&
+                    !e.target.closest('.navbar') &&
+                    navLinks.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            });
+
+            // Cerrar menú al cambiar el tamaño de la ventana
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    mobileMenu.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+
+                    // Cerrar todos los dropdowns en desktop
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+
+            console.log('✅ Header initialized successfully');
+        }
+
+        // Función para manejar la carga de la página
+        function handlePageLoad() {
+            // Agregar clase de carga al body
+            document.body.classList.add('loading');
+            
+            // Cargar el header
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadHeader);
+            } else {
+                loadHeader();
+            }
+            
+            // Esperar a que cargue todo el contenido
+            window.addEventListener('load', function() {
+                // Pequeño retraso para asegurar que todo esté listo
+                setTimeout(function() {
+                    // Ocultar el loader
+                    const loadingScreen = document.getElementById('loading-screen');
+                    if (loadingScreen) {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Mostrar el contenido
+                        document.body.classList.remove('loading');
+                        document.body.classList.add('loaded');
+                        
+                        // Eliminar el loader del DOM después de la animación
+                        setTimeout(function() {
+                            loadingScreen.remove();
+                        }, 500);
+                    }
+                }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
+            });
+        }
+        
+        // Iniciar la carga de la página
+        handlePageLoad();
+    </script>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section for Contact Page -->
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>Contacto y Ubicación</h1>
+                <p>Visítanos o Pide tu Mariscos a Domicilio en Loja</p>
+            </div>
+        </section>
+
+        <section id="contact-page">
+            <div class="container">
+                <!-- Título Principal -->
+                <h2 class="page-title">Contacto y Ubicación: Visítanos o Pide tu Mariscos a Domicilio en Loja</h2>
+            </div>
+
+            <!-- Contenedor Principal de Doble Columna -->
+            <div class="contact-layout">
+                <!-- Columna 1: Consultas Digitales y Formulario -->
+                <div class="contact-info">
+                    <!-- Formulario de Contacto -->
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Envíanos tu Consulta o Sugerencia</h3>
+                            <form id="contacto-form" class="contact-form">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre Completo *</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico *</label>
+                                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono/WhatsApp</label>
+                                    <input type="tel" id="telefono" name="telefono" placeholder="Opcional">
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje *</label>
+                                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                                </div>
+                                <button type="submit" class="form-submit-btn">Enviar Consulta</button>
+                            </form>
+                            <div id="resultado" style="margin-top: 1rem; text-align: center; font-weight: 500;"></div>
+                            
+                            <script>
+                            // Espera a que el DOM cargue
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const form = document.getElementById('contacto-form');
+                                const resultado = document.getElementById('resultado');
+                                const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
+
+                                if (!form || !submitBtn) {
+                                    console.error('Formulario o botón no encontrado');
+                                    return;
+                                }
+
+                                form.onsubmit = async function(e) {
+                                    e.preventDefault();
+                                    
+                                    // Deshabilitar el botón y mostrar estado de carga
+                                    submitBtn.disabled = true;
+                                    const originalBtnText = submitBtn.textContent;
+                                    submitBtn.textContent = 'Enviando...';
+                                    
+                                    // Limpiar mensajes anteriores
+                                    resultado.innerHTML = '';
+                                    resultado.style.display = 'none';
+                                    
+                                    const formData = {
+                                        nombre: form.nombre.value.trim(),
+                                        email: form.email.value.trim(),
+                                        telefono: form.telefono ? form.telefono.value.trim() : '',
+                                        mensaje: form.mensaje.value.trim()
+                                    };
+
+                                    console.log('Enviando datos:', formData);
+
+                                    try {
+                                        const response = await fetch('http://localhost:3000/api/contacto', {
+                                            method: 'POST',
+                                            headers: { 
+                                                'Content-Type': 'application/json',
+                                                'Accept': 'application/json'
+                                            },
+                                            body: JSON.stringify(formData),
+                                            credentials: 'same-origin' // Importante para mantener la sesión si es necesario
+                                        });
+
+                                        console.log('Respuesta del servidor:', response);
+
+                                        let data;
+                                        try {
+                                            data = await response.json();
+                                        } catch (jsonError) {
+                                            console.error('Error al parsear la respuesta JSON:', jsonError);
+                                            throw new Error('Error en la respuesta del servidor');
+                                        }
+
+                                        if (response.ok) {
+                                            // Éxito
+                                            resultado.innerHTML = '<p style="color: #25D366;">¡Mensaje enviado con éxito! Te hemos enviado un correo de confirmación.</p>';
+                                            form.reset();
+                                        } else {
+                                            // Error del servidor
+                                            throw new Error(data.message || 'Error al procesar tu solicitud');
+                                        }
+                                    } catch (error) {
+                                        console.error('Error en el envío:', error);
+                                        resultado.innerHTML = `<p style="color: #dc3545;">${error.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.'}</p>`;
+                                    } finally {
+                                        // Restaurar el botón
+                                        submitBtn.disabled = false;
+                                        submitBtn.textContent = originalBtnText;
+                                        resultado.style.display = 'block';
+                                        resultado.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                    }
+                                };
+                            });
+                            </script>
+                            <script>
+                                const form = document.getElementById('contactForm');
+                                const formMessages = document.getElementById('form-messages');
+                                
+                                form.addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    const formData = new FormData(form);
+                                    
+                                    // Show loading state
+                                    const submitBtn = form.querySelector('button[type="submit"]');
+                                    const originalBtnText = submitBtn.innerHTML;
+                                    submitBtn.disabled = true;
+                                    submitBtn.innerHTML = 'Enviando...';
+                                    
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        body: formData,
+                                        headers: {
+                                            'Accept': 'application/json'
+                                        }
+                                    })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            // Show success message
+                                            formMessages.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                                            formMessages.style.backgroundColor = '#d4edda';
+                                            formMessages.style.color = '#155724';
+                                            formMessages.style.border = '1px solid #c3e6cb';
+                                            formMessages.style.display = 'block';
+                                            
+                                            // Reset form
+                                            form.reset();
+                                        } else {
+                                            throw new Error('Error al enviar el mensaje');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        // Show error message
+                                        formMessages.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+                                        formMessages.style.backgroundColor = '#f8d7da';
+                                        formMessages.style.color = '#721c24';
+                                        formMessages.style.border = '1px solid #f5c6cb';
+                                        formMessages.style.display = 'block';
+                                        console.error('Error:', error);
+                                    })
+                                    .finally(() => {
+                                        // Reset button state
+                                        submitBtn.disabled = false;
+                                        submitBtn.innerHTML = originalBtnText;
+                                        
+                                        // Scroll to show the message
+                                        formMessages.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+                    <!-- CTA Rápido de WhatsApp -->
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Contacto Rápido</h3>
+                            <p>Para reservas inmediatas o pedidos a domicilio:</p>
+                            <a href="https://wa.me/593998941753?text=¡Hola! Quiero hacer una reserva o pedido a domicilio en 200 Millas Loja." class="whatsapp-cta" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i> +593 99 894 1753
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Datos Operativos y Ubicación -->
+                <div class="location-info">
+                    <!-- Bloque de Horarios -->
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Horarios de Atención</h3>
+                            <ul class="schedule-list">
+                                <li><strong>Lunes a Jueves:</strong> 10:00 a 16:00</li>
+                                <li><strong>Viernes, Sábado y Domingo:</strong> 09:30 a 16:30</li>
+                            </ul>
+                            <p class="note"><strong>Nota:</strong> Se recomienda confirmar feriados por WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <!-- Bloque de Ubicación -->
+                    <div class="info-card">
+                        <div class="card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Dirección</h3>
+                            <p>Juan José Peña y 10 de Agosto, Loja, Ecuador</p>
+                            <p>Estamos ubicados en el corazón de Loja, en la esquina de 10 de Agosto y Juan José Peña. Fácil acceso desde el centro histórico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Mapa Interactivo -->
+                    <div class="map-container">
+                        <h3>Mapa Interactivo</h3>
+                        <div class="map-wrapper">
+                            <!-- Placeholder para Google Maps -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.1160766476473!2d-79.20187232391443!3d-3.996549595977182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cb47ffe7de6479%3A0x7273e3b7a124251a!2sRESTAURANTE%20200%20MILLAS%20LOJA!5e0!3m2!1ses-419!2sec!4v1761156706264!5m2!1ses-419!2sec" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Función para cargar el componente footer dinámicamente
+        function loadFooter() {
+            fetch('/components/footer/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+
+                    // Cargar los estilos del footer
+                    const footerStyles = document.createElement('link');
+                    footerStyles.rel = 'stylesheet';
+                    footerStyles.href = '/components/footer/footer.css';
+                    document.head.appendChild(footerStyles);
+
+                    // Cargar el JavaScript del footer si existe
+                    const footerScript = document.createElement('script');
+                    footerScript.src = '/components/footer/footer.js';
+                    document.body.appendChild(footerScript);
+
+                    console.log('✅ Footer component cargado correctamente');
+                })
+                .catch(error => {
+                    console.error('❌ Error cargando footer:', error);
+                });
+        }
+
+        // Cargar el footer cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadFooter);
+    </script>
+
+    <!-- Estilos Específicos para la Página de Contacto -->
+    <style>
+        /* Animación de carga */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Ocultar contenido hasta que se cargue */
+        body.loading main,
+        body.loading #footer-placeholder {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        body.loaded main,
+        body.loaded #footer-placeholder {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Variables de Branding */
+        :root {
+            --naranja-principal: #E67E22;
+            --marron-calido: #D35400;
+            --amarillo-dorado: #F39C12;
+            --gris-oscuro: #2C3E50;
+            --gris-claro: #ECF0F1;
+            --crema: #FDF2E9;
+            --blanco: #FFFFFF;
+
+            --font-titulos: 'Playfair Display', serif;
+            --font-subtitulos: 'Montserrat', sans-serif;
+            --font-cuerpo: 'Open Sans', sans-serif;
+        }
+
+        /* Sección Principal */
+        #contact-page {
+            background-color: var(--gris-claro);
+            padding: 4rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Estilos para el hero de contacto */
+        .contact-hero {
+            min-height: 100vh;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            position: relative;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .contact-hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: var(--font-titulos);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .contact-hero-content p {
+            font-size: 1.5rem;
+            font-family: var(--font-cuerpo);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Page Title */
+        .page-title {
+            font-family: var(--font-titulos);
+            font-size: 2.5rem;
+            color: var(--gris-oscuro);
+            text-align: center;
+            margin-bottom: 3rem;
+            line-height: 1.2;
+        }
+
+        /* Layout Principal de Doble Columna */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Cards de Información */
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .card-icon {
+            color: var(--naranja-principal);
+            font-size: 2rem;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-family: var(--font-subtitulos);
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 1rem;
+        }
+
+        .card-content p,
+        .card-content li {
+            font-family: var(--font-cuerpo);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--gris-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .schedule-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item a {
+            color: var(--naranja-principal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item a:hover {
+            color: var(--marron-calido);
+        }
+
+        .note {
+            font-style: italic;
+            color: var(--gris-oscuro);
+            opacity: 0.8;
+        }
+
+        /* Mapa Interactivo */
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container h3 {
+            font-family: var(--font-subtitulos);
+            font-size: 1.5rem;
+            color: var(--naranja-principal);
+            margin-bottom: 1rem;
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Formulario de Contacto */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-family: var(--font-subtitulos);
+            font-size: 0.9rem;
+            color: var(--gris-oscuro);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 2px solid var(--gris-claro);
+            border-radius: 8px;
+            font-family: var(--font-cuerpo);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--naranja-principal);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit-btn {
+            background-color: var(--naranja-principal);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--font-subtitulos);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .form-submit-btn:hover {
+            background-color: var(--marron-calido);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        /* CTA de WhatsApp en Card */
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #25d366;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: var(--font-subtitulos);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-cta:hover {
+            background-color: #128c7e;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-cta i {
+            font-size: 1.2rem;
+        }
+
+        /* Botón de WhatsApp Flotante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float span {
+            display: none;
+        }
+
+        .whatsapp-float i {
+            font-size: 2rem;
+        }
+
+        /* Responsividad */
+        @media (max-width: 1024px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info {
+                order: 1; /* Formulario primero */
+            }
+
+            .location-info {
+                order: 2; /* Ubicación segundo */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 100px 1rem 2rem;
+                margin: 0;
+            }
+
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .card-icon {
+                margin-bottom: 1rem;
+            }
+
+            .map-wrapper {
+                height: 300px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float i {
+                font-size: 1.5rem;
+            }
+
+            /* Orden móvil: Formulario → WhatsApp → Mapa → Horarios */
+            .contact-layout {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .contact-info {
+                order: 1;
+            }
+
+            .location-info .info-card:nth-child(3) { /* Mapa */
+                order: 2;
+            }
+
+            .location-info .info-card:nth-child(1) { /* Horarios */
+                order: 3;
+            }
+
+            .location-info .info-card:nth-child(2) { /* Ubicación */
+                order: 4;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero {
+                min-height: 100vh;
+                height: auto;
+                padding: 2rem 1rem;
+            }
+            
+            .contact-hero-content h1 {
+                font-size: 2.2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-hero {
+                height: 50vh;
+            }
+
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-hero-content p {
+                font-size: 1rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .info-card {
+                padding: 1rem;
+            }
+
+            .map-wrapper {
+                height: 250px;
+            }
+
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 0.6rem;
+            }
+
+            .form-submit-btn {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    </style>
+</body>
+</html>

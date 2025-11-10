@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200 Millas Loja | Algo muy especial en mariscos</title>
+    <meta name="description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    
+    <!-- Preload de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/components/header/header.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://200millasloja.com/">
+    <meta property="og:title" content="200 Millas Loja | Algo muy especial en mariscos">
+    <meta property="og:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    <meta property="og:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://200millasloja.com/">
+    <meta name="twitter:title" content="200 Millas Loja | Algo muy especial en mariscos">
+    <meta name="twitter:description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+    <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-image.jpg">
+    
+    <!-- Estilos específicos de la página de inicio -->
+    <style>
+        /* Los estilos del Hero ahora están en hero.css */
+        
+        /* Mantener otros estilos específicos de la página */
+        .specialty-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Añadir espacio para el header fijo */
+        main {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1>El Pacífico a 200 Millas: Sabor y Tradición desde 1979</h1>
+                <p>Disfrute de la frescura inigualable de nuestros mariscos, garantizada desde Machala a su mesa en Loja. La distancia no compromete nuestra calidad premium.</p>
+                <a href="https://wa.me/593997533304" class="cta-button">
+                    <i class="fab fa-whatsapp"></i> ¡Reserve Ahora por WhatsApp!
+                </a>
+            </div>
+        </section>
+
+        <!-- Resto del contenido de la página -->
+        <section id="menu" class="specialties">
+            <!-- Contenido existente de la sección de menú -->
+        </section>
+
+        <section class="testimonials">
+            <!-- Contenido existente de la sección de testimonios -->
+        </section>
+
+        <section class="cta animate-on-scroll">
+            <!-- Contenido existente de la sección CTA -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!--#include virtual="/components/footer.html" -->
+
+    <!-- Scripts -->
+    <script>
+        // Función para cargar el header
+        function loadHeader() {
+            const headerContainer = document.getElementById('header-container');
+            if (!headerContainer) return;
+            
+            // Código existente para cargar el header
+            headerContainer.innerHTML = `
+                <header class="header">
+                    <div class="container">
+                        <nav class="navbar">
+                            <a href="/" class="logo">
+                                <span class="logo-text">200 Millas</span>
+                                <span class="logo-subtext">Loja</span>
+                            </a>
+                            
+                            <div class="menu-toggle" id="mobile-menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            
+                            <ul class="nav-links">
+                                <li><a href="/" class="active">Inicio</a></li>
+                                <li><a href="/menu/">Menú</a></li>
+                                <li><a href="/galeria/">Galería</a></li>
+                                <li><a href="/contacto/">Contacto</a></li>
+                                <li class="cta-nav">
+                                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                                        <i class="fab fa-whatsapp"></i> Reservar
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+            `;
+            
+            initHeader();
+        }
+
+        // Inicializar funcionalidades del header
+        function initHeader() {
+            // Código existente para inicializar el header
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+            }
+            
+            // Header con scroll
+            const header = document.querySelector('.header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+        }
+
+        // Cargar el header cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', loadHeader);
+        
+        // Función para animaciones al hacer scroll
+        function checkIfInView() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Ejecutar al cargar y al hacer scroll
+        window.addEventListener('load', checkIfInView);
+        window.addEventListener('scroll', checkIfInView);
+    </script>
+</body>
+</html>
