@@ -123,7 +123,7 @@
                                 <li><a href="/gallery/">Galería</a></li>
                                 <li><a href="/contact/">Contacto</a></li>
                                 <li class="cta-nav">
-                                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <a href="https://wa.me/593998941753" class="btn btn-primary" target="_blank" rel="noopener">
                                         <i class="fab fa-whatsapp"></i> Reservar
                                     </a>
                                 </li>
@@ -658,9 +658,175 @@
 
                     <!-- Sección de Narrativa -->
                     <div class="conchas-narrative">
-                        <h3>De la Parrilla a su Mesa: Sabor Intenso y Ahumado</h3>
-                        <p>Nuestras famosas Conchas asadas son ahumadas a la perfección, asadas lentamente, con una mezcla de especias y hierbas que realzan su sabor natural, ¡simplemente irresistibles! Acompañadas de chifles o patacones.</p>
+                        <div class="narrative-intro">
+                            <h3>De la Parrilla a su Mesa: Sabor Intenso y Ahumado</h3>
+                            <p>Nuestras famosas Conchas asadas son ahumadas a la perfección, asadas lentamente, con una mezcla de especias y hierbas que realzan su sabor natural, ¡simplemente irresistibles! Acompañadas de chifles o patacones.</p>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>El Secreto de Nuestro Ahumado</h4>
+                                <p>Nuestras <span class="highlight-text">Conchas Asadas</span> se preparan con una técnica de cocción lenta que garantiza una textura perfecta. Utilizamos maderas aromáticas que imparten un <span class="highlight-text">sabor ahumado único</span>, mientras que nuestra mezcla secreta de especias realza el sabor natural de las conchas sin enmascararlo.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Ingredientes Frescos y Seleccionados</h4>
+                                <p>Cada concha se selecciona minuciosamente para garantizar la máxima frescura. Nuestros mariscos provienen directamente de las costas ecuatorianas, asegurando un <span class="highlight-text">sabor fresco y auténtico</span> en cada bocado. Las hierbas frescas y especias se mezclan para crear un perfil de sabor equilibrado y delicioso.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>El Acompañamiento Perfecto</h4>
+                                <p>Servimos nuestras Conchas Asadas con <span class="highlight-text">chifles crujientes</span> o <span class="highlight-text">patacones</span> recién hechos, junto con una selección de salsas caseras que complementan a la perfección el sabor ahumado. Cada bocado es una explosión de texturas y sabores que te transportarán directamente a la costa.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-cta">
+                            <p class="highlight">¡Una experiencia gastronómica que despertará todos tus sentidos! Disfruta del auténtico sabor del mar con el toque especial de 200 Millas en el corazón de Loja.</p>
+                        </div>
                     </div>
+                    <style>
+                        /* Estilos para la sección de narrativa */
+                        .conchas-narrative {
+                            background: white;
+                            border-radius: 12px;
+                            padding: 2.5rem;
+                            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                            margin-bottom: 3rem;
+                        }
+
+                        .narrative-section {
+                            display: flex;
+                            gap: 1.5rem;
+                            margin: 2.5rem 0;
+                            padding: 1.5rem;
+                            border-radius: 10px;
+                            background: linear-gradient(to right, rgba(255, 248, 240, 0.3), rgba(255, 255, 255, 0.1));
+                            transition: all 0.3s ease;
+                            border-left: 4px solid var(--naranja-principal, #E67E22);
+                        }
+
+                        .narrative-section:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
+                        }
+
+                        .narrative-icon {
+                            color: var(--naranja-principal, #E67E22);
+                            font-size: 1.8rem;
+                            min-width: 50px;
+                            text-align: center;
+                            padding-top: 0.5rem;
+                        }
+
+                        .narrative-content h4 {
+                            color: var(--naranja-principal, #E67E22);
+                            font-family: var(--font-subtitulos);
+                            margin-bottom: 0.8rem;
+                            font-size: 1.4rem;
+                            position: relative;
+                            padding-bottom: 0.5rem;
+                        }
+
+                        .narrative-content h4::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 60px;
+                            height: 3px;
+                            background: var(--amarillo-dorado, #F39C12);
+                        }
+
+                        .narrative-content p {
+                            color: var(--gris-oscuro);
+                            line-height: 1.8;
+                            margin-bottom: 0;
+                            font-size: 1.05rem;
+                        }
+
+                        .highlight-text {
+                            color: var(--marron-calido, #D35400);
+                            font-weight: 600;
+                            position: relative;
+                        }
+
+                        .highlight-text::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -2px;
+                            left: 0;
+                            width: 100%;
+                            height: 3px;
+                            background: var(--amarillo-dorado, #F39C12);
+                            opacity: 0.5;
+                        }
+
+                        .narrative-cta {
+                            text-align: center;
+                            margin-top: 3rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(241, 196, 15, 0.1));
+                            border-radius: 10px;
+                            border: 1px dashed var(--naranja-principal, #E67E22);
+                        }
+
+                        .narrative-cta .highlight {
+                            font-size: 1.3rem;
+                            color: var(--marron-calido, #D35400);
+                            font-weight: 700;
+                            font-family: var(--font-subtitulos);
+                            margin: 0;
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .narrative-intro {
+                            margin-bottom: 3rem;
+                            text-align: center;
+                        }
+
+                        .narrative-intro h3 {
+                            color: var(--marron-calido, #D35400);
+                            font-family: var(--font-subtitulos);
+                            font-size: 2rem;
+                            margin-bottom: 1.5rem;
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .narrative-intro h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 100px;
+                            height: 3px;
+                            background: linear-gradient(90deg, var(--naranja-principal, #E67E22), var(--amarillo-dorado, #F39C12));
+                            border-radius: 3px;
+                        }
+
+                        .narrative-intro p {
+                            max-width: 800px;
+                            margin: 0 auto;
+                            font-size: 1.1rem;
+                            line-height: 1.8;
+                            color: var(--gris-oscuro);
+                        }
+                    </style>
 
                     <!-- Galería de Imágenes/Carrusel -->
                     <div class="conchas-gallery">
@@ -710,7 +876,7 @@
                         <div class="accompaniment">
                             <strong>Acompañamiento Clásico:</strong> Patacones y salsa de la casa
                         </div>
-                        <a href="https://wa.me/593997533304?text=¡Hola! Quiero pedir Conchas Asadas para delivery en Loja." class="cta-button" target="_blank" rel="noopener">
+                        <a href="https://wa.me/593998941753?text=¡Hola! Quiero pedir Conchas Asadas para delivery." class="cta-button" target="_blank" rel="noopener">
                             ¡PRUEBA LA ESPECIALIDAD AL GRILL EN LOJA!
                         </a>
                     </div>

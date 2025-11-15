@@ -141,8 +141,44 @@
 
                     <!-- Sección de Narrativa -->
                     <div class="pariguela-narrative">
-                        <h3>Un Viaje Culinario desde Peru hasta la Sierra Lojana</h3>
-                        <p>La Parihuela es el plato estrella de nuestro Restaurante y un clásico de todos los tiempos! Es una deliciosa sopa de todos los mariscos: camarones, conchas, cangrejo, calamares, mejillones, abundante, perfecta para reponer energías y disfrutarla al máximo!</p>
+                        <div class="narrative-intro">
+                            <h3>Un Viaje Culinario desde Perú hasta la Sierra Lojana</h3>
+                            <p>La Parihuela es el plato estrella de nuestro Restaurante y un clásico de todos los tiempos! Es una deliciosa sopa de todos los mariscos: camarones, conchas, cangrejo, calamares, mejillones, abundante, perfecta para reponer energías y disfrutarla al máximo!</p>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-anchor"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Orígenes con Historia</h4>
+                                <p>Nuestra receta de Parihuela llega directamente desde las costas peruanas, donde los pescadores preparaban este nutritivo caldo con las mejores capturas del día. En <span class="highlight-text">200 Millas</span>, hemos perfeccionado esta tradición marinera con más de 40 años de experiencia, manteniendo la esencia de los sabores originales mientras adaptamos la presentación al paladar lojano.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Selección de Ingredientes Premium</h4>
+                                <p>La magia de nuestra Parihuela comienza con la <span class="highlight-text">selección cuidadosa de mariscos frescos</span>. Cada mañana recibimos pescado recién capturado, camarones jugosos, conchas en su punto óptimo y calamares tiernos. El caldo, preparado con especias secretas y un toque de pisco, se cocina a fuego lento durante horas para extraer todo el sabor del mar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Una Experiencia que Despierta los Sentidos</h4>
+                                <p>El primer sorbo de nuestra Parihuela es un viaje sensorial: el aroma intenso a marisco fresco, el color rojizo del ají panca, la textura perfecta de los mariscos y el equilibrio perfecto entre lo ácido y lo picante. Se sirve humeante, acompañado de arroz blanco esponjoso y rodajas de limón para realzar los sabores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-cta">
+                            <p class="highlight">¡Ven y descubre por qué nuestra Parihuela es considerada la mejor de Loja! Un plato que no solo alimenta el cuerpo, sino también el alma.</p>
+                        </div>
                     </div>
 
                     <!-- Galería de Imágenes/Carrusel -->
@@ -410,8 +446,130 @@
             margin-bottom: 1.5rem;
         }
 
-        .pariguela-narrative p {
-            font-family: var(--font-cuerpo);
+        /* Estilos para la sección de narrativa */
+        .pariguela-narrative {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+        }
+
+        .narrative-section {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: linear-gradient(to right, rgba(240, 248, 255, 0.3), rgba(255, 255, 255, 0.1));
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--azul-marino, #1a365d);
+        }
+
+        .narrative-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 54, 93, 0.15);
+        }
+
+        .narrative-icon {
+            color: var(--azul-marino, #1a365d);
+            font-size: 1.8rem;
+            min-width: 50px;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+
+        .narrative-content h4 {
+            color: var(--azul-marino, #1a365d);
+            font-family: var(--font-subtitulos);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .narrative-content h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--azul-turquesa, #38b2ac);
+        }
+
+        .narrative-content p {
+            color: var(--gris-oscuro);
+            line-height: 1.8;
+            margin-bottom: 0;
+            font-size: 1.05rem;
+        }
+
+        .highlight-text {
+            color: var(--azul-marino, #1a365d);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--azul-turquesa, #38b2ac);
+            opacity: 0.5;
+        }
+
+        .narrative-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.1), rgba(56, 178, 172, 0.1));
+            border-radius: 10px;
+            border: 1px dashed var(--azul-marino, #1a365d);
+        }
+
+        .narrative-cta .highlight {
+            font-size: 1.3rem;
+            color: var(--azul-marino, #1a365d);
+            font-weight: 700;
+            font-family: var(--font-subtitulos);
+            margin: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .narrative-intro {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .narrative-intro h3 {
+            color: var(--azul-marino, #1a365d);
+            font-family: var(--font-subtitulos);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .narrative-intro h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--azul-marino, #1a365d), var(--azul-turquesa, #38b2ac));
+            border-radius: 3px;
+        }
+
+        .narrative-intro p {
+            max-width: 800px;
+            margin: 0 auto;
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--gris-oscuro);

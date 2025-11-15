@@ -123,7 +123,7 @@
                                 <li><a href="/gallery/">Galería</a></li>
                                 <li><a href="/contact/">Contacto</a></li>
                                 <li class="cta-nav">
-                                    <a href="https://wa.me/593997533304" class="btn btn-primary" target="_blank" rel="noopener">
+                                    <a href="https://wa.me/593998941753" class="btn btn-primary" target="_blank" rel="noopener">
                                         <i class="fab fa-whatsapp"></i> Reservar
                                     </a>
                                 </li>
@@ -658,44 +658,173 @@
 
                     <!-- Sección de Narrativa -->
                     <div class="arroz-narrative">
-                        <h3>Un Sabor Rico y Concentrado que Habla de Tradición</h3>
-                        <div class="description-text">
-                            <span class="short-text">Nuestro delicioso Arroz con Mariscos, está preparado con mariscos frescos como camarón, conchas, cangrejo, calamar, mejillones</span>
-                            <span class="full-text">, cada grano de arroz que usamos absorbe el toque del mar, el amor del fuego y la pasión de nuestra cocina… ¡Ven y pruébalo hoy! Un clásico del mar reinventado con el sello y sabor de 200 Millas.</span>
-                            <button class="read-more-btn">seguir leyendo</button>
+                        <div class="narrative-intro">
+                            <h3>Un Sabor Rico y Concentrado que Habla de Tradición</h3>
+                            <p>Nuestro delicioso Arroz con Mariscos, está preparado con mariscos frescos como camarón, conchas, cangrejo, calamar, mejillones, cada grano de arroz que usamos absorbe el toque del mar, el amor del fuego y la pasión de nuestra cocina… ¡Ven y pruébalo hoy! Un clásico del mar reinventado con el sello y sabor de 200 Millas.</p>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>La Esencia del Mar en Cada Bocado</h4>
+                                <p>Nuestro Arroz con Mariscos es una verdadera celebración de los sabores del Pacífico. Cada ingrediente se selecciona cuidadosamente para garantizar la máxima frescura y calidad. Los <span class="highlight-text">camarones</span> jugosos, las <span class="highlight-text">conchas</span> tiernas y el <span class="highlight-text">calamar</span> en su punto perfecto se mezclan con un arroz dorado que absorbe todos los sabores del mar y las especias secretas de nuestra cocina.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-mortar-pestle"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Técnica y Tradición en Cada Grano</h4>
+                                <p>La preparación de este plato es todo un ritual. El arroz se dora ligeramente con nuestra mezcla secreta de especias antes de cocinarse lentamente en un caldo de mariscos casero. Este proceso lento permite que cada grano absorba los sabores intensos del mar, creando una textura cremosa por fuera pero firme al morder, el sello distintivo de un auténtico arroz con mariscos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-section">
+                            <div class="narrative-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="narrative-content">
+                                <h4>Los Acompañamientos Perfectos</h4>
+                                <p>Servimos nuestro Arroz con Mariscos con una guarnición de <span class="highlight-text">limón fresco</span>, <span class="highlight-text">ají criollo</span> y <span class="highlight-text">culantro picado</span> para realzar los sabores. Acompañado de una refrescante ensalada de lechuga y tomate, este plato se convierte en una experiencia culinaria completa que satisface todos los sentidos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="narrative-cta">
+                            <p class="highlight">¡Una explosión de sabores que te transportará directamente a la orilla del mar! Disfruta de la auténtica cocina marina en el corazón de Loja, preparada con los ingredientes más frescos y el toque especial de 200 Millas.</p>
                         </div>
                     </div>
                     <style>
-                        .description-text {
-                            display: block;
-                            margin-bottom: 15px;
+                        /* Estilos para la sección de narrativa */
+                        .arroz-narrative {
+                            background: white;
+                            border-radius: 12px;
+                            padding: 2.5rem;
+                            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+                            margin-bottom: 3rem;
                         }
-                        .arroz-narrative .read-more-btn {
-                            background: none;
-                            border: none;
-                            color: #e67e22;
-                            font-family: 'Montserrat', sans-serif;
+
+                        .narrative-section {
+                            display: flex;
+                            gap: 1.5rem;
+                            margin: 2.5rem 0;
+                            padding: 1.5rem;
+                            border-radius: 10px;
+                            background: linear-gradient(to right, rgba(255, 248, 240, 0.3), rgba(255, 255, 255, 0.1));
+                            transition: all 0.3s ease;
+                            border-left: 4px solid var(--naranja-principal, #E67E22);
+                        }
+
+                        .narrative-section:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 8px 25px rgba(230, 126, 34, 0.15);
+                        }
+
+                        .narrative-icon {
+                            color: var(--naranja-principal, #E67E22);
+                            font-size: 1.8rem;
+                            min-width: 50px;
+                            text-align: center;
+                            padding-top: 0.5rem;
+                        }
+
+                        .narrative-content h4 {
+                            color: var(--naranja-principal, #E67E22);
+                            font-family: var(--font-subtitulos);
+                            margin-bottom: 0.8rem;
+                            font-size: 1.4rem;
+                            position: relative;
+                            padding-bottom: 0.5rem;
+                        }
+
+                        .narrative-content h4::after {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 60px;
+                            height: 3px;
+                            background: var(--amarillo-dorado, #F39C12);
+                        }
+
+                        .narrative-content p {
+                            color: var(--gris-oscuro);
+                            line-height: 1.8;
+                            margin-bottom: 0;
+                            font-size: 1.05rem;
+                        }
+
+                        .highlight-text {
+                            color: var(--marron-calido, #D35400);
                             font-weight: 600;
-                            padding: 0;
-                            margin: 8px 0 0 0;
-                            cursor: pointer;
-                            display: block;
-                            font-size: 1rem;
-                            text-align: left;
+                            position: relative;
                         }
-                        .read-more-btn:focus {
-                            outline: none;
+
+                        .highlight-text::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -2px;
+                            left: 0;
+                            width: 100%;
+                            height: 3px;
+                            background: var(--amarillo-dorado, #F39C12);
+                            opacity: 0.5;
                         }
-                        .arroz-narrative .full-text {
-                            display: none;
+
+                        .narrative-cta {
+                            text-align: center;
+                            margin-top: 3rem;
+                            padding: 1.5rem;
+                            background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(241, 196, 15, 0.1));
+                            border-radius: 10px;
+                            border: 1px dashed var(--naranja-principal, #E67E22);
                         }
-                        @media (min-width: 769px) {
-                            .arroz-narrative .read-more-btn {
-                                display: none;
-                            }
-                            .arroz-narrative .full-text {
-                                display: inline !important;
-                            }
+
+                        .narrative-cta .highlight {
+                            font-size: 1.3rem;
+                            color: var(--marron-calido, #D35400);
+                            font-weight: 700;
+                            font-family: var(--font-subtitulos);
+                            margin: 0;
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .narrative-intro {
+                            margin-bottom: 3rem;
+                            text-align: center;
+                        }
+
+                        .narrative-intro h3 {
+                            color: var(--marron-calido, #D35400);
+                            font-family: var(--font-subtitulos);
+                            font-size: 2rem;
+                            margin-bottom: 1.5rem;
+                            position: relative;
+                            display: inline-block;
+                        }
+
+                        .narrative-intro h3::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 100px;
+                            height: 3px;
+                            background: linear-gradient(90deg, var(--naranja-principal, #E67E22), var(--amarillo-dorado, #F39C12));
+                            border-radius: 3px;
+                        }
+
+                        .narrative-intro p {
+                            max-width: 800px;
+                            margin: 0 auto;
+                            font-size: 1.1rem;
+                            line-height: 1.8;
+                            color: var(--gris-oscuro);
                         }
                     </style>
                     <script>
@@ -802,7 +931,7 @@
                         <div class="accompaniment">
                             <strong>Acompañamiento:</strong> Se sirve solo (plato completo que no requiere acompañamiento)
                         </div>
-                        <a href="https://wa.me/593997533304?text=¡Hola! Quiero pedir un Arroz con Mariscos para delivery en Loja." class="cta-button" target="_blank" rel="noopener">
+                        <a href="https://wa.me/593998941753?text=¡Hola! Quiero pedir un Arroz con Mariscos para delivery en Loja." class="cta-button" target="_blank" rel="noopener">
                             ¡PIDE ESTE BANQUETE MARINO EN LOJA!
                         </a>
                     </div>
