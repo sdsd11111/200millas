@@ -4,21 +4,25 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
 
-// Configuración del servidor SMTP
+// Cargar variables de entorno desde .env
+dotenv.config();
+
+// Configuración del servidor SMTP usando variables de entorno
 const emailConfig = {
-    host: 'mail.enloja.net',
-    port: 465,
-    secure: true, // true para el puerto 465, false para otros puertos
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT) || 465,
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
-        user: 'restaurante200millas@enloja.net',
-        pass: 'Xv37Bz5sx9.z'
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
     },
     tls: {
         // No rechazar certificados autofirmados
         rejectUnauthorized: false
     },
-    debug: true // Habilitar modo debug para ver la comunicación SMTP
+    debug: true
 };
 
 // Configuración de rutas ES modules
@@ -104,25 +108,16 @@ app.post('/api/contacto', async (req, res) => {
     try {
         console.log('📧 Configurando el envío de correo...');
         
-        // Configuración de Gmail
+        // Configuración del servidor propio
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'sdxd2677@gmail.com', // Tu correo de Gmail
-                pass: '' // Aquí va la contraseña de aplicación de Gmail
-            },
-            tls: {
-                rejectUnauthorized: false
-            },
-            debug: true,
+            ...emailConfig,
             logger: true
         });
 
         // Configuración del correo para el administrador
         const mailOptionsAdmin = {
-            from: '"200 Millas - Contacto" <sdxd2677@gmail.com>',
-            to: 'sdxd2677@gmail.com', // Correo de destino
-            replyTo: email,
+            from: '"200 Millas - Contacto" <email@restaurante200millasloja.com>',
+            to: 'email@restaurante200millasloja.com',
             replyTo: email,
             subject: `Nuevo mensaje de contacto de ${nombre}`,
             text: `Has recibido un nuevo mensaje de contacto:
@@ -152,7 +147,7 @@ ${mensaje}`,
             // 2. Enviar correo de confirmación al remitente
             console.log('📨 Enviando correo de confirmación al remitente...');
             const mailOptionsUser = {
-                from: '"200 Millas - Contacto" <sdxd2677@gmail.com>',
+                from: '"200 Millas - Contacto" <email@restaurante200millasloja.com>',
                 to: email,
                 subject: 'Gracias por contactar a 200 Millas',
                 text: `Hola ${nombre},

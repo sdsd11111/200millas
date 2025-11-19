@@ -98,7 +98,10 @@
                 });
 
             // Crear el header directamente en el DOM
-            headerContainer.innerHTML = `
+            const headerContainerEl = document.getElementById('header-container');
+            if (!headerContainerEl) return;
+
+            headerContainerEl.innerHTML = `
                 <header class="header">
                     <div class="container">
                         <nav class="navbar">
@@ -621,6 +624,7 @@
                         
                         // Eliminar el loader del DOM después de la animación
                         setTimeout(function() {
+                            // Eliminar el loader del DOM
                             loadingScreen.remove();
                         }, 500);
                     }
@@ -756,59 +760,51 @@
                             });
                             </script>
                             <script>
-                                const form = document.getElementById('contactForm');
-                                const formMessages = document.getElementById('form-messages');
-                                
-                                form.addEventListener('submit', function(e) {
-                                    e.preventDefault();
-                                    const formData = new FormData(form);
-                                    
-                                    // Show loading state
-                                    const submitBtn = form.querySelector('button[type="submit"]');
-                                    const originalBtnText = submitBtn.innerHTML;
-                                    submitBtn.disabled = true;
-                                    submitBtn.innerHTML = 'Enviando...';
-                                    
-                                    fetch(form.action, {
-                                        method: 'POST',
-                                        body: formData,
-                                        headers: {
-                                            'Accept': 'application/json'
-                                        }
-                                    })
-                                    .then(response => {
-                                        if (response.ok) {
-                                            // Show success message
-                                            formMessages.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
-                                            formMessages.style.backgroundColor = '#d4edda';
-                                            formMessages.style.color = '#155724';
-                                            formMessages.style.border = '1px solid #c3e6cb';
-                                            formMessages.style.display = 'block';
-                                            
-                                            // Reset form
-                                            form.reset();
-                                        } else {
-                                            throw new Error('Error al enviar el mensaje');
-                                        }
-                                    })
-                                    .catch(error => {
-                                        // Show error message
-                                        formMessages.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
-                                        formMessages.style.backgroundColor = '#f8d7da';
-                                        formMessages.style.color = '#721c24';
-                                        formMessages.style.border = '1px solid #f5c6cb';
-                                        formMessages.style.display = 'block';
-                                        console.error('Error:', error);
-                                    })
-                                    .finally(() => {
-                                        // Reset button state
-                                        submitBtn.disabled = false;
-                                        submitBtn.innerHTML = originalBtnText;
-                                        
-                                        // Scroll to show the message
-                                        formMessages.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                    });
-                                });
+                                // Script de formulario anterior desactivado porque el formulario
+                                // ya se maneja arriba con id "contacto-form" mediante fetch a /api/contacto.
+                                // Se deja comentado para evitar errores cuando no existe el id "contactForm".
+                                // const form = document.getElementById('contactForm');
+                                // const formMessages = document.getElementById('form-messages');
+                                // if (form) {
+                                //     form.addEventListener('submit', function(e) {
+                                //         e.preventDefault();
+                                //         const formData = new FormData(form);
+                                //         const submitBtn = form.querySelector('button[type="submit"]');
+                                //         const originalBtnText = submitBtn.innerHTML;
+                                //         submitBtn.disabled = true;
+                                //         submitBtn.innerHTML = 'Enviando...';
+                                //         fetch(form.action, {
+                                //             method: 'POST',
+                                //             body: formData,
+                                //             headers: { 'Accept': 'application/json' }
+                                //         })
+                                //         .then(response => {
+                                //             if (response.ok) {
+                                //                 formMessages.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                                //                 formMessages.style.backgroundColor = '#d4edda';
+                                //                 formMessages.style.color = '#155724';
+                                //                 formMessages.style.border = '1px solid #c3e6cb';
+                                //                 formMessages.style.display = 'block';
+                                //                 form.reset();
+                                //             } else {
+                                //                 throw new Error('Error al enviar el mensaje');
+                                //             }
+                                //         })
+                                //         .catch(error => {
+                                //             formMessages.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.';
+                                //             formMessages.style.backgroundColor = '#f8d7da';
+                                //             formMessages.style.color = '#721c24';
+                                //             formMessages.style.border = '1px solid #f5c6cb';
+                                //             formMessages.style.display = 'block';
+                                //             console.error('Error:', error);
+                                //         })
+                                //         .finally(() => {
+                                //             submitBtn.disabled = false;
+                                //             submitBtn.innerHTML = originalBtnText;
+                                //             formMessages.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                //         });
+                                //     });
+                                // }
                             </script>
                         </div>
                     </div>
