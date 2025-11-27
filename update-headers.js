@@ -7,7 +7,7 @@ const filesToUpdate = [
     'segundos.html',
     'especialidades.html',
     'acompañamientos.html',
-    'pariguela.html',
+    'parihuela.html',
     'camaron-reventado.html',
     'ceviche-mixto.html',
     'arroz-con-mariscos.html',

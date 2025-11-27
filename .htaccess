@@ -1,0 +1,11 @@
+# Habilitar el motor de reescritura
+RewriteEngine On
+
+# Redirección 301 de pariguela.html a parihuela.html
+RewriteRule ^pariguela\.html$ /parihuela.html [R=301,L,NC]
+
+# Redirección 301 para cualquier ruta que termine con pariguela
+RewriteRule ^(.*)pariguela$ /parihuela.html [R=301,L,NC]
+
+# Redirección 301 para la versión sin extensión
+RewriteRule ^pariguela$ /parihuela.html [R=301,L,NC]

@@ -61,4 +61,10 @@
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
+    <url>
+        <loc>https://restaurante200millasloja.com/parihuela.html</loc>
+        <lastmod>2025-11-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
