@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>200 Millas Loja | Algo muy especial en mariscos</title>
-    <meta name="description" content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
-    
+    <meta name="description"
+        content="Restaurante familiar especializado en mariscos frescos en Loja, Ecuador. Disfruta de nuestros platos tradicionales desde 1979.">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico">
-    
+
     <!-- Preconexión a dominios externos -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
+
     <!-- Preload de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        media="print" onload="this.media='all'">
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+            rel="stylesheet">
     </noscript>
-    
+
     <!-- Font Awesome -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
-    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </noscript>
+
     <!-- Estilos CSS -->
     <link rel="preload" href="/assets/css/branding.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/components/header/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="/components/footer/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/branding.css"></noscript>
-    <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
-    <noscript><link rel="stylesheet" href="/components/header/header.css"></noscript>
-    <noscript><link rel="stylesheet" href="/components/footer/footer.css"></noscript>
-    
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/branding.css">
+    </noscript>
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/main.css">
+    </noscript>
+    <noscript>
+        <link rel="stylesheet" href="/components/header/header.css">
+    </noscript>
+    <noscript>
+        <link rel="stylesheet" href="/components/footer/footer.css">
+    </noscript>
+
     <!-- Loading Screen Styles -->
     <style>
         /* Loading Screen */
@@ -55,14 +72,14 @@
             z-index: 9999;
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
-        
+
         .loading-logo {
             width: 120px;
             height: 120px;
             margin-bottom: 20px;
             animation: pulse 1.5s infinite ease-in-out;
         }
-        
+
         .loading-spinner {
             width: 50px;
             height: 50px;
@@ -72,7 +89,7 @@
             animation: spin 1s linear infinite;
             margin-top: 20px;
         }
-        
+
         .loading-text {
             margin-top: 20px;
             font-size: 1.1rem;
@@ -82,27 +99,37 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
-        
+
         .fade-out {
             opacity: 0;
             visibility: hidden;
         }
     </style>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/inicio/favicon.webp">
-    
+
     <!-- Primary Meta Tags -->
     <meta name="title" content="Restaurante 200 Millas">
     <meta name="description" content="Bienvenido al Restaurante 200 Millas, disfruta nuestros servicios.">
@@ -113,7 +140,7 @@
     <meta property="og:title" content="Restaurante 200 Millas">
     <meta property="og:description" content="Bienvenido al Restaurante 200 Millas, disfruta nuestros servicios.">
     <meta property="og:image" content="https://www.restaurante200millasloja.com/assets/images/logo-200-millas.png">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.restaurante200millasloja.com/">
@@ -167,12 +194,12 @@
       ]
     }
     </script>
-    
+
     <!-- WhatsApp -->
     <meta property="og:site_name" content="Restaurante 200 Millas">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
+
     <!-- Estilos específicos de la página de inicio -->
     <style>
         /* Estilos del Hero */
@@ -180,8 +207,8 @@
             position: relative;
             height: 70vh;
             min-height: 700px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('/assets/images/inicio/hero-bg.webp') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('/assets/images/inicio/hero-bg.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -190,14 +217,14 @@
             padding: 0 1.5rem;
             margin-top: 0;
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 2;
             max-width: 900px;
             animation: fadeInUp 1s ease-out;
         }
-        
+
         /* Hero Slider Styles */
         .hero-slider {
             position: relative;
@@ -208,7 +235,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px 0 80px; /* Espacio para las flechas */
+            padding: 20px 0 80px;
+            /* Espacio para las flechas */
         }
 
         .slide {
@@ -236,17 +264,17 @@
 
         .slide:nth-child(1) {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('/assets/images/inicio/hero-bg-1.webp') no-repeat center center/cover;
+                url('/assets/images/inicio/hero-bg-1.webp') no-repeat center center/cover;
         }
 
         .slide:nth-child(2) {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('/assets/images/inicio/hero-bg-2.webp') no-repeat center center/cover;
+                url('/assets/images/inicio/hero-bg-2.webp') no-repeat center center/cover;
         }
 
         .slide:nth-child(3) {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                        url('/assets/images/inicio/hero-bg-3.webp') no-repeat center center/cover;
+                url('/assets/images/inicio/hero-bg-3.webp') no-repeat center center/cover;
         }
 
         .hero-content {
@@ -453,16 +481,19 @@
         /* Base: Doble Columna Menú + Slider */
         .menu-category-block .category-grid {
             display: flex;
-            flex-direction: row; /* Menú a la izquierda, Slider a la derecha */
+            flex-direction: row;
+            /* Menú a la izquierda, Slider a la derecha */
             gap: 20px;
         }
 
         .dish-list {
-            width: 60%; /* Columna de menú */
+            width: 60%;
+            /* Columna de menú */
         }
 
         .category-slider {
-            width: 40%; /* Columna de slider */
+            width: 40%;
+            /* Columna de slider */
         }
 
         /* Punto de quiebre para Tablet y Móvil */
@@ -497,14 +528,16 @@
         /* Punto de quiebre para Tablet */
         @media (max-width: 900px) {
             .testimonios-grid {
-                grid-template-columns: 1fr 1fr; /* 2 columnas */
+                grid-template-columns: 1fr 1fr;
+                /* 2 columnas */
             }
         }
 
         /* Punto de quiebre para Móvil */
         @media (max-width: 600px) {
             .testimonios-grid {
-                grid-template-columns: 1fr; /* 1 columna */
+                grid-template-columns: 1fr;
+                /* 1 columna */
             }
         }
 
@@ -580,6 +613,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -633,7 +667,8 @@
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
             border-radius: 15px;
@@ -694,7 +729,7 @@
                 margin: 0 0.5rem;
             }
         }
-        
+
         /* Sección de Menú Destacado */
         .menu-section {
             padding: 6rem 0;
@@ -756,7 +791,7 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .dish-card {
             width: 100%;
             height: 100%;
@@ -764,17 +799,17 @@
             flex-direction: column;
             margin: 0;
         }
-        
+
         .dish-content {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .dish-content .btn {
             margin-top: auto;
         }
-        
+
         /* Estilo para la última tarjeta */
         .featured-grid .dish-card:last-child {
             grid-column: 1 / -1;
@@ -885,8 +920,10 @@
         }
 
         /* Regla global para prevenir scroll horizontal */
-        html, body {
-            overflow-x: hidden; /* ¡CRÍTICO: Evita scroll horizontal! */
+        html,
+        body {
+            overflow-x: hidden;
+            /* ¡CRÍTICO: Evita scroll horizontal! */
             width: 100%;
             max-width: 100%;
             box-sizing: border-box;
@@ -894,7 +931,8 @@
 
         /* Todos los elementos deben respetar el ancho del contenedor */
         * {
-            box-sizing: border-box; /* ¡Incluye padding y border en el ancho total! */
+            box-sizing: border-box;
+            /* ¡Incluye padding y border en el ancho total! */
         }
 
         /* Contenedores principales nunca deben exceder el viewport */
@@ -902,26 +940,34 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            width: 100%; /* ¡Asegura que nunca exceda el 100% del viewport! */
+            width: 100%;
+            /* ¡Asegura que nunca exceda el 100% del viewport! */
         }
 
         /* Imágenes nunca deben causar scroll horizontal */
         img {
-            max-width: 100%; /* ¡CRÍTICO: Nunca exceder el contenedor! */
-            height: auto; /* Mantiene proporción */
-            display: block; /* Evita espacios en blanco debajo */
+            max-width: 100%;
+            /* ¡CRÍTICO: Nunca exceder el contenedor! */
+            height: auto;
+            /* Mantiene proporción */
+            display: block;
+            /* Evita espacios en blanco debajo */
         }
 
         /* Videos e iframes también deben respetar el contenedor */
-        iframe, video, embed {
-            max-width: 100%; /* ¡CRÍTICO: Nunca exceder el contenedor! */
+        iframe,
+        video,
+        embed {
+            max-width: 100%;
+            /* ¡CRÍTICO: Nunca exceder el contenedor! */
             height: auto;
         }
 
         /* Elementos posicionados absolutamente nunca deben salir del viewport */
         [style*="position: absolute"],
         [style*="position:absolute"] {
-            max-width: 100% !important; /* ¡Fuerza el respeto al contenedor! */
+            max-width: 100% !important;
+            /* ¡Fuerza el respeto al contenedor! */
         }
 
         /* ------------------------------------------------ */
@@ -929,46 +975,65 @@
         /* ------------------------------------------------ */
 
         @media (max-width: 768px) {
+
             /* Contenedor aún más restrictivo en móvil */
             .container {
-                padding: 0 1rem; /* ¡Reduce padding para dar más espacio al contenido! */
-                width: 100%; /* ¡Garantiza 100% del viewport disponible! */
+                padding: 0 1rem;
+                /* ¡Reduce padding para dar más espacio al contenido! */
+                width: 100%;
+                /* ¡Garantiza 100% del viewport disponible! */
             }
 
             /* Asegura que todas las secciones usen el 100% disponible */
             section {
-                width: 100%; /* ¡Nunca exceder el viewport! */
+                width: 100%;
+                /* ¡Nunca exceder el viewport! */
                 max-width: 100%;
             }
 
             /* Elementos flotantes o con posición absoluta en móvil */
             .slider-nav {
-                position: absolute; /* Mantiene navegación absoluta */
-                max-width: 45px; /* ¡Límite de ancho para evitar desborde! */
-                left: 10px; /* ¡Asegura que esté dentro del contenedor! */
+                position: absolute;
+                /* Mantiene navegación absoluta */
+                max-width: 45px;
+                /* ¡Límite de ancho para evitar desborde! */
+                left: 10px;
+                /* ¡Asegura que esté dentro del contenedor! */
             }
 
             .slider-nav.next {
-                right: 10px; /* ¡Asegura que esté dentro del contenedor! */
+                right: 10px;
+                /* ¡Asegura que esté dentro del contenedor! */
                 left: auto;
             }
         }
 
         @media (max-width: 576px) {
+
             /* Aún más restrictivo en pantallas pequeñas */
             .container {
-                padding: 0 0.5rem; /* ¡Padding mínimo para máximo contenido! */
+                padding: 0 0.5rem;
+                /* ¡Padding mínimo para máximo contenido! */
             }
 
             /* Texto que podría causar problemas */
-            h1, h2, h3, h4, h5, h6 {
-                word-wrap: break-word; /* ¡Rompe palabras largas si es necesario! */
-                hyphens: auto; /* ¡Agrega guiones si el navegador lo soporta! */
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                word-wrap: break-word;
+                /* ¡Rompe palabras largas si es necesario! */
+                hyphens: auto;
+                /* ¡Agrega guiones si el navegador lo soporta! */
             }
 
             /* Precios y elementos con fondo que podrían desbordar */
-            .dish-price, .btn {
-                max-width: 100%; /* ¡Nunca exceder el contenedor! */
+            .dish-price,
+            .btn {
+                max-width: 100%;
+                /* ¡Nunca exceder el contenedor! */
                 box-sizing: border-box;
             }
         }
@@ -980,7 +1045,8 @@
             background-color: var(--blanco);
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            width: 100%; /* ¡Asegura que nunca exceda el contenedor! */
+            width: 100%;
+            /* ¡Asegura que nunca exceda el contenedor! */
             box-sizing: border-box;
         }
 
@@ -1000,20 +1066,25 @@
             gap: 30px;
             /* CRÍTICO: Asegura que el slider y la lista tengan la misma altura */
             align-items: stretch;
-            width: 100%; /* ¡Asegura que nunca exceda el contenedor! */
+            width: 100%;
+            /* ¡Asegura que nunca exceda el contenedor! */
         }
 
         .dish-list {
-            flex-grow: 1; /* Permite a la lista ocupar el espacio restante */
-            width: 65%; /* 65% para la lista de menú */
+            flex-grow: 1;
+            /* Permite a la lista ocupar el espacio restante */
+            width: 65%;
+            /* 65% para la lista de menú */
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .category-slider {
-            width: 35%; /* 35% para la imagen/slider */
-            overflow: hidden; /* Oculta partes de la imagen que exceden */
+            width: 35%;
+            /* 35% para la imagen/slider */
+            overflow: hidden;
+            /* Oculta partes de la imagen que exceden */
             border-radius: 8px;
             /* La altura se ajusta por align-items: stretch del padre */
         }
@@ -1022,7 +1093,8 @@
         .category-slider img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* CRÍTICO: Cubre el área sin desbordar ni deformar */
+            object-fit: cover;
+            /* CRÍTICO: Cubre el área sin desbordar ni deformar */
             display: block;
         }
 
@@ -1031,18 +1103,22 @@
         /* ------------------------------------------------ */
         .dish-item {
             display: flex;
-            justify-content: space-between; /* Empuja Nombre/Puntos a la izquierda y Precio a la derecha */
+            justify-content: space-between;
+            /* Empuja Nombre/Puntos a la izquierda y Precio a la derecha */
             align-items: flex-end;
             padding: 12px 0;
-            border-bottom: 1px dashed var(--gris-claro); /* Separador sutil */
+            border-bottom: 1px dashed var(--gris-claro);
+            /* Separador sutil */
             font-family: var(--font-cuerpo);
             font-size: 1.1rem;
         }
 
         .dish-name {
-            white-space: nowrap; /* Evita que el nombre del plato salte de línea */
+            white-space: nowrap;
+            /* Evita que el nombre del plato salte de línea */
             font-weight: 600;
-            color: var(--blanco); /* ¡Cambiado a blanco para mejor visibilidad! */
+            color: var(--blanco);
+            /* ¡Cambiado a blanco para mejor visibilidad! */
         }
 
         /* CRÍTICO: La línea punteada se estira para llenar el espacio */
@@ -1052,7 +1128,8 @@
             /* Usar un pseudo-elemento o un span de borde punteado para la línea */
             border-bottom: 2px dotted #aaa;
             align-self: flex-end;
-            height: 1em; /* Mantiene la altura para que el borde se muestre */
+            height: 1em;
+            /* Mantiene la altura para que el borde se muestre */
             opacity: 0.7;
         }
 
@@ -1078,6 +1155,7 @@
         /* MEDIA QUERY: TABLET Y PANTALLAS PEQUEÑAS (Max 900px) */
         /* ------------------------------------------------ */
         @media (max-width: 900px) {
+
             /* Reestructura el layout de doble columna a apilamiento vertical */
             .category-grid {
                 flex-direction: column;
@@ -1164,16 +1242,19 @@
             .hero-slider {
                 height: 100vh;
                 min-height: 100%;
-                padding-bottom: 100px; /* Más espacio para las flechas en móvil */
+                padding-bottom: 100px;
+                /* Más espacio para las flechas en móvil */
             }
-            
+
             .hero-content {
                 padding: 0 20px;
-                margin-bottom: 60px; /* Espacio para el botón y flechas */
+                margin-bottom: 60px;
+                /* Espacio para el botón y flechas */
             }
-            
+
             .hero-buttons {
-                margin-bottom: 30px; /* Espacio entre botón y flechas */
+                margin-bottom: 30px;
+                /* Espacio entre botón y flechas */
             }
 
             .hero-content h1 {
@@ -1217,52 +1298,52 @@
                 font-size: 1rem;
             }
         }
-        
+
         /* Sección de Bienvenida */
         .welcome {
             padding: 6rem 0;
             background-color: white;
         }
-        
+
         .welcome-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-        
+
         .welcome-text h2 {
             color: var(--naranja-principal);
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
             font-family: var(--font-titulos);
         }
-        
+
         .welcome-text p {
             color: var(--gris-oscuro);
             margin-bottom: 1.5rem;
             line-height: 1.8;
             font-family: var(--font-cuerpo);
         }
-        
+
         .welcome-image {
             position: relative;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .welcome-image img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.5s ease;
         }
-        
+
         .welcome-image:hover img {
             transform: scale(1.05);
         }
-        
+
         .experience-badge {
             position: absolute;
             bottom: -30px;
@@ -1279,39 +1360,39 @@
             text-align: center;
             box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
         }
-        
+
         .experience-badge .years {
             font-size: 2.5rem;
             font-weight: 700;
             line-height: 1;
         }
-        
+
         .experience-badge .text {
             font-size: 0.9rem;
             line-height: 1.2;
             display: block;
             margin-top: 0.5rem;
         }
-        
+
         /* Sección de Especialidades */
         .specialties {
             padding: 6rem 0;
             background-color: #f9f9f9;
         }
-        
+
         .section-header {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 3rem;
         }
-        
+
         .section-title {
             color: var(--naranja-principal);
             font-size: 2.5rem;
             margin-bottom: 1rem;
             font-family: var(--font-titulos);
         }
-        
+
         .section-subtitle {
             color: var(--amarillo-dorado);
             font-weight: 600;
@@ -1322,21 +1403,21 @@
             margin-bottom: 1rem;
             font-family: var(--font-subtitulos);
         }
-        
+
         .section-description {
             color: var(--gris-oscuro);
             font-size: 1.1rem;
             line-height: 1.7;
             font-family: var(--font-cuerpo);
         }
-        
+
         .specialties-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .specialty-card {
             background: white;
             border-radius: 10px;
@@ -1344,39 +1425,39 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         .specialty-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .specialty-image {
             height: 200px;
             overflow: hidden;
         }
-        
+
         .specialty-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .specialty-card:hover .specialty-image img {
             transform: scale(1.1);
         }
-        
+
         .specialty-content {
             padding: 1.5rem;
         }
-        
+
         .specialty-title {
             font-size: 1.5rem;
             color: var(--naranja-principal);
             margin-bottom: 0.75rem;
             font-family: var(--font-titulos);
         }
-        
+
         .specialty-description {
             color: var(--gris-oscuro);
             margin-bottom: 1.25rem;
@@ -1384,7 +1465,7 @@
             line-height: 1.6;
             font-family: var(--font-cuerpo);
         }
-        
+
         .specialty-price {
             color: var(--amarillo-dorado);
             font-weight: 700;
@@ -1393,7 +1474,7 @@
             display: block;
             font-family: var(--font-subtitulos);
         }
-        
+
         .btn-more {
             display: inline-flex;
             align-items: center;
@@ -1402,29 +1483,29 @@
             transition: all 0.3s ease;
             font-family: var(--font-subtitulos);
         }
-        
+
         .btn-more:hover {
             color: var(--naranja-principal);
         }
-        
+
         .btn-more i {
             margin-left: 0.5rem;
             transition: transform 0.3s ease;
         }
-        
-        
+
+
         .btn-more:hover i {
             transform: translateX(5px);
         }
-        
+
         .text-center {
             text-align: center;
         }
-        
+
         .mt-5 {
             margin-top: 3rem;
         }
-        
+
         /* Sección de Testimonios */
         .testimonials-section {
             padding: 6rem 0;
@@ -1585,9 +1666,9 @@
             transition: all 0.3s ease;
             flex-shrink: 0;
             outline: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+
         .testimonial-slider-controls button:active {
             transform: scale(0.95);
         }
@@ -1637,8 +1718,10 @@
                 scroll-snap-type: x mandatory;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
-                -ms-overflow-style: none; /* IE and Edge */
+                scrollbar-width: none;
+                /* Firefox */
+                -ms-overflow-style: none;
+                /* IE and Edge */
                 gap: 0;
                 padding: 0 0 2rem 0;
                 margin: 0 -1rem;
@@ -1646,7 +1729,8 @@
             }
 
             .testimonials-grid::-webkit-scrollbar {
-                display: none; /* Chrome, Safari, Opera */
+                display: none;
+                /* Chrome, Safari, Opera */
             }
 
             .testimonial-card {
@@ -1705,7 +1789,7 @@
                 padding: 1.5rem;
             }
         }
-        
+
         /* Sección de Preguntas Frecuentes */
         .faq-section {
             padding: 6rem 0;
@@ -1786,7 +1870,7 @@
             margin-bottom: 1rem;
         }
 
-        .faq-question[aria-expanded="true"] + .faq-answer {
+        .faq-question[aria-expanded="true"]+.faq-answer {
             max-height: 500px;
             padding: 1.5rem;
         }
@@ -1857,30 +1941,30 @@
                 font-size: 0.85rem;
             }
         }
-        
+
         /* Sección de Llamado a la Acción */
         .cta {
             padding: 6rem 0;
-            background: linear-gradient(rgba(212, 106, 31, 0.9), rgba(26, 54, 93, 0.9)), 
-                        url('/assets/images/inicio/cta-bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(212, 106, 31, 0.9), rgba(26, 54, 93, 0.9)),
+                url('/assets/images/inicio/cta-bg.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
             position: relative;
         }
-        
+
         .cta-content {
             position: relative;
             z-index: 2;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: white;
         }
-        
+
         .cta p {
             font-size: 1.25rem;
             margin-bottom: 2.5rem;
@@ -1889,163 +1973,168 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .cta-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-        
+
         /* Estilos responsivos */
         @media (max-width: 1200px) {
             .hero h1 {
                 font-size: 3rem;
             }
-            
+
             .hero p {
                 font-size: 1.3rem;
             }
         }
-        
+
         @media (max-width: 992px) {
             .welcome-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .welcome-image {
                 max-width: 600px;
                 margin: 0 auto;
             }
-            
+
             .experience-badge {
                 width: 120px;
                 height: 120px;
                 bottom: -20px;
                 right: -20px;
             }
-            
+
             .experience-badge .years {
                 font-size: 2rem;
             }
-            
+
             .section-title {
                 font-size: 2.25rem;
             }
-            
+
             .testimonials-section {
                 background-attachment: scroll;
             }
         }
-        
+
         @media (max-width: 768px) {
             .hero {
                 min-height: 600px;
             }
-            
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .section-title {
                 font-size: 2rem;
             }
-            
+
             .cta h2 {
                 font-size: 2rem;
             }
-            
+
             .cta p {
                 font-size: 1.1rem;
             }
-            
+
             .testimonial-card {
                 padding: 1.5rem;
             }
         }
-        
+
         @media (max-width: 576px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
                 margin-bottom: 2rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 width: 100%;
             }
-            
+
             .hero-buttons .btn {
                 width: 100%;
                 text-align: center;
             }
-            
+
             .section-title {
                 font-size: 1.75rem;
             }
-            
+
             .cta h2 {
                 font-size: 1.75rem;
             }
-            
+
             .cta p {
                 font-size: 1rem;
             }
-            
+
             .cta-buttons {
                 flex-direction: column;
                 width: 100%;
             }
-            
+
             .cta-buttons .btn {
                 width: 100%;
                 text-align: center;
             }
         }
-        
+
         /* Animaciones */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
+
         /* Sección Quiénes Somos - Diseño Asimétrico */
         .quienes-somos-section {
             padding: 6rem 0;
             background-color: #ffffff;
             position: relative;
-            min-height: 100vh; /* Asegura que la sección ocupe al menos el alto de la pantalla */
+            min-height: 100vh;
+            /* Asegura que la sección ocupe al menos el alto de la pantalla */
             display: flex;
             align-items: center;
         }
 
         .quienes-asimetrico {
             display: grid;
-            grid-template-columns: 65% 35%; /* Ajustado a 65/35 para hacer la columna de imágenes más pequeña */
-            gap: 3rem; /* Reducido el espacio entre columnas */
+            grid-template-columns: 65% 35%;
+            /* Ajustado a 65/35 para hacer la columna de imágenes más pequeña */
+            gap: 3rem;
+            /* Reducido el espacio entre columnas */
             align-items: flex-start;
-            max-width: 1100px; /* Ancho máximo reducido */
+            max-width: 1100px;
+            /* Ancho máximo reducido */
             margin: 0 auto;
             min-height: 100%;
         }
@@ -2054,7 +2143,8 @@
             padding-right: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Alinear contenido en la parte superior */
+            justify-content: flex-start;
+            /* Alinear contenido en la parte superior */
             height: 100%;
         }
 
@@ -2071,14 +2161,14 @@
             width: 100%;
             max-width: 100%;
         }
-        
+
         .quienes-title .highlight {
             display: block;
             font-size: 2.2rem;
             margin: 0 0 2rem 0;
             color: var(--naranja-principal);
         }
-        
+
         .image-text-container {
             background: var(--naranja-principal);
             padding: 1.5rem 2rem;
@@ -2086,7 +2176,7 @@
             text-align: center;
             margin-bottom: 0;
         }
-        
+
         .overlay-slogan {
             font-size: 1.5rem;
             font-style: italic;
@@ -2094,14 +2184,14 @@
             margin: 0 0 0.5rem 0;
             font-weight: 500;
         }
-        
+
         .overlay-years {
             font-size: 1.1rem;
             color: white;
             margin: 0;
             opacity: 0.9;
         }
-        
+
         .quienes-visual {
             display: flex;
             flex-direction: column;
@@ -2109,10 +2199,12 @@
             height: 100%;
             position: sticky;
             top: 2rem;
-            max-width: 380px; /* Ancho máximo para la columna de imágenes */
-            margin-left: auto; /* Alinear a la derecha */
+            max-width: 380px;
+            /* Ancho máximo para la columna de imágenes */
+            margin-left: auto;
+            /* Alinear a la derecha */
         }
-        
+
         .quienes-title .years {
             display: block;
             font-size: 1.2rem;
@@ -2121,7 +2213,7 @@
             color: #2c3e50;
             font-weight: 500;
         }
-        
+
         .quienes-title span.highlight {
             color: var(--naranja-principal);
             font-weight: 800;
@@ -2197,10 +2289,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            gap: 8px; /* Espaciado reducido entre imágenes */
+            gap: 8px;
+            /* Espaciado reducido entre imágenes */
             height: 100%;
-            min-height: 400px; /* Altura mínima reducida */
-            max-height: 500px; /* Altura máxima reducida */
+            min-height: 400px;
+            /* Altura mínima reducida */
+            max-height: 500px;
+            /* Altura máxima reducida */
             border-radius: 0 0 10px 10px;
             overflow: hidden;
             flex: 1;
@@ -2213,8 +2308,10 @@
             border-radius: 0;
             overflow: hidden;
             height: 100%;
-            min-height: 250px; /* Altura mínima reducida */
-            max-height: 300px; /* Altura máxima para la imagen principal */
+            min-height: 250px;
+            /* Altura mínima reducida */
+            max-height: 300px;
+            /* Altura máxima para la imagen principal */
         }
 
         .main-image img {
@@ -2229,7 +2326,8 @@
             border-radius: 8px;
             overflow: hidden;
             height: 100%;
-            max-height: 200px; /* Altura máxima para las imágenes pequeñas */
+            max-height: 200px;
+            /* Altura máxima para las imágenes pequeñas */
         }
 
         .small-image img {
@@ -2310,22 +2408,23 @@
             }
 
             .image-grid {
-                grid-template-rows: 300px 150px; /* Ajusta la altura para móviles */
+                grid-template-rows: 300px 150px;
+                /* Ajusta la altura para móviles */
             }
 
             .quienes-title {
                 font-size: 1.4rem;
                 line-height: 1.4;
             }
-            
+
             .quienes-title .highlight {
                 font-size: 1.8rem;
             }
-            
+
             .quienes-title .slogan {
                 font-size: 1.3rem;
             }
-            
+
             .quienes-title .years {
                 font-size: 1.1rem;
             }
@@ -2341,11 +2440,11 @@
             .legacy-number {
                 font-size: 1.3rem;
             }
-            
+
             .legacy-year {
                 font-size: 0.7rem;
             }
-            
+
             .legacy-text {
                 font-size: 0.6rem;
             }
@@ -2360,15 +2459,15 @@
                 font-size: 1.2rem;
                 line-height: 1.3;
             }
-            
+
             .quienes-title .highlight {
                 font-size: 1.5rem;
             }
-            
+
             .quienes-title .slogan {
                 font-size: 1.1rem;
             }
-            
+
             .quienes-title .years {
                 font-size: 1rem;
             }
@@ -2384,21 +2483,22 @@
             .valor-item {
                 gap: 1rem;
             }
-            
+
             .image-grid {
-                grid-template-rows: 250px 120px; /* Ajuste para móviles más pequeños */
+                grid-template-rows: 250px 120px;
+                /* Ajuste para móviles más pequeños */
             }
-            
+
             .legacy-capsule {
                 width: 80px;
                 height: 80px;
                 padding: 0.8rem;
             }
-            
+
             .legacy-number {
                 font-size: 1.2rem;
             }
-            }
+
 
             .valor-icon {
                 font-size: 1.5rem;
@@ -2466,7 +2566,7 @@
                 right: -10px;
             }
         }
-        
+
         /* Sección de Video Destacado */
         .video-showcase {
             padding: 6rem 0;
@@ -2508,7 +2608,8 @@
 
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
             border-radius: 15px;
@@ -2569,7 +2670,7 @@
                 margin: 0 0.5rem;
             }
         }
-        
+
         /* Sección de Menú Destacado */
         .menu-section {
             padding: 6rem 0;
@@ -2631,7 +2732,7 @@
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .dish-card {
             width: 100%;
             height: 100%;
@@ -2639,17 +2740,17 @@
             flex-direction: column;
             margin: 0;
         }
-        
+
         .dish-content {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .dish-content .btn {
             margin-top: auto;
         }
-        
+
         /* Estilo para la última tarjeta */
         .featured-grid .dish-card:last-child {
             grid-column: 1 / -1;
@@ -2882,358 +2983,378 @@
 
             .featured-grid {
 
-    .menu-section .section-header {
-        margin-bottom: 3rem;
-    }
+                .menu-section .section-header {
+                    margin-bottom: 3rem;
+                }
 
-    .category-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2.5rem;
-    }
+                .category-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2.5rem;
+                }
 
-    .category {
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-    }
+                .category {
+                    padding: 2rem;
+                    margin-bottom: 1.5rem;
+                }
 
-    /* ------------------------------------- */
-    /* 1. SIMETRÍA DE ALTURA (CRÍTICA) */
-    /* ------------------------------------- */
-    .category-grid {
-        display: flex; /* ¡Flexbox para simetría perfecta! */
-        gap: 20px;
-        align-items: stretch; /* ¡AMBAS COLUMNAS TIENEN LA MISMA ALTURA! */
-    }
+                /* ------------------------------------- */
+                /* 1. SIMETRÍA DE ALTURA (CRÍTICA) */
+                /* ------------------------------------- */
+                .category-grid {
+                    display: flex;
+                    /* ¡Flexbox para simetría perfecta! */
+                    gap: 20px;
+                    align-items: stretch;
+                    /* ¡AMBAS COLUMNAS TIENEN LA MISMA ALTURA! */
+                }
 
-    .dish-list {
-        flex-grow: 1; /* ¡Lista ocupa todo el espacio disponible! */
-        padding-right: 20px; /* ¡Espacio para evitar choque con imagen! */
-    }
+                .dish-list {
+                    flex-grow: 1;
+                    /* ¡Lista ocupa todo el espacio disponible! */
+                    padding-right: 20px;
+                    /* ¡Espacio para evitar choque con imagen! */
+                }
 
-    .category-slider {
-        width: 40%; /* ¡Ancho fijo para el slider! */
-        /* ¡No necesitamos height explícito gracias a align-items: stretch! */
-    }
+                .category-slider {
+                    width: 40%;
+                    /* ¡Ancho fijo para el slider! */
+                    /* ¡No necesitamos height explícito gracias a align-items: stretch! */
+                }
 
-    .category-slider img {
-        width: 100%;
-        height: 100%; /* ¡Imagen llena completamente la altura! */
-        object-fit: cover; /* ¡Imagen cubre todo el espacio sin deformarse! */
-    }
+                .category-slider img {
+                    width: 100%;
+                    height: 100%;
+                    /* ¡Imagen llena completamente la altura! */
+                    object-fit: cover;
+                    /* ¡Imagen cubre todo el espacio sin deformarse! */
+                }
 
-    /* ------------------------------------- */
-    /* 2. ALINEACIÓN COLUMNAR DE PRECIOS (CRÍTICA) */
-    /* ------------------------------------- */
+                /* ------------------------------------- */
+                /* 2. ALINEACIÓN COLUMNAR DE PRECIOS (CRÍTICA) */
+                /* ------------------------------------- */
 
-    .dish-item {
-        display: flex; /* ¡Flexbox para plato, puntos y precio! */
-        justify-content: space-between; /* ¡Precio empujado completamente a la derecha! */
-        align-items: flex-end; /* ¡Elementos alineados a la parte inferior! */
-        padding: 10px 0;
-        border-bottom: 1px solid var(--gris-claro); /* ¡Separador suave! */
-    }
+                .dish-item {
+                    display: flex;
+                    /* ¡Flexbox para plato, puntos y precio! */
+                    justify-content: space-between;
+                    /* ¡Precio empujado completamente a la derecha! */
+                    align-items: flex-end;
+                    /* ¡Elementos alineados a la parte inferior! */
+                    padding: 10px 0;
+                    border-bottom: 1px solid var(--gris-claro);
+                    /* ¡Separador suave! */
+                }
 
-    .dish-name {
-        /* ¡Nombre del plato como primer elemento en flexbox! */
-        font-size: 16px;
-        font-weight: 500;
-        white-space: nowrap; /* ¡Evita saltos de línea! */
-    }
+                .dish-name {
+                    /* ¡Nombre del plato como primer elemento en flexbox! */
+                    font-size: 16px;
+                    font-weight: 500;
+                    white-space: nowrap;
+                    /* ¡Evita saltos de línea! */
+                }
 
-    /* ¡Línea punteada extensible - LA CLAVE! */
-    .dotted-line {
-        flex-grow: 1; /* ¡CRECE Y OCUPA TODO EL ESPACIO CENTRAL! */
-        margin: 0 10px;
-        border-bottom: 2px dotted #ccc; /* ¡Puntos elegantes! */
-        align-self: flex-end; /* ¡Línea al mismo nivel que el texto! */
-        height: 1em; /* ¡Necesario para que el border se vea! */
-    }
+                /* ¡Línea punteada extensible - LA CLAVE! */
+                .dotted-line {
+                    flex-grow: 1;
+                    /* ¡CRECE Y OCUPA TODO EL ESPACIO CENTRAL! */
+                    margin: 0 10px;
+                    border-bottom: 2px dotted #ccc;
+                    /* ¡Puntos elegantes! */
+                    align-self: flex-end;
+                    /* ¡Línea al mismo nivel que el texto! */
+                    height: 1em;
+                    /* ¡Necesario para que el border se vea! */
+                }
 
-    .dish-price {
-        /* ¡PRECIO ALINEADO VERTICALMENTE A LA DERECHA! */
-        font-family: var(--font-subtitulos);
-        font-weight: 700;
-        color: var(--naranja-principal); /* ¡Color naranja principal! */
-        white-space: nowrap; /* ¡CRÍTICO: Mantiene la columna estricta! */
-        width: 60px; /* ¡Ancho fijo para columna perfecta! */
-        text-align: right;
-    }
+                .dish-price {
+                    /* ¡PRECIO ALINEADO VERTICALMENTE A LA DERECHA! */
+                    font-family: var(--font-subtitulos);
+                    font-weight: 700;
+                    color: var(--naranja-principal);
+                    /* ¡Color naranja principal! */
+                    white-space: nowrap;
+                    /* ¡CRÍTICO: Mantiene la columna estricta! */
+                    width: 60px;
+                    /* ¡Ancho fijo para columna perfecta! */
+                    text-align: right;
+                }
 
-    /* Slider Styles con altura perfecta */
-    .slider-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        min-height: 250px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        flex: 1;
-    }
+                /* Slider Styles con altura perfecta */
+                .slider-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 250px;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                    flex: 1;
+                }
 
-    .slider-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
+                .slider-wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
 
-    .slide-item {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
+                .slide-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                }
 
-    .slide-item.active {
-        opacity: 1;
-    }
+                .slide-item.active {
+                    opacity: 1;
+                }
 
-    .slide-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+                .slide-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
 
-    .slider-nav {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.9);
-        border: none;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        color: var(--naranja-principal);
-        transition: all 0.3s ease;
-        z-index: 10;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+                .slider-nav {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(255, 255, 255, 0.9);
+                    border: none;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    color: var(--naranja-principal);
+                    transition: all 0.3s ease;
+                    z-index: 10;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                }
 
-    .slider-nav:hover {
-        background: var(--naranja-principal);
-        color: white;
-        transform: translateY(-50%) scale(1.1);
-    }
+                .slider-nav:hover {
+                    background: var(--naranja-principal);
+                    color: white;
+                    transform: translateY(-50%) scale(1.1);
+                }
 
-    .slider-nav.prev {
-        left: 15px;
-    }
+                .slider-nav.prev {
+                    left: 15px;
+                }
 
-    .slider-nav.next {
-        right: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-section .section-title {
-        font-size: 2rem;
-    }
-
-    .menu-section .section-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .featured-dishes .section-subtitle {
-        font-size: 1.3rem;
-    }
-
-    .dish-image {
-        height: 200px;
-    }
-}
-
-@media (max-width: 576px) {
-    .menu-section {
-        padding: 4rem 0;
-    }
-
-    .menu-section .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .menu-section .category-grid {
-        align-items: stretch;
-        min-height: 100%;
-    }
-
-        .category-slider {
-            display: flex;
-            flex-direction: column;
-            align-self: stretch;
-            width: 300px;
-        }
-
-        /* Slider Styles con altura perfecta */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            min-height: 250px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            flex: 1;
-        }
-
-        .slider-wrapper {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .slide-item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .slide-item.active {
-            opacity: 1;
-        }
-
-        .slide-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--naranja-principal);
-            transition: all 0.3s ease;
-            z-index: 10;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .slider-nav:hover {
-            background: var(--naranja-principal);
-            color: white;
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .slider-nav.prev {
-            left: 15px;
-        }
-
-        .slider-nav.next {
-            right: 15px;
-        }
-
-        /* Responsive Design para Menú con Sliders */
-        @media (max-width: 1200px) {
-            .category-grid {
-                gap: 15px;
+                .slider-nav.next {
+                    right: 15px;
+                }
             }
 
-            .dish-list {
-                padding-right: 15px;
+            @media (max-width: 768px) {
+                .menu-section .section-title {
+                    font-size: 2rem;
+                }
+
+                .menu-section .section-subtitle {
+                    font-size: 1.1rem;
+                }
+
+                .featured-dishes .section-subtitle {
+                    font-size: 1.3rem;
+                }
+
+                .dish-image {
+                    height: 200px;
+                }
             }
 
-            .category-slider {
-                width: 35%;
-            }
-        }
+            @media (max-width: 576px) {
+                .menu-section {
+                    padding: 4rem 0;
+                }
 
-        @media (max-width: 992px) {
-            .category-grid {
-                flex-direction: column;
-                gap: 2rem;
-            }
+                .menu-section .section-title {
+                    font-size: 1.8rem;
+                }
 
-            .category-menu {
-                order: 2;
-            }
+                .menu-section .category-grid {
+                    align-items: stretch;
+                    min-height: 100%;
+                }
 
-            .category-slider {
-                order: 1;
-                width: 100%;
-            }
+                .category-slider {
+                    display: flex;
+                    flex-direction: column;
+                    align-self: stretch;
+                    width: 300px;
+                }
 
-            .category-title {
-                font-size: 1.6rem;
-                margin-bottom: 1.5rem;
-            }
-        }
+                /* Slider Styles con altura perfecta */
+                .slider-container {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 250px;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                    flex: 1;
+                }
 
-        @media (max-width: 768px) {
-            .menu-categories-with-sliders {
-                margin-top: 3rem;
-            }
+                .slider-wrapper {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
 
-            .category-block {
-                padding: 1.5rem;
-                margin-bottom: 3rem;
-            }
+                .slide-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 0.5s ease-in-out;
+                }
 
-            .category-title {
-                font-size: 1.4rem;
-                margin-bottom: 1.2rem;
-            }
+                .slide-item.active {
+                    opacity: 1;
+                }
 
-            .dish-item {
-                padding: 0.8rem 0;
-            }
+                .slide-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
 
-            .dish-name {
-                font-size: 0.95rem;
-            }
+                .slider-nav {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(255, 255, 255, 0.9);
+                    border: none;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.2rem;
+                    color: var(--naranja-principal);
+                    transition: all 0.3s ease;
+                    z-index: 10;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                }
 
-            .dish-price {
-                width: 55px;
-                font-size: 0.9rem;
-            }
-        }
+                .slider-nav:hover {
+                    background: var(--naranja-principal);
+                    color: white;
+                    transform: translateY(-50%) scale(1.1);
+                }
 
-        @media (max-width: 576px) {
-            .category-block {
-                padding: 1rem;
-                margin-bottom: 2.5rem;
-            }
+                .slider-nav.prev {
+                    left: 15px;
+                }
 
-            .category-title {
-                font-size: 1.2rem;
-                margin-bottom: 1rem;
-            }
+                .slider-nav.next {
+                    right: 15px;
+                }
 
-            .dish-item {
-                padding: 0.7rem 0;
-            }
+                /* Responsive Design para Menú con Sliders */
+                @media (max-width: 1200px) {
+                    .category-grid {
+                        gap: 15px;
+                    }
 
-            .dish-name {
-                font-size: 0.9rem;
-            }
+                    .dish-list {
+                        padding-right: 15px;
+                    }
 
-            .dish-price {
-                width: 50px;
-                font-size: 0.85rem;
-            }
-        }
+                    .category-slider {
+                        width: 35%;
+                    }
+                }
+
+                @media (max-width: 992px) {
+                    .category-grid {
+                        flex-direction: column;
+                        gap: 2rem;
+                    }
+
+                    .category-menu {
+                        order: 2;
+                    }
+
+                    .category-slider {
+                        order: 1;
+                        width: 100%;
+                    }
+
+                    .category-title {
+                        font-size: 1.6rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .menu-categories-with-sliders {
+                        margin-top: 3rem;
+                    }
+
+                    .category-block {
+                        padding: 1.5rem;
+                        margin-bottom: 3rem;
+                    }
+
+                    .category-title {
+                        font-size: 1.4rem;
+                        margin-bottom: 1.2rem;
+                    }
+
+                    .dish-item {
+                        padding: 0.8rem 0;
+                    }
+
+                    .dish-name {
+                        font-size: 0.95rem;
+                    }
+
+                    .dish-price {
+                        width: 55px;
+                        font-size: 0.9rem;
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .category-block {
+                        padding: 1rem;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    .category-title {
+                        font-size: 1.2rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    .dish-item {
+                        padding: 0.7rem 0;
+                    }
+
+                    .dish-name {
+                        font-size: 0.9rem;
+                    }
+
+                    .dish-price {
+                        width: 50px;
+                        font-size: 0.85rem;
+                    }
+                }
     </style>
 </head>
+
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -3252,7 +3373,7 @@
         link.rel = 'stylesheet';
         link.href = '/components/header/header.css';
         document.head.appendChild(link);
-        
+
         // Función para cargar el header
         function loadHeader() {
             fetch('/components/header/header.html')
@@ -3261,13 +3382,13 @@
                     const headerContainer = document.getElementById('header-container');
                     if (headerContainer) {
                         headerContainer.innerHTML = html;
-                        
+
                         // Cargar el JS del header
                         const script = document.createElement('script');
                         script.src = '/components/header/header.js';
                         script.async = false; // Importante: cargar de forma síncrona
                         document.body.appendChild(script);
-                        
+
                         // Forzar la inicialización después de un breve retraso
                         setTimeout(() => {
                             if (window.initHeader) {
@@ -3280,7 +3401,7 @@
                     console.error('Error cargando el header HTML:', error);
                 });
         }
-        
+
         // Cargar el header cuando el DOM esté listo
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', loadHeader);
@@ -3290,475 +3411,528 @@
     </script>
 
     <!-- Hero Slider Section -->
-        <section class="hero-slider">
-            <div class="slide active">
-                <div class="hero-content">
-                    <h1>46 Años Siendo los #1 en Mariscos en Loja</h1>
-                    <p>Desde 1979, somos el restaurante de mariscos más experimentado de la ciudad.<br>La confianza de miles de familias lojanas nos respalda.</p>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/593998941753" class="btn btn-primary" target="_blank" rel="noopener">
-                            <i class="fas fa-calendar-alt"></i> Reserva Tu Mesa Ahora
-                        </a>
+    <section class="hero-slider">
+        <div class="slide active">
+            <div class="hero-content">
+                <h1>46 Años Siendo los #1 en Mariscos en Loja</h1>
+                <p>Desde 1979, somos el restaurante de mariscos más experimentado de la ciudad.<br>La confianza de miles
+                    de familias lojanas nos respalda.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/593998941753" class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fas fa-calendar-alt"></i> Reserva Tu Mesa Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="hero-content">
+                <h1>Camarón Reventado, Parihuela, Ceviche Mixto</h1>
+                <p>Los platos que hacen que nuestros clientes vuelvan una y otra vez.<br>Especialidades únicas que solo
+                    encontrarás aquí.</p>
+                <div class="hero-buttons">
+                    <a href="#platos-estrella" class="btn btn-primary">
+                        <i class="fas fa-utensils"></i> Ver Nuestro Menú Completo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="hero-content">
+                <h1>Mariscos Frescos Todos Los Días.<br>Garantizado.</h1>
+                <p>Del Pacífico a tu mesa en menos de 24 horas.<br>Calidad que puedes ver, oler y saborear.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/593998941753?text=Hola%20equipo%20de%20200%20Millas%2C%20estoy%20interesado%2Fa%20en%20conocer%20m%C3%A1s%20sobre%20la%20frescura%20de%20sus%20mariscos.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F"
+                        class="btn btn-primary" target="_blank" rel="noopener">
+                        <i class="fas fa-images"></i> Compruébalo Tú Mismo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-arrows">
+            <button class="slider-nav nav-prev" aria-label="Slide anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav nav-next" aria-label="Siguiente slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos Section - Diseño Asimétrico -->
+    <section class="quienes-somos-section animate-on-scroll">
+        <div class="container">
+            <div class="quienes-asimetrico">
+                <!-- Columna de Contenido (60%) -->
+                <div class="quienes-content">
+                    <h2 class="quienes-title">
+                        <span class="highlight">RESTAURANTE 200 MILLAS</span>
+                    </h2>
+                    <div class="quienes-intro-container">
+                        <p class="quienes-intro">
+                            <span class="text-short">Bienvenidos a 200 Millas Loja, nuestra historia empieza en el año
+                                1979 y no es solo un menú, es un legado que inició su fundador el Sr. Vismar
+                                Moncayo</span><span class="text-full">, con la idea de poner en Loja un Restaurante de
+                                Mariscos fusionando la comida ecuatoriana con la peruana, para lo cual se contrató un
+                                chef peruano y se capacitó al personal local.</span>
+                            <button class="read-more-btn">seguir leyendo</button>
+                        </p>
+                    </div>
+
+                    <!-- Bloques de Valor -->
+                    <div class="valor-blocks">
+                        <div class="valor-item">
+                            <div class="valor-icon">
+                                <i class="fas fa-fish"></i>
+                            </div>
+                            <div class="valor-content">
+                                <h3 class="valor-title">Frescos y Garantizados</h3>
+                                <p class="valor-text">Han pasado muchos años, muchas experiencias y seguimos preparando
+                                    los mejores mariscos manteniendo la esencia y tradición que nos caracteriza.</p>
+                            </div>
+                        </div>
+
+                        <div class="valor-item">
+                            <div class="valor-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="valor-content">
+                                <h3 class="valor-title">La Esencia Peruana</h3>
+                                <p class="valor-text">
+                                    <span class="text-short">En 200 Millas no solo deleitamos a nuestros clientes y
+                                        amigos con los mejores mariscos</span><span class="text-full">, sino que junto a
+                                        ellos creamos momentos especiales en familia, en pareja y entre amigos, creando
+                                        experiencias que quedan en la mente y corazón de todos.</span>
+                                    <button class="read-more-btn">seguir leyendo</button>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="valor-item">
+                            <div class="valor-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="valor-content">
+                                <h3 class="valor-title">Visión Familiar</h3>
+                                <p class="valor-text">Cada uno de nuestros platos es una celebración de frescura,
+                                    calidad y tradición que perdura con los años y demuestra nuestra pasión por la
+                                    gastronomía marina.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Visual (40%) -->
+                <div class="quienes-visual">
+                    <div class="image-text-container">
+                        <p class="overlay-slogan">"Algo muy especial en mariscos"</p>
+                        <p class="overlay-years">46 años de experiencia ofreciendo lo mejor de la comida marina en la
+                            ciudad de Loja.</p>
+                    </div>
+                    <div class="image-grid" style="border-radius: 0 0 10px 10px; overflow: hidden;">
+                        <!-- Imagen 1 (grande) -->
+                        <div class="grid-item main-image">
+                            <img src="/assets/images/inicio/vismar-moncayo.webp"
+                                alt="Vismar Moncayo - Fundador 200 Millas Loja" loading="lazy">
+                            <!-- Cápsula del Tiempo Flotante -->
+                            <div class="legacy-capsule">
+                                <div class="capsule-content">
+                                    <span class="legacy-year">Desde</span>
+                                    <span class="legacy-number">1979</span>
+                                    <p class="legacy-text">años de excelencia</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Imagen 2 (pequeña) -->
+                        <div class="grid-item small-image">
+                            <img src="/assets/images/inicio/cocina-200millas.webp" alt="Cocina 200 Millas Loja"
+                                loading="lazy">
+                        </div>
+
+                        <!-- Imagen 3 (pequeña) -->
+                        <div class="grid-item small-image">
+                            <img src="/assets/images/inicio/ambiente-200millas.webp" alt="Ambiente 200 Millas Loja"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Video Destacado -->
+    <section class="video-showcase animate-on-scroll">
+        <div class="container">
+            <div class="video-content">
+                <h2 class="section-title">Experimenta 200 Millas Loja: Sabor, Tradición y Ambiente</h2>
+                <p class="section-description">
+                    Una breve mirada a la excelencia de nuestra cocina, la frescura de nuestros mariscos y el cálido
+                    ambiente familiar que nos define. ¡Disfrútalo!
+                </p>
+
+                <div class="video-container" style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 15px;">
+                    <div class="video-wrapper"
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                        <video controls
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                            <source src="/assets/images/inicio/home.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Menú Destacado -->
+    <section id="menu-destacado" class="menu-section animate-on-scroll">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Menú de Mariscos 200 Millas Loja: Fusión y Tradición</h2>
+                <p class="section-subtitle">Una selección de nuestros mejores platos: desde las especialidades de la
+                    alta cocina marina hasta la auténtica tradición lojana. Explore la frescura del mar y encuentre su
+                    favorito.</p>
+            </div>
+
+            <!-- Zona A: Platos Destacados -->
+            <div id="platos-estrella" class="featured-dishes">
+                <h3 class="section-subtitle">Nuestros Platos Estrella</h3>
+                <div class="featured-grid">
+                    <!-- Plato 1 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/pariguella.webp" alt="Parihuela 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">$11.00</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Parihuela</h4>
+                            <p class="dish-description">La Sopa Marinera Tradicional</p>
+                            <a href="/pariguela.html" class="btn btn-primary">Ver Plato</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 2 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/camaron-reventado.webp"
+                                alt="Camarón Reventado 200 Millas Loja" loading="lazy">
+                            <div class="dish-price">$11.25</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Camarón Reventado</h4>
+                            <p class="dish-description">Especialidad de la Casa con salsa única</p>
+                            <a href="/camaron-reventado.html" class="btn btn-primary">Ver Plato</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 3 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/ceviche-mixto.webp" alt="Ceviche Mixto 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">$11.50</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Ceviche Mixto</h4>
+                            <p class="dish-description">Fusión Perfecta: Camarón, Concha, Pescado</p>
+                            <a href="/ceviche-mixto.html" class="btn btn-primary">Ver Plato</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 4 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/arroz-mariscos.webp"
+                                alt="Arroz con Mariscos 200 Millas Loja" loading="lazy">
+                            <div class="dish-price">$11.25</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Arroz con Mariscos</h4>
+                            <p class="dish-description">Clásico Abundante (sin acompañamiento extra)</p>
+                            <a href="/arroz-con-mariscos.html" class="btn btn-primary">Ver Plato</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 5 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/conchas-asadas.webp" alt="Conchas Asadas 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">$11.75</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Conchas Asadas (20 Unidades)</h4>
+                            <p class="dish-description">El Plato Ideal para Compartir</p>
+                            <a href="/conchas-asadas.html" class="btn btn-primary">Ver Plato</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 6 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/sopas.webp" alt="Sopas 200 Millas Loja" loading="lazy">
+                            <div class="dish-price">Desde $8.50</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Sopas Marineras</h4>
+                            <p class="dish-description">Variedad de sabores del mar</p>
+                            <a href="/sopas.html" class="btn btn-primary">Ver Platos</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 7 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/ceviches.webp" alt="Ceviches 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">Desde $10.50</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Ceviches Variados</h4>
+                            <p class="dish-description">Frescura y sabor en cada bocado</p>
+                            <a href="/ceviches.html" class="btn btn-primary">Ver Platos</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 8 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/segundos.webp" alt="Segundos 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">Desde $9.75</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Segundos Platos</h4>
+                            <p class="dish-description">Platos fuertes del mar</p>
+                            <a href="/segundos.html" class="btn btn-primary">Ver Platos</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 9 -->
+                    <div class="dish-card">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/especialidades.webp" alt="Especialidades 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">Desde $12.00</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Nuestras Especialidades</h4>
+                            <p class="dish-description">Lo mejor de nuestra cocina</p>
+                            <a href="/especialidades.html" class="btn btn-primary">Ver Platos</a>
+                        </div>
+                    </div>
+
+                    <!-- Plato 10 - Última fila centrada -->
+                    <div class="dish-card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto;">
+                        <div class="dish-image">
+                            <img src="/assets/images/inicio/acompañamientos.webp" alt="Acompañamientos 200 Millas Loja"
+                                loading="lazy">
+                            <div class="dish-price">Desde $2.50</div>
+                        </div>
+                        <div class="dish-content">
+                            <h4>Acompañamientos</h4>
+                            <p class="dish-description">El complemento perfecto para tus platos</p>
+                            <a href="/acompañamientos.html" class="btn btn-primary">Ver Opciones</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="slide">
-                <div class="hero-content">
-                    <h1>Camarón Reventado, Parihuela, Ceviche Mixto</h1>
-                    <p>Los platos que hacen que nuestros clientes vuelvan una y otra vez.<br>Especialidades únicas que solo encontrarás aquí.</p>
-                    <div class="hero-buttons">
-                        <a href="#platos-estrella" class="btn btn-primary">
-                            <i class="fas fa-utensils"></i> Ver Nuestro Menú Completo
-                        </a>
-                    </div>
-                </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">Lo que Dicen Nuestros Clientes: El Mejor Sabor de Loja</h2>
+                <p class="testimonials-subtitle">Más de 46 años construyendo un legado de sabor y excelencia. Lea las
+                    experiencias auténticas de quienes ya probaron la fusión marina de 200 Millas.</p>
             </div>
 
-            <div class="slide">
-                <div class="hero-content">
-                    <h1>Mariscos Frescos Todos Los Días.<br>Garantizado.</h1>
-                    <p>Del Pacífico a tu mesa en menos de 24 horas.<br>Calidad que puedes ver, oler y saborear.</p>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/593998941753?text=Hola%20equipo%20de%20200%20Millas%2C%20estoy%20interesado%2Fa%20en%20conocer%20m%C3%A1s%20sobre%20la%20frescura%20de%20sus%20mariscos.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F" class="btn btn-primary" target="_blank" rel="noopener">
-                            <i class="fas fa-images"></i> Compruébalo Tú Mismo
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <div class="slider-arrows">
-                <button class="slider-nav nav-prev" aria-label="Slide anterior">
+            <!-- Controles del slider para móviles -->
+            <div class="testimonial-slider-controls mobile-only">
+                <button class="testimonial-prev" aria-label="Anterior testimonio" id="testimonial-prev-btn">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="slider-nav nav-next" aria-label="Siguiente slide">
+                <div class="testimonial-pagination" id="testimonial-pagination"></div>
+                <button class="testimonial-next" aria-label="Siguiente testimonio" id="testimonial-next-btn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-        </section>
 
-        <!-- Quiénes Somos Section - Diseño Asimétrico -->
-        <section class="quienes-somos-section animate-on-scroll">
-            <div class="container">
-                <div class="quienes-asimetrico">
-                    <!-- Columna de Contenido (60%) -->
-                    <div class="quienes-content">
-                        <h2 class="quienes-title">
-                            <span class="highlight">RESTAURANTE 200 MILLAS</span>
-                        </h2>
-                        <div class="quienes-intro-container">
-                            <p class="quienes-intro">
-                                <span class="text-short">Bienvenidos a 200 Millas Loja, nuestra historia empieza en el año 1979 y no es solo un menú, es un legado que inició su fundador el Sr. Vismar Moncayo</span><span class="text-full">, con la idea de poner en Loja un Restaurante de Mariscos fusionando la comida ecuatoriana con la peruana, para lo cual se contrató un chef peruano y se capacitó al personal local.</span>
-                                <button class="read-more-btn">seguir leyendo</button>
-                            </p>
-                        </div>
-
-                        <!-- Bloques de Valor -->
-                        <div class="valor-blocks">
-                            <div class="valor-item">
-                                <div class="valor-icon">
-                                    <i class="fas fa-fish"></i>
-                                </div>
-                                <div class="valor-content">
-                                    <h3 class="valor-title">Frescos y Garantizados</h3>
-                                    <p class="valor-text">Han pasado muchos años, muchas experiencias y seguimos preparando los mejores mariscos manteniendo la esencia y tradición que nos caracteriza.</p>
-                                </div>
-                            </div>
-
-                            <div class="valor-item">
-                                <div class="valor-icon">
-                                    <i class="fas fa-utensils"></i>
-                                </div>
-                                <div class="valor-content">
-                                    <h3 class="valor-title">La Esencia Peruana</h3>
-                                    <p class="valor-text">
-                                        <span class="text-short">En 200 Millas no solo deleitamos a nuestros clientes y amigos con los mejores mariscos</span><span class="text-full">, sino que junto a ellos creamos momentos especiales en familia, en pareja y entre amigos, creando experiencias que quedan en la mente y corazón de todos.</span>
-                                        <button class="read-more-btn">seguir leyendo</button>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="valor-item">
-                                <div class="valor-icon">
-                                    <i class="fas fa-award"></i>
-                                </div>
-                                <div class="valor-content">
-                                    <h3 class="valor-title">Visión Familiar</h3>
-                                    <p class="valor-text">Cada uno de nuestros platos es una celebración de frescura, calidad y tradición que perdura con los años y demuestra nuestra pasión por la gastronomía marina.</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
+                    <p class="testimonial-text">"Excelente atención y la comida deliciosa. El ceviche y el arroz con
+                        camarones son espectaculares. El lugar es muy acogedor y la atención es de primera. ¡Totalmente
+                        recomendado!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="/assets/images/gallery/cliente-4.webp" alt="Ana M." loading="lazy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ana M.</h4>
+                            <p>Google Review · 5/5</p>
+                        </div>
+                        <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,,"
+                            target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
+                    </div>
+                </div>
 
-                    <!-- Columna Visual (40%) -->
-                    <div class="quienes-visual">
-                        <div class="image-text-container">
-                            <p class="overlay-slogan">"Algo muy especial en mariscos"</p>
-                            <p class="overlay-years">46 años de experiencia ofreciendo lo mejor de la comida marina en la ciudad de Loja.</p>
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"La mejor experiencia gastronómica en Loja. La calidad de los mariscos
+                        es excepcional, todo fresco y bien preparado. El personal es muy amable y el ambiente es
+                        familiar. ¡Volveré cada vez que visite la ciudad!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="/assets/images/gallery/cliente-2.webp" alt="Carlos P." loading="lazy">
                         </div>
-                        <div class="image-grid" style="border-radius: 0 0 10px 10px; overflow: hidden;">
-                            <!-- Imagen 1 (grande) -->
-                            <div class="grid-item main-image">
-                                <img src="/assets/images/inicio/vismar-moncayo.webp" alt="Vismar Moncayo - Fundador 200 Millas Loja" loading="lazy">
-                                <!-- Cápsula del Tiempo Flotante -->
-                                <div class="legacy-capsule">
-                                    <div class="capsule-content">
-                                        <span class="legacy-year">Desde</span>
-                                        <span class="legacy-number">1979</span>
-                                        <p class="legacy-text">años de excelencia</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Imagen 2 (pequeña) -->
-                            <div class="grid-item small-image">
-                                <img src="/assets/images/inicio/cocina-200millas.webp" alt="Cocina 200 Millas Loja" loading="lazy">
-                            </div>
-                            
-                            <!-- Imagen 3 (pequeña) -->
-                            <div class="grid-item small-image">
-                                <img src="/assets/images/inicio/ambiente-200millas.webp" alt="Ambiente 200 Millas Loja" loading="lazy">
-                            </div>
+                        <div class="testimonial-info">
+                            <h4>Carlos P.</h4>
+                            <p>Google Review · 5/5</p>
                         </div>
+                        <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,,"
+                            target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
+                    </div>
+                </div>
+
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Increíble la sazón de sus platos. El encocado de camarones es para
+                        chuparse los dedos. La atención es excelente y los precios son justos para la calidad que
+                        ofrecen. ¡Un lugar que no pueden dejar de visitar!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="/assets/images/gallery/cliente-3.webp" alt="María G." loading="lazy">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>María G.</h4>
+                            <p>Google Review · 5/5</p>
+                        </div>
+                        <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,,"
+                            target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Sección de Video Destacado -->
-        <section class="video-showcase animate-on-scroll">
-            <div class="container">
-                <div class="video-content">
-                    <h2 class="section-title">Experimenta 200 Millas Loja: Sabor, Tradición y Ambiente</h2>
-                    <p class="section-description">
-                        Una breve mirada a la excelencia de nuestra cocina, la frescura de nuestros mariscos y el cálido ambiente familiar que nos define. ¡Disfrútalo!
-                    </p>
-
-                    <div class="video-container" style="width: 100%; max-width: 100%; margin: 0 auto; padding: 0 15px;">
-                        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
-                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                                <source src="/assets/images/inicio/home.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                        </div>
-                    </div>
-                </div>
+    <!-- Sección de Preguntas Frecuentes -->
+    <section class="faq-section animate-on-scroll">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-title">Preguntas Frecuentes sobre Restaurantes en Loja y Nuestro Servicio</h2>
             </div>
-        </section>
 
-        <!-- Sección de Menú Destacado -->
-        <section id="menu-destacado" class="menu-section animate-on-scroll">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Menú de Mariscos 200 Millas Loja: Fusión y Tradición</h2>
-                    <p class="section-subtitle">Una selección de nuestros mejores platos: desde las especialidades de la alta cocina marina hasta la auténtica tradición lojana. Explore la frescura del mar y encuentre su favorito.</p>
-                </div>
-
-                <!-- Zona A: Platos Destacados -->
-                <div id="platos-estrella" class="featured-dishes">
-                    <h3 class="section-subtitle">Nuestros Platos Estrella</h3>
-                    <div class="featured-grid">
-                        <!-- Plato 1 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/pariguella.webp" alt="Parihuela 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">$11.00</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Parihuela</h4>
-                                <p class="dish-description">La Sopa Marinera Tradicional</p>
-                                <a href="/pariguela.html" class="btn btn-primary">Ver Plato</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 2 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/camaron-reventado.webp" alt="Camarón Reventado 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">$11.25</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Camarón Reventado</h4>
-                                <p class="dish-description">Especialidad de la Casa con salsa única</p>
-                                <a href="/camaron-reventado.html" class="btn btn-primary">Ver Plato</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 3 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/ceviche-mixto.webp" alt="Ceviche Mixto 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">$11.50</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Ceviche Mixto</h4>
-                                <p class="dish-description">Fusión Perfecta: Camarón, Concha, Pescado</p>
-                                <a href="/ceviche-mixto.html" class="btn btn-primary">Ver Plato</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 4 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/arroz-mariscos.webp" alt="Arroz con Mariscos 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">$11.25</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Arroz con Mariscos</h4>
-                                <p class="dish-description">Clásico Abundante (sin acompañamiento extra)</p>
-                                <a href="/arroz-con-mariscos.html" class="btn btn-primary">Ver Plato</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 5 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/conchas-asadas.webp" alt="Conchas Asadas 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">$11.75</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Conchas Asadas (20 Unidades)</h4>
-                                <p class="dish-description">El Plato Ideal para Compartir</p>
-                                <a href="/conchas-asadas.html" class="btn btn-primary">Ver Plato</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 6 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/sopas.webp" alt="Sopas 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">Desde $8.50</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Sopas Marineras</h4>
-                                <p class="dish-description">Variedad de sabores del mar</p>
-                                <a href="/sopas.html" class="btn btn-primary">Ver Platos</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 7 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/ceviches.webp" alt="Ceviches 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">Desde $10.50</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Ceviches Variados</h4>
-                                <p class="dish-description">Frescura y sabor en cada bocado</p>
-                                <a href="/ceviches.html" class="btn btn-primary">Ver Platos</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 8 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/segundos.webp" alt="Segundos 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">Desde $9.75</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Segundos Platos</h4>
-                                <p class="dish-description">Platos fuertes del mar</p>
-                                <a href="/segundos.html" class="btn btn-primary">Ver Platos</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 9 -->
-                        <div class="dish-card">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/especialidades.webp" alt="Especialidades 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">Desde $12.00</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Nuestras Especialidades</h4>
-                                <p class="dish-description">Lo mejor de nuestra cocina</p>
-                                <a href="/especialidades.html" class="btn btn-primary">Ver Platos</a>
-                            </div>
-                        </div>
-
-                        <!-- Plato 10 - Última fila centrada -->
-                        <div class="dish-card" style="grid-column: 1 / -1; max-width: 500px; margin: 0 auto;">
-                            <div class="dish-image">
-                                <img src="/assets/images/inicio/acompañamientos.webp" alt="Acompañamientos 200 Millas Loja" loading="lazy">
-                                <div class="dish-price">Desde $2.50</div>
-                            </div>
-                            <div class="dish-content">
-                                <h4>Acompañamientos</h4>
-                                <p class="dish-description">El complemento perfecto para tus platos</p>
-                                <a href="/acompañamientos.html" class="btn btn-primary">Ver Opciones</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </section>
-
-        <!-- Sección de Testimonios -->
-        <section class="testimonials-section">
-            <div class="container">
-                <div class="testimonials-header">
-                    <h2 class="testimonials-title">Lo que Dicen Nuestros Clientes: El Mejor Sabor de Loja</h2>
-                    <p class="testimonials-subtitle">Más de 46 años construyendo un legado de sabor y excelencia. Lea las experiencias auténticas de quienes ya probaron la fusión marina de 200 Millas.</p>
-                </div>
-
-                <!-- Controles del slider para móviles -->
-                <div class="testimonial-slider-controls mobile-only">
-                    <button class="testimonial-prev" aria-label="Anterior testimonio" id="testimonial-prev-btn">
-                        <i class="fas fa-chevron-left"></i>
+            <div class="faq-accordion">
+                <!-- Pregunta 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">¿Cómo puedo reservar una mesa en Restaurante 200 Millas
+                            Loja?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </button>
-                    <div class="testimonial-pagination" id="testimonial-pagination"></div>
-                    <button class="testimonial-next" aria-label="Siguiente testimonio" id="testimonial-next-btn">
-                        <i class="fas fa-chevron-right"></i>
+                    <div class="faq-answer">
+                        <p>¡Es muy sencillo! La manera más rápida para reservar mesa en Restaurante Loja es
+                            contactándonos directamente por WhatsApp al +593 99 894 1753. Aceptamos reservas de Lunes a
+                            Domingo.</p>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">¿Tienen opciones de menú en el centro de Loja que sean
+                            económicas?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
                     </button>
+                    <div class="faq-answer">
+                        <p>Sí. Además de nuestra alta cocina marina, ofrecemos el auténtico Pollo Acullado desde $6.50,
+                            haciéndonos una de las mejores opciones entre los restaurantes económicos centro Loja sin
+                            sacrificar calidad y sabor.</p>
+                    </div>
                 </div>
 
-                <div class="testimonials-grid">
-                    <!-- Testimonio 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Excelente atención y la comida deliciosa. El ceviche y el arroz con camarones son espectaculares. El lugar es muy acogedor y la atención es de primera. ¡Totalmente recomendado!"</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <img src="/assets/images/gallery/cliente-4.webp" alt="Ana M." loading="lazy">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>Ana M.</h4>
-                                <p>Google Review · 5/5</p>
-                            </div>
-                            <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,," target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
-                        </div>
+                <!-- Pregunta 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">¿Cuáles son los horarios de atención y dónde están
+                            ubicados?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Estamos en el centro de Loja (10 de Agosto y Juan José Peña). Nuestro horario es Lunes a
+                            Jueves: 10:00 a 16:00 y Viernes a Domingo: 09:30 a 16:45. ¡Le esperamos!</p>
                     </div>
+                </div>
 
-                    <!-- Testimonio 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"La mejor experiencia gastronómica en Loja. La calidad de los mariscos es excepcional, todo fresco y bien preparado. El personal es muy amable y el ambiente es familiar. ¡Volveré cada vez que visite la ciudad!"</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <img src="/assets/images/gallery/cliente-2.webp" alt="Carlos P." loading="lazy">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>Carlos P.</h4>
-                                <p>Google Review · 5/5</p>
-                            </div>
-                            <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,," target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
-                        </div>
+                <!-- Pregunta 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">¿Qué tan frescos son los mariscos, estando Loja lejos de la
+                            costa?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La frescura es nuestra garantía y promesa principal. 200 Millas Loja es el embajador de la
+                            frescura del Pacífico en la Sierra Sur.</p>
                     </div>
+                </div>
 
-                    <!-- Testimonio 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Increíble la sazón de sus platos. El encocado de camarones es para chuparse los dedos. La atención es excelente y los precios son justos para la calidad que ofrecen. ¡Un lugar que no pueden dejar de visitar!"</p>
-                        <div class="testimonial-author">
-                            <div class="testimonial-avatar">
-                                <img src="/assets/images/gallery/cliente-3.webp" alt="María G." loading="lazy">
-                            </div>
-                            <div class="testimonial-info">
-                                <h4>María G.</h4>
-                                <p>Google Review · 5/5</p>
-                            </div>
-                            <a href="https://www.google.com/search?q=200+millas+google+review&rlz=1C1CHBF_esEC1095EC1095&oq=200+millas+google+re&gs_lcrp=EgZjaHJvbWUqBwgCECEYoAEyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRigATIHCAUQIRifBTIHCAYQIRifBdIBCDUyMDZqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#lrd=0x91cb47ffe7de6479:0x7273e3b7a124251a,1,,,," target="_blank" rel="noopener" class="btn-ver-resena">Ver reseña</a>
-                        </div>
+                <!-- Pregunta 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-question-text">¿Tienen servicio a domicilio o delivery en Loja?</span>
+                        <span class="faq-icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, ofrecemos servicio a domicilio. Puede realizar su pedido directamente por WhatsApp al
+                            +593 99 894 1753 o a través de PedidosYa para disfrutar de nuestros mariscos Loja en su
+                            hogar u oficina.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Sección de Preguntas Frecuentes -->
-        <section class="faq-section animate-on-scroll">
-            <div class="container">
-                <div class="faq-header">
-                    <h2 class="faq-title">Preguntas Frecuentes sobre Restaurantes en Loja y Nuestro Servicio</h2>
-                </div>
-
-                <div class="faq-accordion">
-                    <!-- Pregunta 1 -->
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-question-text">¿Cómo puedo reservar una mesa en Restaurante 200 Millas Loja?</span>
-                            <span class="faq-icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>¡Es muy sencillo! La manera más rápida para reservar mesa en Restaurante Loja es contactándonos directamente por WhatsApp al +593 99 894 1753. Aceptamos reservas de Lunes a Domingo.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 2 -->
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-question-text">¿Tienen opciones de menú en el centro de Loja que sean económicas?</span>
-                            <span class="faq-icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sí. Además de nuestra alta cocina marina, ofrecemos el auténtico Pollo Acullado desde $6.50, haciéndonos una de las mejores opciones entre los restaurantes económicos centro Loja sin sacrificar calidad y sabor.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 3 -->
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-question-text">¿Cuáles son los horarios de atención y dónde están ubicados?</span>
-                            <span class="faq-icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Estamos en el centro de Loja (10 de Agosto y Juan José Peña). Nuestro horario es Lunes a Jueves: 10:00 a 16:00 y Viernes a Domingo: 09:30 a 16:45. ¡Le esperamos!</p>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 4 -->
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-question-text">¿Qué tan frescos son los mariscos, estando Loja lejos de la costa?</span>
-                            <span class="faq-icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>La frescura es nuestra garantía y promesa principal. 200 Millas Loja es el embajador de la frescura del Pacífico en la Sierra Sur.</p>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 5 -->
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span class="faq-question-text">¿Tienen servicio a domicilio o delivery en Loja?</span>
-                            <span class="faq-icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Sí, ofrecemos servicio a domicilio. Puede realizar su pedido directamente por WhatsApp al +593 99 894 1753 o a través de PedidosYa para disfrutar de nuestros mariscos Loja en su hogar u oficina.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <!-- Footer Component -->
@@ -3826,7 +4000,7 @@
 
     <!-- Hero Slider Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.querySelector('.nav-prev');
             const nextBtn = document.querySelector('.nav-next');
@@ -3859,7 +4033,7 @@
 
             // Event listeners for navigation buttons
             if (nextBtn) {
-                nextBtn.addEventListener('click', function() {
+                nextBtn.addEventListener('click', function () {
                     nextSlide();
                     stopAutoSlide();
                     setTimeout(startAutoSlide, 10000); // Restart auto-slide after 10 seconds of manual interaction
@@ -3867,7 +4041,7 @@
             }
 
             if (prevBtn) {
-                prevBtn.addEventListener('click', function() {
+                prevBtn.addEventListener('click', function () {
                     prevSlide();
                     stopAutoSlide();
                     setTimeout(startAutoSlide, 10000); // Restart auto-slide after 10 seconds of manual interaction
@@ -3885,7 +4059,7 @@
             startAutoSlide();
 
             // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'ArrowLeft') {
                     prevSlide();
                     stopAutoSlide();
@@ -3901,11 +4075,11 @@
 
     <!-- FAQ Accordion Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const faqQuestions = document.querySelectorAll('.faq-question');
 
             faqQuestions.forEach(question => {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
                     // Cerrar todas las preguntas
@@ -3921,7 +4095,7 @@
             });
 
             // Cerrar FAQ al hacer clic fuera
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (!e.target.closest('.faq-item')) {
                     faqQuestions.forEach(q => {
                         q.setAttribute('aria-expanded', 'false');
@@ -3935,14 +4109,14 @@
     <script src="/assets/js/main.js" defer></script>
     <script>
         // Hide loading screen when everything is loaded
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             // Small delay to ensure everything is ready
-            setTimeout(function() {
+            setTimeout(function () {
                 const loadingScreen = document.getElementById('loading-screen');
                 if (loadingScreen) {
                     loadingScreen.classList.add('fade-out');
                     // Remove from DOM after animation completes
-                    setTimeout(function() {
+                    setTimeout(function () {
                         loadingScreen.style.display = 'none';
                     }, 500); // Match this with the CSS transition time
                 }
@@ -3952,28 +4126,28 @@
     <script src="/components/header/header.js" defer></script>
     <script>
         // Inicializar animaciones al hacer scroll
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Verificar si los elementos están en el viewport
             const animateElements = document.querySelectorAll('.animate-on-scroll');
-            
+
             const checkIfInView = () => {
                 animateElements.forEach(element => {
                     const elementTop = element.getBoundingClientRect().top;
                     const windowHeight = window.innerHeight;
-                    
+
                     if (elementTop < windowHeight - 100) {
                         element.classList.add('visible');
                     }
                 });
             };
-            
+
             // Ejecutar al cargar y al hacer scroll
             window.addEventListener('load', checkIfInView);
             window.addEventListener('scroll', checkIfInView);
-            
+
             // Forzar verificación inicial
             checkIfInView();
-            
+
             // Actualizar año en el footer
             const currentYear = new Date().getFullYear();
             const yearElement = document.getElementById('current-year');
@@ -3985,7 +4159,7 @@
 
     <!-- Menu Category Sliders Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Inicializar todos los sliders de categorías
             const categorySliders = document.querySelectorAll('.category-slider');
 
@@ -4051,11 +4225,11 @@
                 setInterval(nextSlide, 4000);
 
                 // Pausar auto-slide al hacer hover
-                slider.addEventListener('mouseenter', function() {
+                slider.addEventListener('mouseenter', function () {
                     clearInterval(slider.autoSlideInterval);
                 });
 
-                slider.addEventListener('mouseleave', function() {
+                slider.addEventListener('mouseleave', function () {
                     slider.autoSlideInterval = setInterval(nextSlide, 4000);
                 });
             });
@@ -4063,11 +4237,11 @@
             // Funcionalidad para los botones 'seguir leyendo' en móviles
             function setupReadMoreButtons() {
                 const readMoreButtons = document.querySelectorAll('.read-more-btn');
-                
+
                 readMoreButtons.forEach(button => {
                     const container = button.closest('.valor-text, .quienes-intro');
                     const textFull = container ? container.querySelector('.text-full') : null;
-                    
+
                     if (textFull) {
                         // Ocultar el texto completo por defecto en móviles
                         if (window.innerWidth <= 768) {
@@ -4076,9 +4250,9 @@
                             textFull.style.display = 'inline';
                             button.style.display = 'none';
                         }
-                        
+
                         // Configurar el evento click
-                        button.addEventListener('click', function(e) {
+                        button.addEventListener('click', function (e) {
                             e.preventDefault();
                             const isExpanded = textFull.style.display === 'inline';
                             textFull.style.display = isExpanded ? 'none' : 'inline';
@@ -4087,10 +4261,10 @@
                     }
                 });
             }
-            
+
             // Inicializar los botones
             setupReadMoreButtons();
-            
+
             // Inicializar el slider de testimonios
             function initTestimonialSlider() {
                 const testimonials = document.querySelectorAll('.testimonial-card');
@@ -4117,7 +4291,7 @@
 
                     currentSlide = (index + testimonials.length) % testimonials.length;
                     const scrollPosition = currentSlide * (testimonials[0].offsetWidth + 32); // 32px = gap (1rem * 2)
-                    
+
                     testimonialsGrid.scrollTo({
                         left: scrollPosition,
                         behavior: 'smooth'
@@ -4150,7 +4324,7 @@
                     testimonialsGrid.addEventListener('scroll', () => {
                         const scrollPosition = testimonialsGrid.scrollLeft;
                         const cardWidth = testimonials[0]?.offsetWidth + 32; // Ancho de la tarjeta + gap
-                        
+
                         if (cardWidth) {
                             const newSlide = Math.round(scrollPosition / cardWidth);
                             if (newSlide !== currentSlide) {
@@ -4177,21 +4351,21 @@
                 window.addEventListener('resize', adjustTestimonialsGrid);
                 adjustTestimonialsGrid();
             }
-            
+
             // Inicializar el slider cuando el DOM esté listo
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', initTestimonialSlider);
             } else {
                 initTestimonialSlider();
             }
-            
+
             // Manejar cambios de tamaño de pantalla
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 const readMoreButtons = document.querySelectorAll('.read-more-btn');
                 readMoreButtons.forEach(button => {
                     const container = button.closest('.valor-text, .quienes-intro');
                     const textFull = container ? container.querySelector('.text-full') : null;
-                    
+
                     if (textFull) {
                         if (window.innerWidth > 768) {
                             textFull.style.display = 'inline';
@@ -4206,7 +4380,7 @@
             });
         });
     </script>
-    
+
     <style>
         /* Estilos para los botones de reseñas */
         .btn-ver-resena {
@@ -4222,12 +4396,12 @@
             transition: background-color 0.3s ease;
             border: 1px solid #e67e22;
         }
-        
+
         .btn-ver-resena:hover {
             background-color: #d35400;
             text-decoration: none;
         }
-        
+
         .testimonial-author {
             position: relative;
             padding-bottom: 15px;
@@ -4238,7 +4412,7 @@
             .quienes-intro-container {
                 position: relative;
             }
-            
+
             .read-more-btn {
                 background: none;
                 border: none;
@@ -4253,26 +4427,27 @@
                 vertical-align: baseline;
                 text-decoration: none;
             }
-            
+
             .read-more-btn::before {
                 content: ' ';
                 display: inline;
             }
-            
+
             .read-more-btn:hover {
                 text-decoration: underline;
             }
         }
-        
+
         @media (min-width: 769px) {
             .read-more-btn {
                 display: none;
             }
-            
+
             .text-full {
                 display: inline !important;
             }
         }
     </style>
 </body>
+
 </html>
