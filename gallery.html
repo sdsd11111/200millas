@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja</title>
-    <meta name="description" content="Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve en 200 Millas Loja.">
+    <meta name="description"
+        content="Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve en 200 Millas Loja.">
 
     <!-- Preload de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -29,25 +33,32 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://200millasloja.com/gallery">
     <meta property="og:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
-    <meta property="og:description" content="Descubre la historia visual de 200 Millas en Loja a través de clientes satisfechos, eventos especiales y platos icónicos.">
+    <meta property="og:description"
+        content="Descubre la historia visual de 200 Millas en Loja a través de clientes satisfechos, eventos especiales y platos icónicos.">
     <meta property="og:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://200millasloja.com/gallery">
     <meta name="twitter:title" content="Nuestra Galería: Momentos, Tradición y Sabores de 200 Millas en Loja">
-    <meta name="twitter:description" content="Explora la galería de 200 Millas: clientes, eventos y platos destacados en Loja.">
+    <meta name="twitter:description"
+        content="Explora la galería de 200 Millas: clientes, eventos y platos destacados en Loja.">
     <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-gallery.webp">
 </head>
+
 <body>
     <!-- Loading Screen -->
-    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+    <div id="loading-screen"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
         <div style="text-align: center;">
-            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
-            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja"
+                style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner"
+                style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;">
+            </div>
         </div>
     </div>
-    
+
     <!-- Header Component -->
     <div id="header-container"></div>
 
@@ -58,7 +69,7 @@
         link.rel = 'stylesheet';
         link.href = '/components/header/header.css';
         document.head.appendChild(link);
-        
+
         // Función para cargar el header
         function loadHeader() {
             fetch('/components/header/header.html')
@@ -67,12 +78,12 @@
                     const headerContainer = document.getElementById('header-container');
                     if (headerContainer) {
                         headerContainer.innerHTML = html;
-                        
+
                         // Cargar el JS del header
                         const script = document.createElement('script');
                         script.src = '/components/header/header.js';
                         script.async = false; // Importante: cargar de forma síncrona
-                        script.onload = function() {
+                        script.onload = function () {
                             // Asegurarse de que el header se inicialice correctamente
                             if (window.initHeader) {
                                 window.initHeader();
@@ -90,42 +101,42 @@
                     console.error('Error cargando el header HTML:', error);
                 });
         }
-        
+
         // Función para manejar la carga de la página
         function handlePageLoad() {
             // Agregar clase de carga al body
             document.body.classList.add('loading');
-            
+
             // Cargar el header
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', loadHeader);
             } else {
                 loadHeader();
             }
-            
+
             // Esperar a que cargue todo el contenido
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 // Pequeño retraso para asegurar que todo esté listo
-                setTimeout(function() {
+                setTimeout(function () {
                     // Ocultar el loader
                     const loadingScreen = document.getElementById('loading-screen');
                     if (loadingScreen) {
                         loadingScreen.style.opacity = '0';
                         loadingScreen.style.visibility = 'hidden';
-                        
+
                         // Mostrar el contenido
                         document.body.classList.remove('loading');
                         document.body.classList.add('loaded');
-                        
+
                         // Eliminar el loader del DOM después de la animación
-                        setTimeout(function() {
+                        setTimeout(function () {
                             loadingScreen.remove();
                         }, 500);
                     }
                 }, 300); // Tiempo más corto que en la página de inicio (300ms vs 500ms)
             });
         }
-        
+
         // Iniciar la carga de la página
         handlePageLoad();
     </script>
@@ -142,7 +153,8 @@
         <section id="gallery-page">
             <div class="container">
                 <!-- Subtítulo -->
-                <p class="gallery-subtitle">Explore nuestra historia visual: desde los clientes satisfechos y eventos especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve.</p>
+                <p class="gallery-subtitle">Explore nuestra historia visual: desde los clientes satisfechos y eventos
+                    especiales hasta la belleza de nuestros platos más icónicos. La frescura se ve.</p>
 
                 <!-- Navegación de Pestañas -->
                 <div class="tabs-navigation">
@@ -226,6 +238,134 @@
                         </div>
                     </div>
 
+                    <!-- Cliente 10 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-10.webp" alt="Clientes Felices">
+                        <div class="card-overlay">
+                            <h3>Clientes Felices</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 11 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-11.webp" alt="Momentos Especiales">
+                        <div class="card-overlay">
+                            <h3>Momentos Especiales</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 12 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-12.webp" alt="Clientes Contentos">
+                        <div class="card-overlay">
+                            <h3>Clientes Contentos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 13 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-13.webp" alt="Familia Lojana">
+                        <div class="card-overlay">
+                            <h3>Familia Lojana</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 14 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-14.webp" alt="Visitantes Satisfechos">
+                        <div class="card-overlay">
+                            <h3>Visitantes Satisfechos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 15 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-15.webp" alt="Clientes Alegres">
+                        <div class="card-overlay">
+                            <h3>Clientes Alegres</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 16 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-16.webp" alt="Amigos en 200 Millas">
+                        <div class="card-overlay">
+                            <h3>Amigos en 200 Millas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 17 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-17.webp" alt="Celebración Familiar">
+                        <div class="card-overlay">
+                            <h3>Celebración Familiar</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 18 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-18.webp" alt="Clientes Disfrutando">
+                        <div class="card-overlay">
+                            <h3>Clientes Disfrutando</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 19 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-19.webp" alt="Momentos Inolvidables">
+                        <div class="card-overlay">
+                            <h3>Momentos Inolvidables</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 20 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-20.webp" alt="La Familia 200 Millas">
+                        <div class="card-overlay">
+                            <h3>La Familia 200 Millas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 21 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-21.webp" alt="Clientes en 200 Millas">
+                        <div class="card-overlay">
+                            <h3>Clientes en 200 Millas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 22 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-22.webp" alt="Amigos Disfrutando">
+                        <div class="card-overlay">
+                            <h3>Amigos Disfrutando</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 23 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-23.webp" alt="Clientes Satisfechos">
+                        <div class="card-overlay">
+                            <h3>Clientes Satisfechos</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 24 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-24.webp" alt="Sonrisas en 200 Millas">
+                        <div class="card-overlay">
+                            <h3>Sonrisas en 200 Millas</h3>
+                        </div>
+                    </div>
+
+                    <!-- Cliente 25 -->
+                    <div class="gallery-card cliente">
+                        <img src="/assets/images/gallery/cliente-25.webp" alt="Clientes Felices">
+                        <div class="card-overlay">
+                            <h3>Clientes Felices</h3>
+                        </div>
+                    </div>
+
                     <!-- Evento 1 -->
                     <div class="gallery-card evento">
                         <img src="/assets/images/gallery/evento-1.webp" alt="Aniversario 2025">
@@ -279,6 +419,22 @@
                         <img src="/assets/images/gallery/evento-7.webp" alt="Evento Especial">
                         <div class="card-overlay">
                             <h3>Evento Especial</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 8 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-8.webp" alt="Evento Memorable">
+                        <div class="card-overlay">
+                            <h3>Evento Memorable</h3>
+                        </div>
+                    </div>
+
+                    <!-- Evento 9 -->
+                    <div class="gallery-card evento">
+                        <img src="/assets/images/gallery/evento-9.webp" alt="Celebración Especial">
+                        <div class="card-overlay">
+                            <h3>Celebración Especial</h3>
                         </div>
                     </div>
 
@@ -397,12 +553,12 @@
         document.addEventListener('DOMContentLoaded', loadFooter);
 
         // Funcionalidad de Filtrado de Pestañas
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const tabBtns = document.querySelectorAll('.tab-btn');
             const galleryCards = document.querySelectorAll('.gallery-card');
 
             tabBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     // Remover clase activa de todas las pestañas
                     tabBtns.forEach(b => b.classList.remove('active'));
                     // Agregar clase activa a la pestaña clickeada
@@ -427,7 +583,7 @@
 
             if (lightbox && lightboxImg) {
                 galleryCards.forEach(card => {
-                    card.addEventListener('click', function() {
+                    card.addEventListener('click', function () {
                         const img = this.querySelector('img');
                         if (img) {
                             lightboxImg.src = img.src;
@@ -437,7 +593,7 @@
                 });
 
                 // Función para cerrar lightbox
-                window.closeLightbox = function() {
+                window.closeLightbox = function () {
                     lightbox.style.display = 'none';
                 };
             }
@@ -448,23 +604,25 @@
     <style>
         /* Animación de carga */
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        
+
         /* Ocultar contenido hasta que se cargue */
         body.loading main,
         body.loading #footer-placeholder {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         body.loaded main,
         body.loaded #footer-placeholder {
             opacity: 1;
             visibility: visible;
             transition: opacity 0.3s ease-in;
         }
-        
+
         /* Variables de Branding */
         :root {
             --naranja-principal: #E67E22;
@@ -496,7 +654,7 @@
         .gallery-hero {
             min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -504,7 +662,8 @@
             color: white;
             position: relative;
             margin: 0;
-            padding-top: 80px; /* Espacio para el header fijo */
+            padding-top: 80px;
+            /* Espacio para el header fijo */
             width: 100%;
             box-sizing: border-box;
         }
@@ -708,7 +867,7 @@
                 gap: 1.5rem;
                 padding: 0 1rem;
             }
-            
+
             .gallery-card {
                 width: 100%;
                 max-width: 100%;
@@ -722,11 +881,12 @@
             .gallery-hero {
                 height: 100vh;
                 min-height: -webkit-fill-available;
-                padding: 60px 0 0; /* Espacio para el header en móviles */
+                padding: 60px 0 0;
+                /* Espacio para el header en móviles */
                 margin: 0;
                 position: relative;
             }
-            
+
             .gallery-hero-content {
                 padding: 1rem;
                 width: 100%;
@@ -801,44 +961,45 @@
                 aspect-ratio: 1 / 1;
                 border-radius: 12px;
                 overflow: hidden;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
                 margin: 0 auto;
             }
-            
+
             .gallery-card:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             }
-            
+
             .gallery-card img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 transition: transform 0.5s ease;
             }
-            
+
             .gallery-card:hover img {
                 transform: scale(1.05);
             }
-            
+
             .card-overlay {
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background: linear-gradient(transparent, rgba(0,0,0,0.7));
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
                 padding: 20px;
                 color: white;
             }
-            
+
             .card-overlay h3 {
                 margin: 0;
                 font-size: 1.3rem;
                 font-weight: 600;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
             }
         }
     </style>
 </body>
+
 </html>

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Auténtica Parihuela en Loja | Sopa Marinera Tradicional | 200 Millas</title>
-    <meta name="description" content="La sopa marinera histórica de 200 Millas, receta peruana tradicional desde 1979. Disfrute de mariscos y pescado en una sopa potente, recién llegado a Loja. ¡El sabor del mar en la sierra!">
+    <meta name="description"
+        content="La sopa marinera histórica de 200 Millas, receta peruana tradicional desde 1979. Disfrute de mariscos y pescado en una sopa potente, recién llegado a Loja. ¡El sabor del mar en la sierra!">
 
     <!-- Preload de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -29,28 +33,35 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://200millasloja.com/parihuela">
     <meta property="og:title" content="La Auténtica Parihuela en Loja | Sopa Marinera Tradicional | 200 Millas">
-    <meta property="og:description" content="Descubre la auténtica Parihuela de 200 Millas en Loja. Sopa marinera con mariscos frescos y tradición peruana desde 1979.">
+    <meta property="og:description"
+        content="Descubre la auténtica Parihuela de 200 Millas en Loja. Sopa marinera con mariscos frescos y tradición peruana desde 1979.">
     <meta property="og:image" content="https://200millasloja.com/assets/images/platos/parihuela-banner.webp">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://200millasloja.com/parihuela">
     <meta name="twitter:title" content="La Auténtica Parihuela en Loja | Sopa Marinera Tradicional | 200 Millas">
-    <meta name="twitter:description" content="La mejor Parihuela de Loja en 200 Millas. Mariscos frescos con receta histórica peruana.">
+    <meta name="twitter:description"
+        content="La mejor Parihuela de Loja en 200 Millas. Mariscos frescos con receta histórica peruana.">
     <meta name="twitter:image" content="https://200millasloja.com/assets/images/platos/parihuela-banner.webp">
 </head>
+
 <body>
     <!-- Contenedor del header -->
     <div id="header-container"></div>
-    
+
     <!-- Loading Screen -->
-    <div id="loading-screen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
+    <div id="loading-screen"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.3s ease-out, visibility 0.3s ease-out;">
         <div style="text-align: center;">
-            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja" style="width: 150px; height: auto; margin-bottom: 20px;">
-            <div class="loading-spinner" style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;"></div>
+            <img src="/assets/images/logo-200-millas.png" alt="200 Millas Loja"
+                style="width: 150px; height: auto; margin-bottom: 20px;">
+            <div class="loading-spinner"
+                style="width: 40px; height: 40px; border: 3px solid rgba(0,0,0,0.1); border-radius: 50%; border-top-color: #e67e22; animation: spin 0.8s linear infinite; margin: 0 auto;">
+            </div>
         </div>
     </div>
-    
+
 
     <!-- Cargar el header dinámicamente -->
     <script src="/assets/js/load-header.js" defer></script>
@@ -74,12 +85,12 @@
         function handlePageLoad() {
             // Agregar clase de carga al body
             document.body.classList.add('loading');
-            
+
             // El header se carga automáticamente con el script load-header.js
-            
+
             // Cargar el footer
             loadFooter();
-            
+
             // Simular tiempo de carga
             setTimeout(() => {
                 // Ocultar pantalla de carga
@@ -87,17 +98,17 @@
                 if (loadingScreen) {
                     loadingScreen.style.opacity = '0';
                     loadingScreen.style.visibility = 'hidden';
-                    
+
                     // Eliminar el loader del DOM después de la animación
-                    setTimeout(function() {
+                    setTimeout(function () {
                         loadingScreen.remove();
                     }, 500);
                 }
-                
+
                 // Quitar clase de carga del body
                 document.body.classList.remove('loading');
                 document.body.classList.add('loaded');
-                
+
                 // Asegurar que el header esté visible después de la carga
                 const header = document.querySelector('.header');
                 if (header) {
@@ -105,7 +116,7 @@
                 }
             }, 800);
         }
-        
+
         // Iniciar la carga de la página cuando el DOM esté listo
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', handlePageLoad);
@@ -136,48 +147,66 @@
                 <div class="parihuela-main">
                     <!-- Banner Principal Full-Width -->
                     <div class="parihuela-banner">
-                        <img src="assets/images/platos/parihuela-restaurante.webp" alt="Parihuela servida en la mesa - Sopa marinera tradicional de 200 Millas Loja" loading="lazy">
+                        <img src="assets/images/platos/parihuela-restaurante.webp"
+                            alt="Parihuela servida en la mesa - Sopa marinera tradicional de 200 Millas Loja"
+                            loading="lazy">
                     </div>
 
                     <!-- Sección de Narrativa -->
                     <div class="parihuela-narrative">
                         <div class="narrative-intro">
                             <h3>Un Viaje Culinario desde Perú</h3>
-                            <p>La Parihuela es el plato estrella de nuestro Restaurante y un clásico de todos los tiempos! Es una deliciosa sopa de todos los mariscos: camarones, conchas, cangrejo, calamares, mejillones, abundante, perfecta para reponer energías y disfrutarla al máximo!</p>
+                            <p>La Parihuela es el plato estrella de nuestro Restaurante y un clásico de todos los
+                                tiempos! Es una deliciosa sopa de todos los mariscos: camarones, conchas, cangrejo,
+                                calamares, mejillones, abundante, perfecta para reponer energías y disfrutarla al
+                                máximo!</p>
                         </div>
-                        
+
                         <div class="narrative-section">
                             <div class="narrative-icon">
                                 <i class="fas fa-anchor"></i>
                             </div>
                             <div class="narrative-content">
                                 <h4>Orígenes con Historia</h4>
-                                <p>Nuestra receta de Parihuela llega directamente desde las costas peruanas, donde los pescadores preparaban esta nutritiva sopa con las mejores capturas del día. En <span class="highlight-text">200 Millas</span>, hemos perfeccionado esta tradición marinera con más de 40 años de experiencia, manteniendo la esencia de los sabores originales mientras adaptamos la presentación al paladar lojano.</p>
+                                <p>Nuestra receta de Parihuela llega directamente desde las costas peruanas, donde los
+                                    pescadores preparaban esta nutritiva sopa con las mejores capturas del día. En <span
+                                        class="highlight-text">200 Millas</span>, hemos perfeccionado esta tradición
+                                    marinera con más de 40 años de experiencia, manteniendo la esencia de los sabores
+                                    originales mientras adaptamos la presentación al paladar lojano.</p>
                             </div>
                         </div>
-                        
+
                         <div class="narrative-section">
                             <div class="narrative-icon">
                                 <i class="fas fa-fish"></i>
                             </div>
                             <div class="narrative-content">
                                 <h4>Selección de Ingredientes Premium</h4>
-                                <p>La magia de nuestra Parihuela comienza con la <span class="highlight-text">selección cuidadosa de mariscos frescos</span>. Cada mañana recibimos pescado recién capturado, camarones jugosos, conchas en su punto óptimo, calamares tiernos, mariscos variados, cangrejos frescos y mejillones seleccionados. La sopa, preparada con especias secretas, se cocina a fuego lento durante horas para extraer todo el sabor del mar.</p>
+                                <p>La magia de nuestra Parihuela comienza con la <span class="highlight-text">selección
+                                        cuidadosa de mariscos frescos</span>. Cada mañana recibimos pescado recién
+                                    capturado, camarones jugosos, conchas en su punto óptimo, calamares tiernos,
+                                    mariscos variados, cangrejos frescos y mejillones seleccionados. La sopa, preparada
+                                    con especias secretas, se cocina a fuego lento durante horas para extraer todo el
+                                    sabor del mar.</p>
                             </div>
                         </div>
-                        
+
                         <div class="narrative-section">
                             <div class="narrative-icon">
                                 <i class="fas fa-utensils"></i>
                             </div>
                             <div class="narrative-content">
                                 <h4>Una Experiencia que Despierta los Sentidos</h4>
-                                <p>El primer sorbo de nuestra Parihuela es un viaje sensorial: el aroma intenso a marisco fresco, la textura perfecta de los mariscos y el equilibrio perfecto entre lo ácido y lo picante. Se sirve humeante, acompañado de arroz blanco esponjoso y rodajas de limón para realzar los sabores.</p>
+                                <p>El primer sorbo de nuestra Parihuela es un viaje sensorial: el aroma intenso a
+                                    marisco fresco, la textura perfecta de los mariscos y el equilibrio perfecto de
+                                    sabores, acompañado de arroz blanco esponjoso y rodajas de limón para realzar cada
+                                    bocado.</p>
                             </div>
                         </div>
-                        
+
                         <div class="narrative-cta">
-                            <p class="highlight">¡Ven y descubre por qué nuestra Parihuela es considerada la mejor de Loja! Un plato que no solo alimenta el cuerpo, sino también el alma.</p>
+                            <p class="highlight">¡Ven y descubre por qué nuestra Parihuela es considerada la mejor de
+                                Loja! Un plato que no solo alimenta el cuerpo, sino también el alma.</p>
                         </div>
                     </div>
 
@@ -186,18 +215,23 @@
                         <h3>Descubre la Frescura en Cada Detalle</h3>
                         <div class="gallery-container">
                             <div class="gallery-item active">
-                                <img src="/assets/images/platos/parihuela-mariscos.webp" alt="Primer plano de mariscos frescos en la Parihuela" loading="lazy">
+                                <img src="/assets/images/platos/parihuela-mariscos.webp"
+                                    alt="Primer plano de mariscos frescos en la Parihuela" loading="lazy">
                             </div>
                             <div class="gallery-item">
-                                <img src="/assets/images/platos/parihuela-completa.webp" alt="Parihuela completa con arroz blanco" loading="lazy">
+                                <img src="/assets/images/platos/parihuela-completa.webp"
+                                    alt="Parihuela completa con arroz blanco" loading="lazy">
                             </div>
                             <div class="gallery-item">
-                                <img src="/assets/images/platos/parihuela-restaurante.webp" alt="Parihuela en el ambiente acogedor de 200 Millas Loja" loading="lazy">
+                                <img src="/assets/images/platos/parihuela-restaurante.webp"
+                                    alt="Parihuela en el ambiente acogedor de 200 Millas Loja" loading="lazy">
                             </div>
                         </div>
                         <div class="gallery-nav">
-                            <button class="gallery-btn prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-                            <button class="gallery-btn next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                            <button class="gallery-btn prev" onclick="changeSlide(-1)"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <button class="gallery-btn next" onclick="changeSlide(1)"><i
+                                    class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -231,7 +265,8 @@
                             <strong>Extras para Acompañar:</strong> chifles o patacones<br>
                             <span class="additional-cost" style="color: #000000;">Costo adicional</span>
                         </div>
-                        <a href="https://wa.me/593998941753?text=¡Hola! Quiero pedir una Parihuela para delivery en Loja." class="cta-button" target="_blank" rel="noopener">
+                        <a href="https://wa.me/593998941753?text=¡Hola! Quiero pedir una Parihuela para delivery en Loja."
+                            class="cta-button" target="_blank" rel="noopener">
                             ¡PIDE LA TUYA A DOMICILIO EN LOJA!
                         </a>
                     </div>
@@ -292,23 +327,25 @@
     <style>
         /* Animación de carga */
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
-        
+
         /* Ocultar contenido hasta que se cargue */
         body.loading main,
         body.loading #footer-placeholder {
             opacity: 0;
             visibility: hidden;
         }
-        
+
         body.loaded main,
         body.loaded #footer-placeholder {
             opacity: 1;
             visibility: visible;
             transition: opacity 0.3s ease-in;
         }
-        
+
         /* Variables de Branding */
         :root {
             --naranja-principal: #E67E22;
@@ -342,7 +379,7 @@
             padding-top: 0 !important;
             overflow: hidden;
         }
-        
+
         /* Parihuela Hero Styles */
         .parihuela-hero {
             width: 100%;
@@ -350,7 +387,7 @@
             min-height: -webkit-fill-available;
             min-height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('/assets/images/platos/parihuela-restaurante.webp') center/cover no-repeat;
+                url('/assets/images/platos/parihuela-restaurante.webp') center/cover no-repeat;
             background-attachment: fixed;
             color: white;
             text-align: center;
@@ -793,7 +830,7 @@
                 align-items: center;
                 justify-content: center;
             }
-            
+
             .parihuela-hero-content {
                 padding: 80px 20px 40px 20px !important;
                 width: 100% !important;
@@ -809,21 +846,21 @@
                 align-items: center !important;
                 text-align: center !important;
             }
-            
+
             .parihuela-hero h1 {
                 font-size: 2.5rem !important;
                 margin: 0 0 1rem 0 !important;
                 line-height: 1.2 !important;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
                 width: 100% !important;
                 max-width: 800px !important;
                 padding: 0 15px !important;
             }
-            
+
             .parihuela-hero p {
                 font-size: 1.2rem !important;
                 margin: 0.5rem 0 0 0 !important;
-                text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
                 width: 100% !important;
                 max-width: 800px !important;
                 padding: 0 15px !important;
@@ -859,7 +896,7 @@
             .parihuela-hero h1 {
                 font-size: 2rem !important;
             }
-            
+
             .parihuela-hero p {
                 font-size: 1.1rem !important;
             }
@@ -888,4 +925,5 @@
         }
     </style>
 </body>
+
 </html>
