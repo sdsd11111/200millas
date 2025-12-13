@@ -1479,6 +1479,10 @@
         }
 
         @media (max-width: 576px) {
+            .arroz-layout {
+                padding: 0 1rem;
+            }
+
             .arroz-hero h1 {
                 font-size: 2rem !important;
             }
@@ -1504,8 +1508,21 @@
             .narrative-section {
                 padding: 1rem !important;
                 margin: 1.5rem 0 !important;
+                gap: 1rem;
+                flex-direction: column;
+                text-align: center;
                 word-wrap: break-word;
                 overflow-wrap: break-word;
+            }
+
+            .narrative-icon {
+                margin: 0 auto;
+                min-width: auto;
+            }
+
+            .narrative-content h4::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .narrative-content {

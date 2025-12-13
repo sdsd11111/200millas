@@ -893,6 +893,10 @@
         }
 
         @media (max-width: 576px) {
+            .parihuela-layout {
+                padding: 0 1rem;
+            }
+
             .parihuela-hero h1 {
                 font-size: 2rem !important;
             }
@@ -911,7 +915,24 @@
 
             .parihuela-narrative,
             .parihuela-gallery {
-                padding: 1.5rem;
+                padding: 1rem;
+            }
+
+            .narrative-section {
+                padding: 1rem;
+                gap: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .narrative-icon {
+                margin: 0 auto;
+                min-width: auto;
+            }
+
+            .narrative-content h4::after {
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .order-card {
