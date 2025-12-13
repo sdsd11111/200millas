@@ -4522,12 +4522,16 @@
         }
 
         /* Cursor pointer for clickable images */
-        .quienes-visual .image-grid img {
+        .quienes-visual .image-grid img,
+        .dish-image img,
+        .welcome-image img {
             cursor: pointer;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        .quienes-visual .image-grid img:hover {
+        .quienes-visual .image-grid img:hover,
+        .dish-image img:hover,
+        .welcome-image img:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
         }

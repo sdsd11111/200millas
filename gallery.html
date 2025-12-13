@@ -552,51 +552,89 @@
         // Cargar el footer cuando el DOM esté listo
         document.addEventListener('DOMContentLoaded', loadFooter);
 
-        // Funcionalidad de Filtrado de Pestañas
-        document.addEventListener('DOMContentLoaded', function () {
+        // Funcionalidad de Galería Dinámica
+        document.addEventListener('DOMContentLoaded', async function () {
+            const galleryGrid = document.querySelector('.gallery-grid');
             const tabBtns = document.querySelectorAll('.tab-btn');
-            const galleryCards = document.querySelectorAll('.gallery-card');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            let currentFilter = 'all';
 
+            // Cargar imágenes desde la base de datos
+            async function loadGalleryImages() {
+                try {
+                    const response = await fetch('/api/gallery');
+                    const images = await response.json();
+
+                    // Generar HTML para imágenes de la BD
+                    const dbImagesHtml = images.map(img => `
+                        <div class="gallery-card ${img.category}" data-src="/api/gallery/image/${img.id}">
+                            <img src="/api/gallery/image/${img.id}" alt="${img.title}" loading="lazy">
+                            <div class="card-overlay">
+                                <h3>${img.title}</h3>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    // Agregar imágenes de la BD al inicio del grid
+                    galleryGrid.insertAdjacentHTML('afterbegin', dbImagesHtml);
+
+                    // Re-aplicar filtro actual después de cargar
+                    applyFilter(currentFilter);
+
+                    // Configurar lightbox para nuevas tarjetas
+                    setupLightbox();
+                } catch (error) {
+                    console.error('Error cargando imágenes de galería:', error);
+                }
+            }
+
+            // Función para aplicar filtro
+            function applyFilter(filter) {
+                currentFilter = filter;
+                const allCards = document.querySelectorAll('.gallery-card');
+                allCards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // Configurar pestañas de filtro
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', function () {
-                    // Remover clase activa de todas las pestañas
                     tabBtns.forEach(b => b.classList.remove('active'));
-                    // Agregar clase activa a la pestaña clickeada
                     this.classList.add('active');
-
-                    const filter = this.getAttribute('data-filter');
-
-                    // Mostrar/Ocultar tarjetas basado en el filtro
-                    galleryCards.forEach(card => {
-                        if (filter === 'all' || card.classList.contains(filter)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
+                    applyFilter(this.getAttribute('data-filter'));
                 });
             });
 
-            // Funcionalidad de Lightbox
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-
-            if (lightbox && lightboxImg) {
-                galleryCards.forEach(card => {
+            // Configurar lightbox
+            function setupLightbox() {
+                const allCards = document.querySelectorAll('.gallery-card');
+                allCards.forEach(card => {
                     card.addEventListener('click', function () {
                         const img = this.querySelector('img');
-                        if (img) {
+                        if (img && lightbox && lightboxImg) {
                             lightboxImg.src = img.src;
                             lightbox.style.display = 'flex';
                         }
                     });
                 });
-
-                // Función para cerrar lightbox
-                window.closeLightbox = function () {
-                    lightbox.style.display = 'none';
-                };
             }
+
+            // Función para cerrar lightbox
+            window.closeLightbox = function () {
+                lightbox.style.display = 'none';
+            };
+
+            // Configurar lightbox inicial para tarjetas estáticas
+            setupLightbox();
+
+            // Cargar imágenes de la BD
+            await loadGalleryImages();
         });
     </script>
 

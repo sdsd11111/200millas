@@ -1,3 +1,7 @@
+// IMPORTANTE: Cargar dotenv PRIMERO antes de cualquier import que use process.env
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import compression from 'compression';
 import path from 'path';
@@ -5,10 +9,9 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import fs from 'fs';
 import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-
-// Cargar variables de entorno desde .env
-dotenv.config();
+import multer from 'multer';
+import session from 'express-session';
+import getPool from './db.js';
 
 // Configuración del servidor SMTP usando variables de entorno
 const emailConfig = {
@@ -36,6 +39,36 @@ const app = express();
 // Habilitar compresión Gzip
 app.use(compression());
 
+// Configuración de sesiones para admin
+app.use(session({
+    secret: 'galeria200millas_secret_key_2024',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false, // Set to true in production with HTTPS
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+    }
+}));
+
+// Configuración de multer para subida de archivos (1MB máximo)
+const storage = multer.memoryStorage();
+const upload = multer({
+    storage: storage,
+    limits: { fileSize: 1024 * 1024 }, // 1MB
+    fileFilter: (req, file, cb) => {
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+        if (allowedTypes.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            cb(new Error('Tipo de archivo no permitido. Solo JPG, PNG, WebP y GIF.'), false);
+        }
+    }
+});
+
+// Credenciales de admin (hardcoded as requested)
+const ADMIN_USER = '200millas';
+const ADMIN_PASS = 'Contraseña123.';
+
 // Middleware para servir archivos estáticos con caché del navegador (1 día)
 app.use(express.static(path.join(__dirname, '/'), {
     maxAge: '1d',
@@ -55,8 +88,141 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
     next();
 });
+
+// ============================================
+// ADMIN ROUTES
+// ============================================
+
+// Redirect /admin to login page
+app.get('/admin', (req, res) => {
+    if (req.session && req.session.isAdmin) {
+        res.redirect('/admin/gallery.html');
+    } else {
+        res.redirect('/admin/login.html');
+    }
+});
+
+// Admin login
+app.post('/api/admin/login', (req, res) => {
+    const { username, password } = req.body;
+
+    if (username === ADMIN_USER && password === ADMIN_PASS) {
+        req.session.isAdmin = true;
+        res.json({ success: true });
+    } else {
+        res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
+    }
+});
+
+// Admin logout
+app.post('/api/admin/logout', (req, res) => {
+    req.session.destroy();
+    res.json({ success: true });
+});
+
+// Check admin auth
+app.get('/api/admin/check', (req, res) => {
+    res.json({ authenticated: !!(req.session && req.session.isAdmin) });
+});
+
+// ============================================
+// GALLERY API ROUTES
+// ============================================
+
+// Get all gallery images (metadata only)
+app.get('/api/gallery', async (req, res) => {
+    try {
+        const [rows] = await getPool().query(
+            'SELECT id, title, category, image_type, created_at FROM gallery_images ORDER BY created_at DESC'
+        );
+        res.json(rows);
+    } catch (error) {
+        console.error('Error fetching gallery:', error);
+        res.status(500).json({ success: false, message: 'Error al obtener imágenes' });
+    }
+});
+
+// Get single image data (for display)
+app.get('/api/gallery/image/:id', async (req, res) => {
+    try {
+        const [rows] = await getPool().query(
+            'SELECT image_data, image_type FROM gallery_images WHERE id = ?',
+            [req.params.id]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).send('Imagen no encontrada');
+        }
+
+        res.set('Content-Type', rows[0].image_type);
+        res.set('Cache-Control', 'public, max-age=86400'); // Cache 1 day
+        res.send(rows[0].image_data);
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        res.status(500).send('Error al obtener imagen');
+    }
+});
+
+// Upload new image (admin only)
+app.post('/api/gallery', upload.single('image'), async (req, res) => {
+    // Check auth
+    if (!req.session || !req.session.isAdmin) {
+        return res.status(401).json({ success: false, message: 'No autorizado' });
+    }
+
+    try {
+        const { title, category } = req.body;
+        const file = req.file;
+
+        if (!title || !category || !file) {
+            return res.status(400).json({ success: false, message: 'Faltan campos requeridos' });
+        }
+
+        // Validate category
+        const validCategories = ['cliente', 'evento', 'plato'];
+        if (!validCategories.includes(category)) {
+            return res.status(400).json({ success: false, message: 'Categoría inválida' });
+        }
+
+        await getPool().query(
+            'INSERT INTO gallery_images (title, category, image_data, image_type) VALUES (?, ?, ?, ?)',
+            [title, category, file.buffer, file.mimetype]
+        );
+
+        res.json({ success: true, message: 'Imagen subida correctamente' });
+    } catch (error) {
+        console.error('Error uploading image:', error);
+        res.status(500).json({ success: false, message: 'Error al subir imagen' });
+    }
+});
+
+// Delete image (admin only)
+app.delete('/api/gallery/:id', async (req, res) => {
+    // Check auth
+    if (!req.session || !req.session.isAdmin) {
+        return res.status(401).json({ success: false, message: 'No autorizado' });
+    }
+
+    try {
+        const result = await getPool().query('DELETE FROM gallery_images WHERE id = ?', [req.params.id]);
+
+        if (result[0].affectedRows === 0) {
+            return res.status(404).json({ success: false, message: 'Imagen no encontrada' });
+        }
+
+        res.json({ success: true, message: 'Imagen eliminada correctamente' });
+    } catch (error) {
+        console.error('Error deleting image:', error);
+        res.status(500).json({ success: false, message: 'Error al eliminar imagen' });
+    }
+});
+
+// ============================================
+// STATIC FILE ROUTES
+// ============================================
 
 // Ruta principal - Redirigir a index.html
 app.get('/', (req, res) => {
@@ -66,6 +232,12 @@ app.get('/', (req, res) => {
 // Manejador para rutas sin extensión (SPA)
 app.get('/:page', (req, res, next) => {
     const page = req.params.page;
+
+    // Skip 'admin' - it has its own route handler
+    if (page === 'admin') {
+        return next();
+    }
+
     const filePath = path.join(__dirname, `${page}.html`);
 
     // Si el archivo existe, servirlo, de lo contrario continuar

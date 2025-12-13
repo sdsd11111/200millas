@@ -134,21 +134,35 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Lightbox for "RESTAURANTE 200 MILLAS" section
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close-lightbox');
-    const restaurantImages = document.querySelectorAll('.quienes-visual .image-grid img');
+    // Lightbox Logic (Event Delegation)
+    document.body.addEventListener('click', function (e) {
+        const target = e.target;
+        // Check if clicked element is an image inside our target containers
+        if (target.tagName === 'IMG' && (
+            target.closest('.quienes-visual .image-grid') ||
+            target.closest('.dish-image') ||
+            target.closest('.welcome-image') ||
+            target.closest('.category-slider') ||
+            target.closest('.sopas-slide') ||
+            target.closest('.gallery-item') ||
+            target.closest('.sidebar-image')
+        )) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
 
-    if (lightbox && lightboxImg) {
-        restaurantImages.forEach(img => {
-            img.addEventListener('click', function () {
+            if (lightbox && lightboxImg) {
                 lightbox.style.display = "block";
-                lightboxImg.src = this.src;
-                // Disable scrolling on body
+                lightboxImg.src = target.src;
                 document.body.style.overflow = 'hidden';
-            });
-        });
+            }
+        }
+    });
 
+    // Close Lightbox Logic
+    const lightbox = document.getElementById('lightbox');
+    const closeBtn = document.querySelector('.close-lightbox');
+
+    if (lightbox) {
         if (closeBtn) {
             closeBtn.addEventListener('click', function () {
                 lightbox.style.display = "none";
@@ -156,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        // Close on click outside
         lightbox.addEventListener('click', function (e) {
             if (e.target === lightbox) {
                 lightbox.style.display = "none";
@@ -164,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && lightbox.style.display === "block") {
                 lightbox.style.display = "none";
