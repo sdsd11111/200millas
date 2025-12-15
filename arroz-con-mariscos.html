@@ -928,9 +928,9 @@
                             </div>
                         </div>
                         <div class="gallery-nav">
-                            <button class="gallery-btn prev" onclick="changeSlide(-1)"><i
+                            <button class="gallery-btn prev" aria-label="Anterior"><i
                                     class="fas fa-chevron-left"></i></button>
-                            <button class="gallery-btn next" onclick="changeSlide(1)"><i
+                            <button class="gallery-btn next" aria-label="Siguiente"><i
                                     class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
@@ -1013,15 +1013,85 @@
         // Cargar el footer
         loadFooter();
 
-        // Carrusel de Galería
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.gallery-item');
+        // Inicializar el slider
+        function initSlider() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.gallery-item');
+            let slideInterval;
 
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
+            function showSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.style.opacity = '0';
+                    slide.style.zIndex = '1';
+                    slide.classList.remove('active');
+                });
+
+                // Mostrar el slide actual
+                if (slides[index]) {
+                    slides[index].style.opacity = '1';
+                    slides[index].style.zIndex = '2';
+                    slides[index].classList.add('active');
+                }
+            }
+
+            function goToSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            // Configurar botones de navegación
+            const prevButton = document.querySelector('.gallery-btn.prev');
+            const nextButton = document.querySelector('.gallery-btn.next');
+
+            if (prevButton) prevButton.addEventListener('click', prevSlide);
+            if (nextButton) nextButton.addEventListener('click', nextSlide);
+
+            // Iniciar autoplay
+            function startSlideShow() {
+                stopSlideShow();
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function stopSlideShow() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                }
+            }
+
+            // Inicializar
+            if (slides.length > 0) {
+                showSlide(0);
+                startSlideShow();
+
+                // Pausar autoplay al pasar el ratón
+                const gallery = document.querySelector('.gallery-container');
+                if (gallery) {
+                    gallery.addEventListener('mouseenter', stopSlideShow);
+                    gallery.addEventListener('mouseleave', startSlideShow);
+                }
+            }
+
+            // Hacer la función accesible globalmente
+            window.changeSlide = function (direction) {
+                if (direction > 0) nextSlide();
+                else prevSlide();
+                // Reiniciar el autoplay después de la navegación manual
+                stopSlideShow();
+                startSlideShow();
+            };
         }
+
+        // Inicializar el slider
+        initSlider();
     </script>
 
     <!-- Estilos Específicos para la Página de Arroz con Mariscos -->
