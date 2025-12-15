@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const lightboxImg = document.getElementById('lightbox-img');
 
             if (lightbox && lightboxImg) {
-                lightbox.style.display = "block";
+                lightbox.style.display = "flex";
                 lightboxImg.src = target.src;
                 document.body.style.overflow = 'hidden';
             }

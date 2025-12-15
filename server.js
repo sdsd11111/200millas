@@ -11,7 +11,10 @@ import fs from 'fs';
 import nodemailer from 'nodemailer';
 import multer from 'multer';
 import session from 'express-session';
+import MySQLStoreFactory from 'express-mysql-session';
 import getPool from './db.js';
+
+const MySQLStore = MySQLStoreFactory(session);
 
 // Configuración del servidor SMTP usando variables de entorno
 const emailConfig = {
@@ -39,13 +42,32 @@ const app = express();
 // Habilitar compresión Gzip
 app.use(compression());
 
+// Configuración de la tienda de sesiones MySQL
+const sessionStore = new MySQLStore({
+    clearExpired: true,
+    checkExpirationInterval: 900000, // 15 minutos
+    expiration: 86400000, // 1 día (24 horas)
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'session_id',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+}, getPool()); // Usar el pool existente
+
 // Configuración de sesiones para admin
 app.use(session({
+    key: 'session_cookie_name',
     secret: 'galeria200millas_secret_key_2024',
+    store: sessionStore,
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: false, // Set to true in production with HTTPS
+        secure: process.env.NODE_ENV === 'production', // True en producción (HTTPS)
+        httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000 // 24 hours
     }
 }));

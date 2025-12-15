@@ -493,20 +493,7 @@
                 slider.scrollLeft = scrollLeft - walk;
             });
 
-            // Soporte táctil
-            slider.addEventListener('touchstart', (e) => {
-                const touch = e.touches[0];
-                startX = touch.pageX - slider.offsetLeft;
-                scrollLeft = slider.scrollLeft;
-            }, { passive: true });
 
-            slider.addEventListener('touchmove', (e) => {
-                if (!e.touches[0]) return;
-                const touch = e.touches[0];
-                const x = touch.pageX - slider.offsetLeft;
-                const walk = (x - startX);
-                slider.scrollLeft = scrollLeft - walk;
-            }, { passive: true });
         });
 
         // Cargar header y footer cuando el DOM esté listo
@@ -795,15 +782,23 @@
 
         .sopas-slider-container {
             display: flex;
+            justify-content: flex-start;
             overflow-x: auto;
             gap: 20px;
-            padding: 20px 10px;
-            margin: 0 -10px;
+            padding: 20px 20px;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
+            margin: 0 auto;
+            max-width: 1200px;
             scrollbar-width: none;
             scroll-behavior: smooth;
             cursor: grab;
+        }
+
+        @media (min-width: 992px) {
+            .sopas-slider-container {
+                justify-content: center;
+            }
         }
 
         .sopas-slider-container:active {
