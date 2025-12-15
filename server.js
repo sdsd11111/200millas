@@ -39,6 +39,9 @@ const __dirname = dirname(__filename);
 // Crear la aplicación Express
 const app = express();
 
+// Confiar en el proxy de Vercel/Nginx para que las cookies seguras funcionen
+app.set('trust proxy', 1);
+
 // Habilitar compresión Gzip
 app.use(compression());
 
