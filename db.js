@@ -13,7 +13,8 @@ function getPool() {
             database: process.env.MYSQL_DATABASE,
             waitForConnections: true,
             connectionLimit: 10,
-            queueLimit: 0
+            queueLimit: 0,
+            connectTimeout: 10000 // 10 segundos
         });
         console.log('✅ Pool de MySQL creado');
     }
