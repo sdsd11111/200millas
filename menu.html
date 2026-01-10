@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Completo | 200 Millas Loja - Mariscos Frescos</title>
-    <meta name="description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja. Desde 1979 ofreciendo la mejor cocina marina en el sur de Ecuador.">
+    <meta name="description"
+        content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja. Desde 1979 ofreciendo la mejor cocina marina en el sur de Ecuador.">
 
     <!-- Preload de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,22 +25,26 @@
     <link rel="stylesheet" href="/components/footer/footer.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/images/favicon.ico">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://200millasloja.com/menu">
     <meta property="og:title" content="Menú Completo | 200 Millas Loja">
-    <meta property="og:description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
+    <meta property="og:description"
+        content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
     <meta property="og:image" content="https://200millasloja.com/assets/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://200millasloja.com/menu">
     <meta name="twitter:title" content="Menú Completo | 200 Millas Loja">
-    <meta name="twitter:description" content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
+    <meta name="twitter:description"
+        content="Explora nuestro menú completo de mariscos frescos, ceviches, sopas y especialidades en 200 Millas Loja.">
     <meta name="twitter:image" content="https://200millasloja.com/assets/images/og-image.jpg">
 </head>
+
 <body>
     <!-- Header Component -->
     <div id="header-container"></div>
@@ -48,7 +56,7 @@
         link.rel = 'stylesheet';
         link.href = '/components/header/header.css';
         document.head.appendChild(link);
-        
+
         // Función para cargar el header
         function loadHeader() {
             fetch('/components/header/header.html')
@@ -57,13 +65,13 @@
                     const headerContainer = document.getElementById('header-container');
                     if (headerContainer) {
                         headerContainer.innerHTML = html;
-                        
+
                         // Cargar el JS del header
                         const script = document.createElement('script');
                         script.src = '/components/header/header.js';
                         script.async = false; // Importante: cargar de forma síncrona
                         document.body.appendChild(script);
-                        
+
                         // Forzar la inicialización después de un breve retraso
                         setTimeout(() => {
                             if (window.initHeader) {
@@ -76,7 +84,7 @@
                     console.error('Error cargando el header HTML:', error);
                 });
         }
-        
+
         // Cargar el header cuando el DOM esté listo
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', loadHeader);
@@ -149,8 +157,10 @@
                     </ul>
                     <div class="category-slider">
                         <div class="multi-image-container">
-                            <img src="/assets/images/platos/parihuela.webp" alt="Sopa marinera tradicional - Parihuela" class="category-image">
-                            <img src="/assets/images/platos/encebollado.webp" alt="Encebollado de pescado - Plato tradicional" class="category-image">
+                            <img src="/assets/images/platos/parihuela.webp" alt="Sopa marinera tradicional - Parihuela"
+                                class="category-image">
+                            <img src="/assets/images/platos/encebollado.webp"
+                                alt="Encebollado de pescado - Plato tradicional" class="category-image">
                         </div>
                     </div>
                 </div>
@@ -161,7 +171,8 @@
                 <h3 class="category-title">Ceviches</h3>
                 <div class="category-grid">
                     <div class="category-slider">
-                        <img src="/assets/images/platos/ceviche-mixto.webp" alt="Ceviche Mixto - Especialidad de la casa">
+                        <img src="/assets/images/platos/ceviche-mixto.webp"
+                            alt="Ceviche Mixto - Especialidad de la casa">
                     </div>
                     <ul class="dish-list">
                         <li class="dish-item">
@@ -316,10 +327,14 @@
                     </ul>
                     <div class="category-slider">
                         <div class="multi-image-grid">
-                            <img src="/assets/images/platos/chicharron-pescado.webp" alt="Chicharrón de pescado - Plato típico" class="grid-image">
-                            <img src="/assets/images/platos/arroz-mariscos.webp" alt="Arroz con mariscos - Clásico abundante" class="grid-image">
-                            <img src="/assets/images/platos/filete-pescado.webp" alt="Filete de pescado - Opción saludable" class="grid-image">
-                            <img src="/assets/images/platos/mariscos-ajillo.webp" alt="Mariscos al ajillo - Plato gourmet" class="grid-image">
+                            <img src="/assets/images/platos/chicharron-pescado.webp"
+                                alt="Chicharrón de pescado - Plato típico" class="grid-image">
+                            <img src="/assets/images/platos/arroz-mariscos.webp"
+                                alt="Arroz con mariscos - Clásico abundante" class="grid-image">
+                            <img src="/assets/images/platos/filete-pescado.webp"
+                                alt="Filete de pescado - Opción saludable" class="grid-image">
+                            <img src="/assets/images/platos/mariscos-ajillo.webp"
+                                alt="Mariscos al ajillo - Plato gourmet" class="grid-image">
                         </div>
                     </div>
                 </div>
@@ -409,7 +424,7 @@
 
     <!-- Menu Category Sliders Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Inicializar todos los sliders de categorías
             const categorySliders = document.querySelectorAll('.category-slider');
 
@@ -475,11 +490,11 @@
                 setInterval(nextSlide, 4000);
 
                 // Pausar auto-slide al hacer hover
-                slider.addEventListener('mouseenter', function() {
+                slider.addEventListener('mouseenter', function () {
                     clearInterval(slider.autoSlideInterval);
                 });
 
-                slider.addEventListener('mouseleave', function() {
+                slider.addEventListener('mouseleave', function () {
                     slider.autoSlideInterval = setInterval(nextSlide, 4000);
                 });
             });
@@ -490,9 +505,10 @@
     <style>
         /* Menu Hero Styles */
         .menu-hero {
-            height: 70vh; /* Approximately 70% of viewport height */
+            height: 70vh;
+            /* Approximately 70% of viewport height */
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                        url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
+                url('/assets/images/hero-bg.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -525,7 +541,8 @@
 
         @media (max-width: 768px) {
             .menu-hero {
-                height: 60vh; /* Slightly less on mobile */
+                height: 60vh;
+                /* Slightly less on mobile */
             }
 
             .menu-hero-content h1 {
@@ -539,7 +556,8 @@
 
         @media (max-width: 576px) {
             .menu-hero {
-                height: 50vh; /* Even less on very small screens */
+                height: 50vh;
+                /* Even less on very small screens */
             }
 
             .menu-hero-content h1 {
@@ -555,7 +573,8 @@
         .menu-categories-with-sliders {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem; /* Added top padding for separation from hero */
+            padding: 4rem 2rem;
+            /* Added top padding for separation from hero */
         }
 
         .menu-category-block {
@@ -646,7 +665,8 @@
         .dish-name {
             white-space: nowrap;
             font-weight: 600;
-            color: black !important; /* Changed to black for emphasis and forced with !important */
+            color: black !important;
+            /* Changed to black for emphasis and forced with !important */
         }
 
         .dotted-line {
@@ -729,4 +749,5 @@
         }
     </style>
 </body>
+
 </html>
