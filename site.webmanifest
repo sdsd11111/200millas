@@ -1,0 +1,23 @@
+{
+    "name": "Restaurante 200 Millas",
+    "short_name": "200 Millas",
+    "description": "Restaurante familiar especializado en mariscos frescos en Loja, Ecuador",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#E67E22",
+    "icons": [
+        {
+            "src": "/assets/images/logo-200-millas.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/logo-200-millas.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
