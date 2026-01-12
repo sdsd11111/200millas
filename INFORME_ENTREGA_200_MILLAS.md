@@ -1,166 +1,176 @@
 # Informe de Entrega y Mantenimiento RESTAURANTE 200 MILLAS LOJA
 
-## 1. Desarrollo del Sitio Web
+## 1. El Nuevo Sitio Web
 
-Con satisfacción le presentamos su nuevo sitio web **restaurante200millasloja.com**, diseñado para reflejar la tradición y el sabor inigualable de 200 Millas.
-
-El portal se ha desarrollado con un enfoque en la experiencia gastronómica, priorizando la visualización de sus platos estrella, la facilidad de contacto y la historia de tradición que caracteriza al restaurante desde 1979.
-
-El diseño busca garantizar una experiencia de usuario apetecible y eficiente, mediante:
-*   **Navegación intuitiva**: acceso rápido al menú y ubicación en uno o dos clics.
-*   **Velocidad de carga optimizada**: el sitio se ha configurado para un rendimiento ágil, esencial para usuarios móviles que buscan dónde comer.
-*   **Diseño adaptable (responsive)**: la visualización es óptima en cualquier dispositivo, vital para clientes que buscan el restaurante desde sus teléfonos.
-
-### Accesos principales
-
-**Panel de Control (cPanel):**
-*   **URL**: [URL_DEL_CPANEL]
-*   **Usuario**: [USUARIO]
-*   **Contraseña**: [CONTRASEÑA]
-
-**Correo de Administración:**
-*   **URL**: [URL_WEBMAIL]
-*   **Usuario**: admin@restaurante200millasloja.com
-*   **Contraseña**: [CONTRASEÑA]
+Su nuevo portal **restaurante200millasloja.com** está listo. Se ha diseñado bajo tres pilares fundamentales:
+*   **Navegación Intuitiva**: Menú y ubicación accesibles en un clic.
+*   **Velocidad**: Optimizado para celulares y carga rápida.
+*   **Adaptabilidad**: Se ve perfecto en computadoras, tablets y móviles.
 
 ---
 
-## 2. Importancia del Posicionamiento Web (SEO)
+## 2. SEO y Posicionamiento Local
 
-El posicionamiento en buscadores es fundamental para atraer nuevos comensales. Nuestro objetivo es que 200 MILLAS aparezca en las primeras posiciones al buscar términos como “restaurante de mariscos en Loja” o “donde comer ceviche en Loja”.
-
-El SEO contribuye a:
-*   Atraer clientes locales y turistas que buscan auténtica comida lojana y mariscos.
-*   Fortalecer la imagen de marca, transmitiendo calidad y tradición.
-*   Generar más reservas y pedidos a domicilio.
+El objetivo es que 200 MILLAS sea la primera opción cuando alguien en Loja busque mariscos. Un buen SEO atrae turistas, genera pedidos a domicilio y fortalece su marca.
 
 ---
 
-## 3. Palabras Clave Estratégicas
+## 3. Palabras Clave e Intención de Búsqueda por Página
 
-Se han integrado de manera natural en títulos, textos e imágenes las siguientes palabras clave, esenciales para el posicionamiento:
+Hemos diseñado una estrategia donde cada sección de la web captura una necesidad diferente del cliente:
 
-*   Restaurante de mariscos en Loja (Objetivo: Primera página)
-*   Mejor ceviche mixto Loja (Objetivo: Primera página)
-*   Comida típica Loja (Objetivo: Primera página)
-*   Parihuela Loja (Objetivo: Primera Página)
-*   Camarón reventado Loja (Objetivo: Primera Página)
-*   Restaurante familiar Loja (Objetivo: Segunda Página)
-*   Almuerzos en Loja (Objetivo: Tercera Página)
+### [Home (Inicio)](https://www.restaurante200millasloja.com/)
+*   **Palabras Clave**: "Restaurante de mariscos en Loja", "Comida típica Loja".
+*   **Intención**: El usuario busca un lugar tradicional y reconocido para comer mariscos en la ciudad.
 
-A futuro, se recomienda mejorar las posiciones publicando noticias sobre eventos gastronómicos locales o recetas en redes sociales que enlacen a la web.
+### [Menú Completo](https://www.restaurante200millasloja.com/menu)
+*   **Palabras Clave**: "Carta de mariscos en Loja", "Precios de ceviches".
+*   **Intención**: El cliente desea ver la variedad de platos y precios antes de decidir su visita.
 
----
+### [Sopas Marinas](https://www.restaurante200millasloja.com/sopas)
+*   **Palabras Clave**: "Sopas marinas en Loja", "Sopa marinera tradicional".
+*   **Intención**: Usuario con antojo de comida caliente y reconfortante.
 
-## 4. Estrategia y Posicionamiento por Página
+### [Ceviches](https://www.restaurante200millasloja.com/ceviches)
+*   **Palabras Clave**: "Mejores ceviches en Loja", "Ceviche peruano Loja".
+*   **Intención**: El cliente busca frescura y sabor cítrico para un almuerzo ligero.
 
-Para maximizar la visibilidad del restaurante, cada página ha sido optimizada de manera individual, permitiendo que Google identifique la relevancia específica de cada sección de su menú y servicios. A continuación, se detalla la configuración SEO de las páginas principales:
+### [Segundos](https://www.restaurante200millasloja.com/segundos)
+*   **Palabras Clave**: "Segundos de mariscos en Loja", "Pescado frito Loja".
+*   **Intención**: Usuarios que buscan un plato fuerte y completo para su almuerzo principal.
 
-### Páginas Institucionales y Generales
+### [Especialidades (Opción B - Alta Cocina)](https://www.restaurante200millasloja.com/especialidades)
+*   **Palabras Clave**: "Mariscos gourmet Loja", "Platos de autor mariscos".
+*   **Intención**: El usuario busca una experiencia gastronómica de nivel superior o un lugar para celebrar una ocasión especial.
 
-| Página | Título Optimizado (SEO) | Objetivo de Posicionamiento |
-| :--- | :--- | :--- |
-| **Inicio (Home)** | 200 Millas Loja \| Algo muy especial en mariscos | Página principal, marca y autoridad en Loja. |
-| **Menú Completo** | Menú Completo \| 200 Millas Loja - Mariscos Frescos | Usuarios que buscan la carta de precios y variedad. |
-| **Galería** | Nuestra Galería: Momentos, Tradición y Sabores | Usuarios que buscan referencias visuales y ambiente. |
-| **Contacto** | Contacto y Ubicación: Pide tu Mariscos a Domicilio | Localización física, horarios y pedidos vía WhatsApp. |
+### [Especialidades (Opción C - Tradición Única)](https://www.restaurante200millasloja.com/especialidades)
+*   **Palabras Clave**: "Comida de mar exclusiva", "Especialidades marinas Loja".
+*   **Intención**: El cliente quiere probar platos que no se encuentran en otros restaurantes (como Majarisco o Conchas Asadas).
 
-### Categorías del Menú
+### [Parihuela](https://www.restaurante200millasloja.com/parihuela)
+*   **Palabras Clave**: "Parihuela Loja", "Sopa marinera potente".
+*   **Intención**: Amantes de los sabores intensos y tradicionales que buscan nuestro plato estrella.
 
-| Página | Título Optimizado (SEO) | Palabras Clave Relevantes |
-| :--- | :--- | :--- |
-| **Sopas** | Sopas Marinas en Loja \| 200 Millas | Concentrado, Parihuela, Encebollados, Sopa marinera. |
-| **Ceviches** | Los Mejores Ceviches en Loja \| 200 Millas | Ceviche peruano, Leche de tigre, Ceviche mixto. |
-| **Segundos** | Segundos de Mariscos y Pescados \| 200 Millas | Pescado frito, Camarón reventado, Arroz con mariscos. |
-| **Especialidades** | Especialidades \| 200 Millas | Majarisco, Fusión costeña, Conchas asadas. |
-| **Guarniciones** | Guarniciones y Bebidas \| 200 Millas | Patacones, Chifles, Limonada natural, Horchata. |
+### [Ceviche Mixto](https://www.restaurante200millasloja.com/ceviche-mixto)
+*   **Palabras Clave**: "Ceviche Mixto Loja", "Mariscos frescos Loja".
+*   **Intención**: Usuarios que quieren la mezcla clásica de pescado, camarón y conchas.
 
-### Platos Estrella (Páginas de Aterrizaje Específicas)
+### [Camarón Reventado](https://www.restaurante200millasloja.com/camaron-reventado)
+*   **Palabras Clave**: "Camarón Reventado Loja", "Chicharrón de camarón".
+*   **Intención**: Público que busca algo frito, crujiente y sabroso.
 
-Estas páginas actúan como "landing pages" diseñadas para capturar búsquedas de platos específicos muy populares en Loja:
+### [Arroz con Mariscos](https://www.restaurante200millasloja.com/arroz-con-mariscos)
+*   **Palabras Clave**: "Arroz con Mariscos Loja", "Almuerzo marinero abundante".
+*   **Intención**: El cliente busca una opción de arroz meloso y generoso en mariscos.
 
-*   **Parihuela**: *"La Auténtica Parihuela en Loja | Sopa Marinera Tradicional"*. Enfocada en la receta histórica peruana.
-*   **Ceviche Mixto**: *"La Fusión Perfecta de Frescura"*. Destaca la calidad del pescado, camarón y conchas.
-*   **Camarón Reventado**: *"Chicharrón de Camarón Crujiente"*. Optimizada para quienes buscan texturas fritas y crujientes.
-*   **Arroz con Mariscos**: *"La Abundancia del Mar"*. Posicionada para almuerzos potentes y completos.
-*   **Conchas Asadas**: *"Sabor Ahumado y Especialidad al Grill"*. Destaca el método de cocción único del restaurante.
-*   **Majarisco (Plato Lojano)**: *"Fusión entre el Mar y la Sierra"*. Enfocada en la identidad local de Loja y su fusión marina.
+### [Arroz con Mariscos (Opción B - Popular)](https://www.restaurante200millasloja.com/arroz-con-mariscos)
+*   **Palabras Clave**: "Arroz Marinero en Loja", "El mejor arroz marinero".
+*   **Intención**: El usuario usa el término más común en Ecuador para referirse a este plato y busca el lugar con mejor sabor.
 
----
+### [Arroz con Mariscos (Opción C - Experiencia)](https://www.restaurante200millasloja.com/arroz-con-mariscos)
+*   **Palabras Clave**: "Arroz con mariscos meloso", "Dónde comer arroz marinero".
+*   **Intención**: El cliente busca específicamente la textura cremosa/melosa y una porción generosa.
 
-## 5. Uso de Palabras Clave en Otros Canales
+### [Conchas Asadas](https://www.restaurante200millasloja.com/conchas-asadas)
+*   **Palabras Clave**: "Conchas Asadas Loja", "Mariscos al grill".
+*   **Intención**: Clientes que prefieren el sabor ahumado y único del grill.
 
-Para potenciar la visibilidad digital, es recomendable aplicar las palabras clave en:
-*   **Marketing digital**: descripciones de los platos en Menú Digital y campañas.
-*   **Google Maps / My Business**: mantener actualizada la ficha con fotos recientes y palabras clave.
-*   **Redes sociales**: publicaciones en Facebook e Instagram, usando hashtags como #Loja #Mariscos #200Millas.
-*   **Material impreso**: individuales y cartas, manteniendo coherencia con la web.
-
----
-
-## 6. Escalabilidad del Sitio Web
-
-El diseño implementado es modular, lo que permite incorporar nuevas funcionalidades sin necesidad de reconstruir el sitio.
-
-Algunas posibles ampliaciones:
-*   **Sistema de Reservas en Línea**: permitir a los clientes reservar mesa directamente desde la web.
-*   **Pedidos en Línea (Delivery)**: integración con carrito de compras propio o WhatsApp mejorado.
-*   **Blog Gastronómico**: artículos sobre la historia de los platos lojanos o beneficios de los mariscos.
+### [Majarisco (Plato Lojano)](https://www.restaurante200millasloja.com/plato-lojano)
+*   **Palabras Clave**: "Majarisco Loja", "Plato Lojano tradicional".
+*   **Intención**: El usuario busca la especialidad que fusiona el mar con la identidad de Loja.
 
 ---
 
-## 7. Propuesta de Mantenimiento Mensual (Plan Básico)
+## 4. Estrategia de Posicionamiento y Redes Sociales
 
-Con el fin de garantizar la actualización y correcto funcionamiento del sitio, se propone un Plan Básico de Mantenimiento Mensual con un costo de USD 45/mes.
+A continuación, la guía para redes sociales. Cada post incluye la **Palabra Clave** y el **enlace directo** correspondiente.
 
-**Incluye:**
-*   Actualización de Carta/Menú (precios, descripciones de nuevos platos).
-*   Sustitución o incorporación de fotografías de platos y eventos.
-*   Ajustes menores de estilo (avisos de feriados, cambios de horario).
-*   Soporte técnico para el Chatbot o botón de WhatsApp.
+### Página: Home
+*   **Post**: "¿Buscando el mejor **Restaurante de mariscos en Loja**? 🌊 En 200 Millas te esperamos con la frescura que nos caracteriza desde 1979. ¡Ven y vive algo muy especial! 🍤
+    🔗 Visítanos: https://www.restaurante200millasloja.com/"
 
-**No incluye:**
-*   Creación de páginas o secciones nuevas completas.
-*   Sesiones de fotografía profesional de alimentos.
+### Página: Menú
+*   **Post**: "¡Explora nuestra carta! Tenemos desde ceviches clásicos hasta platos especiales. Revisa aquí todos nuestros precios y variedad:
+    🔗 Menú: https://www.restaurante200millasloja.com/menu"
 
-**Compromiso de Servicio (SLA):**
-*   Respuesta inicial en menos de 24 horas hábiles.
-*   Ejecución de cambios de menú sencillos en un máximo de 24-48 horas.
-*   Comunicación directa por WhatsApp.
-*   Envío de un reporte mensual con estadísticas básicas de visitas.
+### Página: Sopas
+*   **Post**: "Para esas mañanas que necesitan energía, nada como nuestras **Sopas marinas en Loja**. 🍲 Calientitas, frescas y con todo el sabor del mar.
+    🔗 Mira nuestra variedad: https://www.restaurante200millasloja.com/sopas"
+
+### Página: Ceviches
+*   **Post**: "Si buscas los **mejores ceviches en Loja**, ¡ya lo encontraste! 🍋 Preparados con la auténtica receta y nuestra famosa leche de tigre. 
+    🔗 Pídelo aquí: https://www.restaurante200millasloja.com/ceviches"
+
+### Página: Segundos
+*   **Post**: "Para un almuerzo completo y delicioso, descubre nuestros **Segundos de mariscos en Loja**. 🍛 Del mar a tu mesa con el toque único de 200 Millas.
+    🔗 Menú de platos fuertes: https://www.restaurante200millasloja.com/segundos"
+
+### Página: Especialidades (Opción Gourmet)
+*   **Post**: "¿Buscas una experiencia gastronómica superior? 💎 Descubre nuestros platos de autor en la sección de **Mariscos gourmet en Loja**. Sabor, técnica y frescura en cada detalle.
+    🔗 Experiencia gourmet: https://www.restaurante200millasloja.com/especialidades"
+
+### Página: Especialidades (Opción Exclusiva)
+*   **Post**: "Hay sabores que solo se encuentran aquí. 🌟 Prueba nuestras **Especialidades marinas en Loja**, platos creados para quienes buscan algo verdaderamente diferente y exclusivo.
+    🔗 Carta exclusiva: https://www.restaurante200millasloja.com/especialidades"
+
+### Página: Parihuela
+*   **Post**: "La potencia del mar en un solo plato. Prueba la auténtica **Parihuela Loja** solo en 200 Millas. 🔥
+    🔗 Ordena ahora: https://www.restaurante200millasloja.com/parihuela"
+
+### Página: Ceviche Mixto
+*   **Post**: "Frescura incomparable en cada bocado. Ven por el mejor **Ceviche Mixto Loja** y disfruta de la verdadera calidad marina. 🍋
+    🔗 Detalles: https://www.restaurante200millasloja.com/ceviche-mixto"
+
+### Página: Camarón Reventado
+*   **Post**: "¿Antojo de algo crujiente? Nuestro **Camarón Reventado Loja** es el favorito de todos por su sabor y textura. 🍤
+    🔗 Conócelo aquí: https://www.restaurante200millasloja.com/camaron-reventado"
+
+### Página: Arroz con Mariscos (Opción Popular)
+*   **Post**: "¿Buscando el mejor **Arroz Marinero en Loja**? 🍚 En 200 Millas lo preparamos con la receta tradicional que nos hace únicos. ¡Ven y comprueba por qué somos el favorito de la ciudad!
+    🔗 Pide tu arroz marinero: https://www.restaurante200millasloja.com/arroz-con-mariscos"
+
+### Página: Arroz con Mariscos (Opción Meloso)
+*   **Post**: "Si te gusta el arroz en su punto, nuestro **Arroz con mariscos meloso** te va a encantar. 🌊 Saturado de mariscos frescos y con una textura cremosa irresistible.
+    🔗 Ver más: https://www.restaurante200millasloja.com/arroz-con-mariscos"
+
+### Página: Conchas Asadas
+*   **Post**: "El sabor ahumado que te transportará a la costa. Ven y prueba tus **Conchas Asadas Loja**, preparadas al momento. 🐚
+    🔗 Más info: https://www.restaurante200millasloja.com/conchas-asadas"
+
+### Página: Majarisco (Plato Lojano)
+*   **Post**: "El plato que nos identifica. Descubre por qué el **Majarisco Loja** es la fusión perfecta entre mar y sierra. 🥘
+    🔗 Nuestra especialidad: https://www.restaurante200millasloja.com/plato-lojano"
 
 ---
 
-## 9. Visualización del Logo en Búsquedas de Google
+## 5. Escalabilidad y Futuro del Portal
 
-Para asegurar que Google muestre el logo de **200 Millas** en lugar de un icono genérico en los resultados de búsqueda, se han realizado los siguientes cambios técnicos:
-*   **Estandarización**: Se han actualizado las 15+ páginas del sitio para apuntar exclusivamente al archivo de alta resolución `/assets/images/favicon.ico`.
-*   **Eliminación de conflictos**: Se eliminaron etiquetas redundantes que confundían al motor de búsqueda.
-
-> [!IMPORTANT]
-> **Pasos necesarios para acelerar el cambio:**
-> Google no actualiza el icono de forma inmediata. Para forzar la actualización, le recomendamos:
-> 1. Acceder a su **Google Search Console**.
-> 2. Usar la herramienta de **"Inspección de URLs"** con su dominio principal.
-> 3. Hacer clic en **"Solicitar indexación"**.
-> 4. El cambio suele reflejarse en un periodo de **3 a 10 días**, dependiendo de la frecuencia de rastreo de Google.
+El diseño es modular, permitiendo ampliaciones futuras como:
+*   **Sistema de Reservas en Línea** directamente desde la web.
+*   **Pedidos en Línea (Delivery)** avanzados.
+*   **Blog Gastronómico** sobre historia y recetas.
 
 ---
 
-## 10. Próximos Pasos
+## 6. Propuesta de Mantenimiento Mensual (USD 45/mes)
 
-Para continuar con este proyecto digital se solicita:
-1.  Revisar y aprobar el presente informe.
-2.  Confirmar si se desea activar el plan de mantenimiento mensual para asegurar que el menú digital esté siempre al día.
-3.  Definir prioridades en futuras ampliaciones (ej. sistema de reservas).
+Incluye actualizaciones de precios, fotos, cambios de horario y soporte técnico para el botón de WhatsApp, asegurando que su menú digital esté siempre vigente.
 
 ---
 
-## Conclusión
+## 7. Visualización del Logo en Google
 
-El objetivo es que RESTAURANTE 200 MILLAS no solo sea el referente de mariscos en Loja en el mundo físico, sino también en el digital, facilitando a los clientes encontrar y disfrutar de su excelente oferta gastronómica.
+Se ha optimizado el código en todas las páginas para que Google muestre el logo de **200 Millas** en los resultados de búsqueda. Le sugerimos solicitar la indexación en Google Search Console para acelerar el proceso.
 
-Quedo a su disposición para cualquier consulta o aclaración adicional.
+---
+
+## 8. Próximos Pasos
+
+1.  Revisar y aprobar este informe.
+2.  Confirmar si desea el mantenimiento mensual.
+3.  Publicar los posts sugeridos en sus redes sociales para empezar a atraer tráfico.
+
+---
 
 **Atentamente,**
 

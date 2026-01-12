@@ -14,7 +14,9 @@ function getPool() {
             waitForConnections: true,
             connectionLimit: 10,
             queueLimit: 0,
-            connectTimeout: 10000 // 10 segundos
+            connectTimeout: 10000,
+            enableKeepAlive: true,
+            keepAliveInitialDelay: 10000
         });
         console.log('✅ Pool de MySQL creado');
     }
