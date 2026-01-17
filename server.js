@@ -96,7 +96,7 @@ const ADMIN_PASS = 'Contraseña123.';
 
 // Middleware para servir archivos estáticos con caché del navegador (1 día)
 app.use(express.static(path.join(__dirname, '/'), {
-    maxAge: '1d',
+    maxAge: '1y',
     setHeaders: (res, path) => {
         if (path.endsWith('.html')) {
             // No cachear HTML para asegurar que los cambios se vean reflejados
